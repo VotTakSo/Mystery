@@ -1,0 +1,17 @@
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\bin\Debug\Mystery.exe.config
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\bin\Debug\Mystery.exe
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\bin\Debug\Mystery.pdb
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\MainWindow.g.cs
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\App.g.cs
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\Mystery_MarkupCompile.cache
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\MainWindow.baml
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\Mystery.g.resources
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\Mystery.Properties.Resources.resources
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\Mystery.csproj.GenerateResource.Cache
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\Mystery.csproj.CoreCompileInputs.cache
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\Mystery.exe
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\Mystery.pdb
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\Mystery.csprojResolveAssemblyReference.cache
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\Mystery_MarkupCompile.lref
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\ArtWindow.g.cs
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\ArtWindow.baml

@@ -1,0 +1,13 @@
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\bin\Release\Mystery.exe.config
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\bin\Release\Mystery.exe
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\bin\Release\Mystery.pdb
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Release\MainWindow.baml
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Release\MainWindow.g.cs
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Release\App.g.cs
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Release\Mystery_MarkupCompile.cache
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Release\Mystery.g.resources
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Release\Mystery.Properties.Resources.resources
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Release\Mystery.csproj.GenerateResource.Cache
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Release\Mystery.csproj.CoreCompileInputs.cache
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Release\Mystery.exe
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Release\Mystery.pdb
