@@ -511,7 +511,7 @@ namespace Mystery
                     {
                         mass[cre.poleNumberVS].ActionAfterDeath(mass, mrTorry, enemy);
                         CreatureHPAttackDeth(cre.poleNumberVS);
-                        mass[cre.poleNumberVS].img = "pack://application:,,,/Resources/fon.jpg";
+                        mass[cre.poleNumberVS].img = "pack://application:,,,/Resources/Creatures/fon.jpg";
                         LoadImage(mass[cre.poleNumberVS].poleNumber, mass[cre.poleNumberVS].img);
                         wind.poleBuffer[cre.poleNumberVS] = false;
                         mass[cre.poleNumberVS] = null;
@@ -524,7 +524,7 @@ namespace Mystery
                         //Тут может быть ошибка при смерти своего существа в свой ход... А может и не быть :)
                         mass[cre.poleNumber].ActionAfterDeath(mass, mrTorry, enemy);
                         CreatureHPAttackDeth(cre.poleNumber);
-                        mass[cre.poleNumber].img = "pack://application:,,,/Resources/fon.jpg";
+                        mass[cre.poleNumber].img = "pack://application:,,,/Resources/Creatures/fon.jpg";
                         LoadImage(mass[cre.poleNumber].poleNumber, mass[cre.poleNumber].img);
                         wind.poleBuffer[cre.poleNumber] = false;
                         mass[cre.poleNumber] = null;

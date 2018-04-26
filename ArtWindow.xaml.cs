@@ -51,22 +51,64 @@ namespace Mystery
 
 //*************************Изображения артефактов*********************************//
         string fireBowImg = "pack://application:,,,/Resources/Artefacts/Weapon/Bow/FireBow.jpg";
+        string windBowImg = "pack://application:,,,/Resources/Artefacts/Weapon/Bow/WindBow.jpg";
+        string waterBowImg = "pack://application:,,,/Resources/Artefacts/Weapon/Bow/WaterBow.jpg";
+        string earthBowImg = "pack://application:,,,/Resources/Artefacts/Weapon/Bow/EarthBow.jpg";
+        string deathBowImg = "pack://application:,,,/Resources/Artefacts/Weapon/Bow/DeathBow.jpg";
+
+        string fireSplinterImg = "pack://application:,,,/Resources/Artefacts/Weapon/Splinter/FireSplinter.jpg";
+        string windSplinterImg = "pack://application:,,,/Resources/Artefacts/Weapon/Splinter/WaterSplinter.jpg";
+        string waterSplinterImg = "pack://application:,,,/Resources/Artefacts/Weapon/Splinter/WindSplinter.jpg";
+        string earthSplinterImg = "pack://application:,,,/Resources/Artefacts/Weapon/Splinter/EarthSplinter.jpg";
         string dethSplinterImg = "pack://application:,,,/Resources/Artefacts/Weapon/Splinter/DeathSplinter.jpg";
+
+        string fireShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/FireShield.jpg";
+        string windShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/WindShield.jpg";
+        string waterShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/WaterShield.jpg";
+        string earthShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/EarthShield.jpg";
         string dethShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/DeathShield.jpg";
 
-//*****************************Оружие*****************************************//
-
-        private void Bow_Click(object sender, RoutedEventArgs e)
+        //*****************************Оружие*****************************************//
+        void Bow()
         {
-            //Window2 w = new Window2(this, weaponFlag);
-            //w.ShowDialog();
             weaponFlag = true;
             weaponNumber = 1;
-            weaponElement = "fire";
             WeaponButton.Visibility = Visibility.Visible;
-            //FireBow.IsEnabled = false;
-            weaponImg = fireBowImg;
             LoadImage(WeaponImage, weaponImg);
+        }
+        private void FireBow_Click(object sender, RoutedEventArgs e)
+        {
+            weaponElement = "fire";
+            weaponImg = fireBowImg;
+            Bow();
+
+        }
+        private void WindBow_Click(object sender, RoutedEventArgs e)
+        {
+            weaponElement = "wind";
+            weaponImg = windBowImg;
+            Bow();
+
+        }
+        private void WaterBow_Click(object sender, RoutedEventArgs e)
+        {
+            weaponElement = "water";
+            weaponImg = waterBowImg;
+            Bow();
+
+        }
+        private void EarthBow_Click(object sender, RoutedEventArgs e)
+        {
+            weaponElement = "earth";
+            weaponImg = earthBowImg;
+            Bow();
+
+        }
+        private void DeathBow_Click(object sender, RoutedEventArgs e)
+        {
+            weaponElement = "death";
+            weaponImg = deathBowImg;
+            Bow();
 
         }
 

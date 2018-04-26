@@ -142,7 +142,7 @@
     <Resource Include="Resources\Artefacts\Weapon\Bow\FireBow.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Artefacts\Weapon\Bow\DethBow.jpg" />
+    <Resource Include="Resources\Artefacts\Weapon\Bow\DeathBow.jpg" />
     <Resource Include="Resources\Artefacts\Weapon\Bow\EarthBow.jpg" />
     <Resource Include="Resources\Artefacts\Weapon\Bow\WaterBow.jpg" />
     <Resource Include="Resources\Artefacts\Weapon\Bow\WindBow.jpg" />
