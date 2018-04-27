@@ -29,7 +29,8 @@ namespace Mystery
         {
 
             mrTorry.weaponElements = w.weaponElement;
-         //   mrTorry.shieldElements = w.shieldElement;
+            mrTorry.shieldElements = w.shieldElement;
+            mrTorry.bootsElements = w.bootsElement;
             enemy.shieldElements = w.shieldElement;
             if (w.weaponFlag)
             {
@@ -59,13 +60,36 @@ namespace Mystery
                             mrTorry.setShield(new Shield());
                             break;
                         }
-                   
+                    case 2:
+                        {
+                            mrTorry.setShield(new BigShield());
+                            break;
+                        }
+                    case 3:
+                        {
+                            mrTorry.setShield(new OrksShield());
+                            break;
+                        }
+
                 }
             }
             else
                 mrTorry.setShield(new NoShield());
 
-            enemy.setShield(new Shield());
+
+            if (w.cloackFlag)
+            {
+                mrTorry.setCloack(new CloackOfVipers());
+            }
+            else
+                mrTorry.setCloack(new NoCloack());
+
+            if (w.bootsFlag)
+            {
+                
+                
+            }
+           // enemy.setShield(new Shield());
             wind = w;
            
 
@@ -111,6 +135,7 @@ namespace Mystery
                     Goblin Goblin = new Goblin(wind.poleNumber, VsPole(wind.poleNumber));
                    
                     //Добавление защиты с учетом щита
+                    if(mrTorry.first)
                     Armor = mrTorry.Shield(mrTorry, Goblin.Element);
                     Goblin.armor += Armor;
                     Armor = 0;

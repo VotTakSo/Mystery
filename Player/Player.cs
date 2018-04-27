@@ -15,6 +15,7 @@ namespace Mystery
 
         Weapon weapon;
         ShieldInterface shield;
+        CloackInterface cloack;
 
         public Creature[] Weapon(Creature[] cre, int mana, int min, int max)
         {
@@ -23,8 +24,18 @@ namespace Mystery
 
         public int Shield(Player first, string Element)
         {
-
+            
             return shield.shield(first, Element);
+        }
+
+        public Creature Cloack(Creature cre, Player pl)
+        {
+
+            return cloack.Cloack(cre, pl);      
+        }
+        public Creature ReturnAttack(Creature cre)
+        {
+            return cloack.ReturnAttack(cre);
         }
 
         public void setWeapon(Weapon w)
@@ -37,11 +48,16 @@ namespace Mystery
             shield = s;
         }
 
+        public void setCloack(CloackInterface c)
+        {
+            cloack = c;
+        }
+
         public string weaponElements;
         public string bootsElements;
         public string shieldElements;
         public int shieldBuff;
-        public bool cloack = false;
+        public bool boolCloack = false;
 
         public Player()
         {
@@ -62,7 +78,7 @@ namespace Mystery
             first = hod;
             weaponElements = weaponElement;
             bootsElements = bootsElement;
-            cloack = clo;
+            boolCloack = clo;
         }
         public Player(bool hod, string weaponElement, string bootsElement, string shieldElement)
         {
@@ -79,7 +95,7 @@ namespace Mystery
             shieldElements = shieldElement;
             shieldBuff = buff;
         }
-        public Player(bool hod, string weaponElement, string bootsElement, string shieldElement, bool clo)
+    /*    public Player(bool hod, string weaponElement, string bootsElement, string shieldElement, bool clo)
         {
             first = hod;
             weaponElements = weaponElement;
@@ -95,6 +111,6 @@ namespace Mystery
             shieldElements = shieldElement;
             shieldBuff = buff;
             cloack = clo;
-        }
+        }*/
     }
 }

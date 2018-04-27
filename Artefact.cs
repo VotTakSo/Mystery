@@ -92,7 +92,7 @@ namespace Mystery
         public Creature CloackOfVipers(Creature cre, Player pl)
         {
             if(cre!=null)
-            if(pl.cloack)
+            if(pl.boolCloack)
             {
                 cre.buffAtack = cre.Attack;
                 cre.Attack = 0;

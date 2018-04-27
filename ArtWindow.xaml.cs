@@ -28,17 +28,28 @@ namespace Mystery
 
         static string artFon = "pack://application:,,,/Resources/Artefacts/test.jpg";
 
-        public string weaponImg = "pack://application:,,,/Resources/Artefacts/test.jpg";
-        public string shieldImg = "pack://application:,,,/Resources/Artefacts/test.jpg";
+        public string weaponImg = artFon;
+        public string shieldImg = artFon;
+        public string cloackImg = artFon;
+        public string amuletImg = artFon;
+        public string bootsImg = artFon;
+        public string ringImg = artFon;
 
         public string weaponElement;
         public string shieldElement;
+        public string bootsElement;
 
         public int weaponNumber;
         public int shieldNumber;
+        public int ringNumber;
+        public int amuletNumber;
 
         public bool weaponFlag = false;
         public bool shieldFlag = false;
+        public bool cloackFlag = false;
+        public bool amuletFlag = false;
+        public bool bootsFlag  = false;
+        public bool ringFlag   = false;
 
        
 //******************************Загрузка изображений******************************//
@@ -62,12 +73,21 @@ namespace Mystery
         string earthSplinterImg = "pack://application:,,,/Resources/Artefacts/Weapon/Splinter/EarthSplinter.jpg";
         string dethSplinterImg = "pack://application:,,,/Resources/Artefacts/Weapon/Splinter/DeathSplinter.jpg";
 
+        string cloackOfVipersImg= "pack://application:,,,/Resources/Artefacts/Cloack/cloack.jpg";
+
+        string orksShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/OrksShield.jpg";
+
         string fireShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/FireShield.jpg";
         string windShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/WindShield.jpg";
         string waterShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/WaterShield.jpg";
         string earthShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/EarthShield.jpg";
-        string dethShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/DeathShield.jpg";
+        string deathShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/DeathShield.jpg";
 
+        string bigFireShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/BigShield/BigFireShield.jpg";
+        string bigWindShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/BigShield/BigWindShield.jpg";
+        string bigWaterShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/BigShield/BigWaterShield.jpg";
+        string bigEarthShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/BigShield/BigEarthShield.jpg";
+        string bigDeathShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/BigShield/BigDeathShield.jpg";
         //*****************************Оружие*****************************************//
         void Bow()
         {
@@ -111,16 +131,43 @@ namespace Mystery
             Bow();
 
         }
-
-        private void Splinter_Click(object sender, RoutedEventArgs e)
+        void Splinter()
         {
             weaponFlag = true;
             weaponNumber = 2;
-            weaponElement = "death";
             WeaponButton.Visibility = Visibility.Visible;
-            //FireBow.IsEnabled = false;
-            weaponImg = dethSplinterImg;
             LoadImage(WeaponImage, weaponImg);
+
+        }
+        private void FireSplinter_Click(object sender, RoutedEventArgs e)
+        {
+            weaponElement = "fire";
+            weaponImg = fireSplinterImg;
+            Splinter();
+        }
+        private void WindSplinter_Click(object sender, RoutedEventArgs e)
+        {
+            weaponElement = "wind";
+            weaponImg = windSplinterImg;
+            Splinter();
+        }
+        private void WaterSplinter_Click(object sender, RoutedEventArgs e)
+        {
+            weaponElement = "water";
+            weaponImg = waterSplinterImg;
+            Splinter();
+        }
+        private void EarthSplinter_Click(object sender, RoutedEventArgs e)
+        {
+            weaponElement = "earth";
+            weaponImg = earthSplinterImg;
+            Splinter();
+        }
+        private void DeathSplinter_Click(object sender, RoutedEventArgs e)
+        {
+            weaponElement = "death";
+            weaponImg = dethSplinterImg;
+            Splinter();
         }
         private void Weapon_Click(object sender, RoutedEventArgs e)
         {
@@ -132,17 +179,103 @@ namespace Mystery
             LoadImage(WeaponImage, weaponImg);
 
         }
-//***********************************Щиты******************************************************//
-    //*********************Малый щит смерти**********************************************//
-        private void DethShield_Click(object sender, RoutedEventArgs e)
+        //***********************************Щиты******************************************************//
+        private void OrksShield_Click(object sender, RoutedEventArgs e)
+        {
+            shieldElement = "fire";
+            shieldImg = orksShieldImg;
+            
+            shieldFlag = true;
+            shieldNumber = 3;
+            ShieldButton.Visibility = Visibility.Visible;
+            LoadImage(ShieldImage, shieldImg);
+
+        }
+        //*********************Малые щиты**********************************************//
+        void shield()
         {
             shieldFlag = true;
             shieldNumber = 1;
-            shieldElement = "death";
             ShieldButton.Visibility = Visibility.Visible;
-            //FireBow.IsEnabled = false;
-            shieldImg = dethShieldImg;
             LoadImage(ShieldImage, shieldImg);
+        }
+        private void FireShield_Click(object sender, RoutedEventArgs e)
+        {
+            shieldElement = "fire";
+            shieldImg = fireShieldImg;
+            shield();
+            
+        }
+        private void WindShield_Click(object sender, RoutedEventArgs e)
+        {
+            shieldElement = "wind";
+            shieldImg = windShieldImg;
+            shield();
+
+        }
+        private void WaterShield_Click(object sender, RoutedEventArgs e)
+        {
+            shieldElement = "water";
+            shieldImg = waterShieldImg;
+            shield();
+
+        }
+        private void EarthShield_Click(object sender, RoutedEventArgs e)
+        {
+            shieldElement = "earth";
+            shieldImg = earthShieldImg;
+            shield();
+
+        }
+        private void DeathShield_Click(object sender, RoutedEventArgs e)
+        {
+            shieldElement = "death";
+            shieldImg = deathShieldImg;
+            shield();
+
+        }
+        //********************Большие щиты*******************************//
+        void BigShield()
+        {
+            shieldFlag = true;
+            shieldNumber = 2;
+            ShieldButton.Visibility = Visibility.Visible;
+            LoadImage(ShieldImage, shieldImg);
+        }
+        private void BigFireShield_Click(object sender, RoutedEventArgs e)
+        {
+            shieldElement = "fire";
+            shieldImg = bigFireShieldImg;
+            BigShield();
+
+        }
+        private void BigWindShield_Click(object sender, RoutedEventArgs e)
+        {
+            shieldElement = "wind";
+            shieldImg = bigWindShieldImg;
+            BigShield();
+
+        }
+        private void BigWaterShield_Click(object sender, RoutedEventArgs e)
+        {
+            shieldElement = "water";
+            shieldImg = bigWaterShieldImg;
+            BigShield();
+
+        }
+        private void BigEarthShield_Click(object sender, RoutedEventArgs e)
+        {
+            shieldElement = "earth";
+            shieldImg = bigEarthShieldImg;
+            BigShield();
+
+        }
+        private void BigDeathShield_Click(object sender, RoutedEventArgs e)
+        {
+            shieldElement = "death";
+            shieldImg = bigDeathShieldImg;
+            BigShield();
+
         }
         //Убрать щит
         private void Shield_Click(object sender, RoutedEventArgs e)
@@ -156,7 +289,101 @@ namespace Mystery
             LoadImage(ShieldImage, shieldImg);
         }
 
-//********************************************************************************************//
+        //********************************************************************************************//
+        private void CloackOfVipers_Click(object sender, RoutedEventArgs e)
+        {
+            cloackImg = cloackOfVipersImg;
+            cloackFlag = true;
+            CloackButton.Visibility = Visibility.Visible;
+            LoadImage(CloackImage, cloackImg);
+        }
+        private void Cloack_Click(object sender, RoutedEventArgs e)
+        {
+            cloackFlag = false;
+            CloackButton.Visibility = Visibility.Hidden;
+            cloackImg = artFon;
+            LoadImage(CloackImage, cloackImg);
+        }
+        //*******************************************************************************************//
+        private void Cross_Click(object sender, RoutedEventArgs e)
+        {
+            amuletImg = cloackOfVipersImg;
+            amuletFlag = true;
+            amuletNumber = 1;
+            AmuletButton.Visibility = Visibility.Visible;
+            LoadImage(AmuletImage, amuletImg);
+        }
+        private void Amulet_Click(object sender, RoutedEventArgs e)
+        {
+            amuletFlag = false;
+            amuletNumber = 0;
+            AmuletButton.Visibility = Visibility.Hidden;
+            amuletImg = artFon;
+            LoadImage(AmuletImage, amuletImg);
+        }
+        //*******************************************************************************************//
+        private void OrksRing_Click(object sender, RoutedEventArgs e)
+        {
+            ringImg = cloackOfVipersImg;
+            ringFlag = true;
+            ringNumber = 1;
+            RingButton.Visibility = Visibility.Visible;
+            LoadImage(RingImage, ringImg);
+        }
+        private void Ring_Click(object sender, RoutedEventArgs e)
+        {
+            ringFlag = false;
+            ringNumber = 0;
+            RingButton.Visibility = Visibility.Hidden;
+            ringImg = artFon;
+            LoadImage(RingImage, ringImg);
+        }
+        //*******************************************************************************************//
+        void boots()
+        {
+            bootsFlag = true;
+            BootsButton.Visibility = Visibility.Visible;
+            LoadImage(BootsImage, bootsImg);
+        }
+        private void FireBoots_Click(object sender, RoutedEventArgs e)
+        {
+            bootsElement = "fire";
+            bootsImg = fireShieldImg;
+            boots();
+        }
+        private void WindBoots_Click(object sender, RoutedEventArgs e)
+        {
+            bootsElement = "wind";
+            bootsImg = windShieldImg;
+            boots();
+        }
+        private void WaterBoots_Click(object sender, RoutedEventArgs e)
+        {
+            bootsElement = "water";
+            bootsImg = waterShieldImg;
+            boots();
+        }
+        private void EarthBoots_Click(object sender, RoutedEventArgs e)
+        {
+            bootsElement = "earth";
+            bootsImg = earthShieldImg;
+            boots();
+        }
+        private void DeathBoots_Click(object sender, RoutedEventArgs e)
+        {
+            bootsElement = "death";
+            bootsImg = deathShieldImg;
+            boots();
+        }
+        private void Boots_Click(object sender, RoutedEventArgs e)
+        {
+            bootsFlag = false;
+            bootsElement = null;
+            BootsButton.Visibility = Visibility.Hidden;
+            bootsImg = artFon;
+            LoadImage(BootsImage, bootsImg);
+        }
+        //*************************************************************************//
         bool end = false;
 
         public bool returnEnd()

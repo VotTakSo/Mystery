@@ -392,16 +392,18 @@ namespace Mystery
                     //if (mass[cre.poleNumberVS] != null)
                     //{
 
-                        //  mass[cre.poleNumberVS].Hp -= (cre.Attack-mass[cre.poleNumberVS].armor);
-                        mass = cre.perfomAttack(mass, cre,enemyPlayer);
-                        //art.CloackOfVipersReturnAttack(cre);
-                        //art.CloackOfVipersReturnAttack(mass[cre.poleNumberVS]);
+                    //  mass[cre.poleNumberVS].Hp -= (cre.Attack-mass[cre.poleNumberVS].armor);
+                    mass = cre.perfomAttack(mass, cre, enemyPlayer);
+                    //art.CloackOfVipersReturnAttack(cre);
+                    //art.CloackOfVipersReturnAttack(mass[cre.poleNumberVS]);
+                    mrTorry.ReturnAttack(cre);
                     //}
                     //else
                     //{
-                  //      enemyPlayer.HP -= cre.Attack;
-                        //art.CloackOfVipersReturnAttack(cre);
-                        //art.CloackOfVipersReturnAttack(mass[cre.poleNumberVS]);
+                    //      enemyPlayer.HP -= cre.Attack;
+                    //art.CloackOfVipersReturnAttack(cre);
+                    //art.CloackOfVipersReturnAttack(mass[cre.poleNumberVS]);
+                   // mrTorry.ReturnAttack(cre);
                     //}
                 }
                
@@ -515,7 +517,8 @@ namespace Mystery
                         LoadImage(mass[cre.poleNumberVS].poleNumber, mass[cre.poleNumberVS].img);
                         wind.poleBuffer[cre.poleNumberVS] = false;
                         mass[cre.poleNumberVS] = null;
-                        art.CloackOfVipers(mass[cre.poleNumber], secondPlayer);
+                        // art.CloackOfVipers(mass[cre.poleNumber], secondPlayer);
+                        if(mrTorry.first) mrTorry.Cloack(mass[cre.poleNumber], secondPlayer);
                        
                     }
                 if (mass[cre.poleNumber] != null)
@@ -528,7 +531,8 @@ namespace Mystery
                         LoadImage(mass[cre.poleNumber].poleNumber, mass[cre.poleNumber].img);
                         wind.poleBuffer[cre.poleNumber] = false;
                         mass[cre.poleNumber] = null;
-                        art.CloackOfVipers(mass[cre.poleNumberVS], firstPlayer);
+                        // art.CloackOfVipers(mass[cre.poleNumberVS], firstPlayer);
+                        if (mrTorry.first) mrTorry.Cloack(mass[cre.poleNumber], firstPlayer);
                     }
             }
         }

@@ -10,7 +10,7 @@ namespace Mystery
     {
         public Creature[] Weapon(Creature[] cre, int mana, int min, int max)
         {
-            if (mana < 80)
+            if (mana < 8)
             {
                 for (int i = min; i < max; i++)
                 {

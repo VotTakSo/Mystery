@@ -29,6 +29,21 @@ namespace Mystery
         public bool weaponFlag = false;
         public string weaponImage;
 
+        public bool cloackFlag=false;
+        public string cloackImage;
+
+        public bool ringFlag=false;
+        public string ringImage;
+        public int ringNumber;
+
+        public bool amuletFlag = false;
+        public string amuletImage;
+        public int amuletNumber;
+
+        public bool bootsFlag = false;
+        public string bootsImage;
+        public string bootsElement;
+
         public string shieldElement;
         public int shieldNumber;
         public bool shieldFlag = false;
@@ -49,6 +64,21 @@ namespace Mystery
             shieldNumber  = w1.shieldNumber;
             shieldFlag    = w1.shieldFlag;
             shieldImage   = w1.shieldImg;
+
+            cloackFlag = w1.cloackFlag;
+            cloackImage = w1.cloackImg;
+
+            ringFlag = w1.ringFlag;
+            ringImage = w1.ringImg;
+            ringNumber = w1.ringNumber;
+
+            bootsFlag = w1.bootsFlag;
+            bootsImage = w1.bootsImg;
+            bootsElement = w1.bootsElement;
+
+            amuletFlag = w1.amuletFlag;
+            amuletImage = w1.amuletImg;
+            amuletNumber = w1.amuletNumber;
 
             weaponElement = w1.weaponElement;
             weaponNumber = w1.weaponNumber;

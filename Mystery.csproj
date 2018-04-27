@@ -61,6 +61,18 @@
     <Compile Include="Creatures\InterfaceAttack\TrippleAttack.cs" />
     <Compile Include="game.cs" />
     <Compile Include="Creatures\InterfaceAttack\UssualAttack.cs" />
+    <Compile Include="Player\Amulet\AmuletInterface.cs" />
+    <Compile Include="Player\Amulet\Cross.cs" />
+    <Compile Include="Player\Amulet\NoAmulet.cs" />
+    <Compile Include="Player\Boots\BootsInterface.cs" />
+    <Compile Include="Player\Boots\ElementBoots.cs" />
+    <Compile Include="Player\Boots\NoBoots.cs" />
+    <Compile Include="Player\Cloack\CloackOfVipers.cs" />
+    <Compile Include="Player\Cloack\CloackInterface.cs" />
+    <Compile Include="Player\Cloack\NoCloack.cs" />
+    <Compile Include="Player\Ring\NoRing.cs" />
+    <Compile Include="Player\Ring\OrksRing.cs" />
+    <Compile Include="Player\Ring\RingInterface.cs" />
     <Compile Include="Player\Shield\BigShield.cs" />
     <Compile Include="Player\Shield\NoShield.cs" />
     <Compile Include="Player\Shield\OrksShield.cs" />
@@ -162,7 +174,18 @@
     <Resource Include="Resources\Artefacts\Shields\Shield\WindShield.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Artefacts\Shields\BigShield\" />
+    <Resource Include="Resources\Artefacts\Shields\OrksShield.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Artefacts\Shields\BigShield\BigDeathShield.jpg" />
+    <Resource Include="Resources\Artefacts\Shields\BigShield\BigEarthShield.jpg" />
+    <Resource Include="Resources\Artefacts\Shields\BigShield\BigFireShield.jpg" />
+    <Resource Include="Resources\Artefacts\Shields\BigShield\BigWaterShield.jpg" />
+    <Resource Include="Resources\Artefacts\Shields\BigShield\BigWindShield.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Artefacts\Cloack\cloack.jpg" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

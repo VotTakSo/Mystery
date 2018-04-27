@@ -7,114 +7,218 @@
         mc:Ignorable="d"
         Title="ArtWindow" Height="600" Width="800">
     <Grid>
-        <Grid x:Name="art">
-        <Image Source="Resources/photo.jpg" HorizontalAlignment="Left" Height="176" Margin="155,209,0,0" VerticalAlignment="Top" Width="178"/>
-        <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="100,209,0,0" VerticalAlignment="Top" Width="50"/>
-        <Image x:Name="WeaponImage" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="100,269,0,0" VerticalAlignment="Top" Width="50"/>
-        <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="100,149,0,0" VerticalAlignment="Top" Width="50"/>
-        <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="100,329,0,0" VerticalAlignment="Top" Width="50"/>
-        <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="100,389,0,0" VerticalAlignment="Top" Width="50"/>
+        <Grid x:Name="art" Margin="0,-41,-0.4,41.4">
+            <Image Source="Resources/photo.jpg" HorizontalAlignment="Left" Height="176" Margin="155,209,0,0" VerticalAlignment="Top" Width="178"/>
+            <Image x:Name="AmuletImage" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="100,209,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image x:Name="WeaponImage" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="100,269,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="100,149,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="100,329,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image x:Name="BootsImage" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="100,389,0,0" VerticalAlignment="Top" Width="50"/>
 
-        <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="340,209,0,0" VerticalAlignment="Top" Width="50"/>
-        <Image x:Name="ShieldImage" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="340,269,0,0" VerticalAlignment="Top" Width="50"/>
-        <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="340,329,0,0" VerticalAlignment="Top" Width="50"/>
-        <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="340,389,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image x:Name="RingImage" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="340,209,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image x:Name="ShieldImage" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="340,269,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image x:Name="CloackImage" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="340,329,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="340,389,0,0" VerticalAlignment="Top" Width="50"/>
 
-        <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="275,389,0,0" VerticalAlignment="Top" Width="50"/>
-        <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="220,389,0,0" VerticalAlignment="Top" Width="50"/>
-        <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="165,389,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="275,389,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="220,389,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="165,389,0,0" VerticalAlignment="Top" Width="50"/>
 
         </Grid>
-        <Label Content="Weapon" HorizontalAlignment="Left" Margin="473,105,0,0" VerticalAlignment="Top"/>
+        
 
-        <Button x:Name="FireShield" HorizontalAlignment="Left" Margin="473,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DethShield_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/FireShield.jpg"  />
-            </Button.Background>
-        </Button>
-        <Button x:Name="WindShield" HorizontalAlignment="Left" Margin="523,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DethShield_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/WindShield.jpg"  />
-            </Button.Background>
-        </Button>
-        <Button x:Name="WaterShield" HorizontalAlignment="Left" Margin="573,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DethShield_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/WaterShield.jpg"  />
-            </Button.Background>
-        </Button>
-        <Button x:Name="EarthShield" HorizontalAlignment="Left" Margin="623,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DethShield_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/EarthShield.jpg"  />
-            </Button.Background>
-        </Button>
-        <Button x:Name="DeathShield" HorizontalAlignment="Left" Margin="673,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DethShield_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/DeathShield.jpg"  />
-            </Button.Background>
-        </Button>
+        <Grid x:Name="Weapon" Margin="0,-121,-0.4,41.4">
+            <Label Content="Weapon" HorizontalAlignment="Left" Margin="473,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.592,-0.937"/>
+            <Grid x:Name="Bows">
+                <Button x:Name="FireBow" HorizontalAlignment="Left" Margin="473,180,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="FireBow_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Weapon/Bow/FireBow.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="WindBow" HorizontalAlignment="Left" Margin="523,180,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WindBow_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Weapon/Bow/WindBow.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="WaterBow" HorizontalAlignment="Left" Margin="573,180,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WaterBow_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Weapon/Bow/WaterBow.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="EarthBow" HorizontalAlignment="Left" Margin="623,180,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="EarthBow_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Weapon/Bow/EarthBow.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="DethBow" HorizontalAlignment="Left" Margin="673,180,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DeathBow_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Weapon/Bow/DeathBow.jpg"  />
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <Grid x:Name="Splinters">
+                <Button x:Name="FireSplinter" HorizontalAlignment="Left" Margin="473,230,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="FireSplinter_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Weapon/Splinter/FireSplinter.jpg"/>
+                    </Button.Background>
+                </Button>
 
-        <Button x:Name="FireBow" HorizontalAlignment="Left" Margin="473,180,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="FireBow_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Weapon/Bow/FireBow.jpg"  />
-            </Button.Background>
-        </Button>
-        <Button x:Name="WindBow" HorizontalAlignment="Left" Margin="523,180,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WindBow_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Weapon/Bow/WindBow.jpg"  />
-            </Button.Background>
-        </Button>
-        <Button x:Name="WaterBow" HorizontalAlignment="Left" Margin="573,180,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WaterBow_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Weapon/Bow/WaterBow.jpg"  />
-            </Button.Background>
-        </Button>
-        <Button x:Name="EarthBow" HorizontalAlignment="Left" Margin="623,180,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="EarthBow_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Weapon/Bow/EarthBow.jpg"  />
-            </Button.Background>
-        </Button>
-        <Button x:Name="DethBow" HorizontalAlignment="Left" Margin="673,180,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DeathBow_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Weapon/Bow/DeathBow.jpg"  />
-            </Button.Background>
-        </Button>
+                <Button x:Name="WindSplinter" HorizontalAlignment="Left" Margin="523,230,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WindSplinter_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Weapon/Splinter/WindSplinter.jpg"/>
+                    </Button.Background>
+                </Button>
 
-        <Button x:Name="FireSplinter" HorizontalAlignment="Left" Margin="473,230,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="Splinter_Click">
+                <Button x:Name="WaterSplinter" HorizontalAlignment="Left" Margin="573,230,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WaterSplinter_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Weapon/Splinter/WaterSplinter.jpg"/>
+                    </Button.Background>
+                </Button>
+
+                <Button x:Name="EarthSplinter" HorizontalAlignment="Left" Margin="623,230,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="EarthSplinter_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Weapon/Splinter/EarthSplinter.jpg"/>
+                    </Button.Background>
+                </Button>
+
+                <Button x:Name="DethSplinter" HorizontalAlignment="Left" Margin="673,230,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DeathSplinter_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Weapon/Splinter/DeathSplinter.jpg"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <Button x:Name="WeaponButton" Click="Weapon_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="100,269,0,0" VerticalAlignment="Top" Width="50" Height="50">
+
+            </Button>
+        </Grid>
+        <Grid x:Name="Shields" Margin="0,-121,-0.4,41.4">
+            <Grid x:Name="Shield">
+                <Button x:Name="FireShield" HorizontalAlignment="Left" Margin="473,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="FireShield_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/FireShield.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="WindShield" HorizontalAlignment="Left" Margin="523,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WindShield_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/WindShield.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="WaterShield" HorizontalAlignment="Left" Margin="573,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WaterShield_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/WaterShield.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="EarthShield" HorizontalAlignment="Left" Margin="623,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="EarthShield_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/EarthShield.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="DeathShield" HorizontalAlignment="Left" Margin="673,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DeathShield_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/DeathShield.jpg"  />
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <Grid x:Name="BigShields">
+                <Button x:Name="BigFireShield" HorizontalAlignment="Left" Margin="473,360,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="BigFireShield_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Shields/BigShield/BigFireShield.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="BigWindShield" HorizontalAlignment="Left" Margin="523,360,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="BigWindShield_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Shields/BigShield/BigWindShield.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="BigWaterShield" HorizontalAlignment="Left" Margin="573,360,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="BigWaterShield_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Shields/BigShield/BigWaterShield.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="BigEarthShield" HorizontalAlignment="Left" Margin="623,360,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="BigEarthShield_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Shields/BigShield/BigEarthShield.jpg"  />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="BigDeathShield" HorizontalAlignment="Left" Margin="673,360,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="BigDeathShield_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/Artefacts/Shields/BigShield/BigDeathShield.jpg"  />
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <Button x:Name="OrksShield" HorizontalAlignment="Left" Margin="723,340,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="OrksShield_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Shields/OrksShield.jpg"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="ShieldButton" Click="Shield_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="340,269,0,0" VerticalAlignment="Top" Width="50" Height="50">
+
+
+            </Button>
+        </Grid>
+        <Grid x:Name="CloackGrid">
+        <Button x:Name="Cloack" HorizontalAlignment="Left" Margin="473,380,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="CloackOfVipers_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Weapon/Splinter/FireSplinter.jpg"/>
+                <ImageBrush ImageSource="Resources/Artefacts/Cloack/cloack.jpg"  />
             </Button.Background>
         </Button>
-
-        <Button x:Name="WindSplinter" HorizontalAlignment="Left" Margin="523,230,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="Splinter_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Weapon/Splinter/WindSplinter.jpg"/>
-            </Button.Background>
-        </Button>
-
-        <Button x:Name="WaterSplinter" HorizontalAlignment="Left" Margin="573,230,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="Splinter_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Weapon/Splinter/WaterSplinter.jpg"/>
-            </Button.Background>
-        </Button>
-
-        <Button x:Name="EarthSplinter" HorizontalAlignment="Left" Margin="623,230,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="Splinter_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Weapon/Splinter/EarthSplinter.jpg"/>
-            </Button.Background>
-        </Button>
-
-        <Button x:Name="DethSplinter" HorizontalAlignment="Left" Margin="673,230,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="Splinter_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Weapon/Splinter/DeathSplinter.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="WeaponButton" Click="Weapon_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="100,269,0,0" VerticalAlignment="Top" Width="50" Height="50">
-            
-        </Button>
-        <Button x:Name="ShieldButton" Click="Shield_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="340,269,0,0" VerticalAlignment="Top" Width="50" Height="50">
-            
+        <Button x:Name="CloackButton" Click="Cloack_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="340,290,0,0" VerticalAlignment="Top" Width="50" Height="50">
 
         </Button>
+        </Grid>
+        <Grid x:Name="BootsGrid">
+            <Button x:Name="FireBoots" HorizontalAlignment="Left" Margin="473,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="FireBoots_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/FireShield.jpg"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="WindBoots" HorizontalAlignment="Left" Margin="523,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WindBoots_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/WindShield.jpg"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="WaterBoots" HorizontalAlignment="Left" Margin="573,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WaterBoots_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/WaterShield.jpg"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="EarthBoots" HorizontalAlignment="Left" Margin="623,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="EarthBoots_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/EarthShield.jpg"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="DeathBoots" HorizontalAlignment="Left" Margin="673,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DeathBoots_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/DeathShield.jpg"  />
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="BootsButton" Click="Boots_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="100,349,0,0" VerticalAlignment="Top" Width="50" Height="50">
+
+            </Button>
+        </Grid>
+
+        <Grid x:Name="AmuletGrid">
+            <Button x:Name="Cross" HorizontalAlignment="Left" Margin="473,430,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="Cross_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Cloack/cloack.jpg"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="AmuletButton" Click="Amulet_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Margin="100,170,0,0" VerticalAlignment="Top" Width="50" Height="50">
+
+            </Button>
+        </Grid>
+
+        <Grid x:Name="RingGrid">
+            <Button x:Name="RingOfOrcs" HorizontalAlignment="Left" Margin="473,480,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="OrksRing_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Cloack/cloack.jpg"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="RingButton" Click="Ring_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Margin="340,170,0,0" VerticalAlignment="Top" Width="50" Height="50">
+
+            </Button>
+        </Grid>
         <Button Content="Go" Click="Go_Click" HorizontalAlignment="Left" Margin="657,516,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
