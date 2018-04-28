@@ -75,6 +75,10 @@ namespace Mystery
 
         string cloackOfVipersImg= "pack://application:,,,/Resources/Artefacts/Cloack/cloack.jpg";
 
+        string orksRingImg = "pack://application:,,,/Resources/Artefacts/Ring/OrksRing.jpg";
+
+        string crossImg = "pack://application:,,,/Resources/Artefacts/Amulet/cross.jpg";
+
         string orksShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/OrksShield.jpg";
 
         string fireShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/Shield/FireShield.jpg";
@@ -88,6 +92,12 @@ namespace Mystery
         string bigWaterShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/BigShield/BigWaterShield.jpg";
         string bigEarthShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/BigShield/BigEarthShield.jpg";
         string bigDeathShieldImg = "pack://application:,,,/Resources/Artefacts/Shields/BigShield/BigDeathShield.jpg";
+
+        string fireBootsImg = "pack://application:,,,/Resources/Artefacts/Boots/FireBoots.jpg";
+        string windBootsImg = "pack://application:,,,/Resources/Artefacts/Boots/WindBoots.jpg";
+        string waterBootsImg = "pack://application:,,,/Resources/Artefacts/Boots/WaterBoots.jpg";
+        string earthBootsImg = "pack://application:,,,/Resources/Artefacts/Boots/EarthBoots.jpg";
+        string deathBootsImg = "pack://application:,,,/Resources/Artefacts/Boots/DeathBoots.jpg";
         //*****************************Оружие*****************************************//
         void Bow()
         {
@@ -307,7 +317,7 @@ namespace Mystery
         //*******************************************************************************************//
         private void Cross_Click(object sender, RoutedEventArgs e)
         {
-            amuletImg = cloackOfVipersImg;
+            amuletImg = crossImg;
             amuletFlag = true;
             amuletNumber = 1;
             AmuletButton.Visibility = Visibility.Visible;
@@ -324,7 +334,7 @@ namespace Mystery
         //*******************************************************************************************//
         private void OrksRing_Click(object sender, RoutedEventArgs e)
         {
-            ringImg = cloackOfVipersImg;
+            ringImg = orksRingImg;
             ringFlag = true;
             ringNumber = 1;
             RingButton.Visibility = Visibility.Visible;
@@ -348,31 +358,31 @@ namespace Mystery
         private void FireBoots_Click(object sender, RoutedEventArgs e)
         {
             bootsElement = "fire";
-            bootsImg = fireShieldImg;
+            bootsImg = fireBootsImg;
             boots();
         }
         private void WindBoots_Click(object sender, RoutedEventArgs e)
         {
             bootsElement = "wind";
-            bootsImg = windShieldImg;
+            bootsImg = windBootsImg;
             boots();
         }
         private void WaterBoots_Click(object sender, RoutedEventArgs e)
         {
             bootsElement = "water";
-            bootsImg = waterShieldImg;
+            bootsImg = waterBootsImg;
             boots();
         }
         private void EarthBoots_Click(object sender, RoutedEventArgs e)
         {
             bootsElement = "earth";
-            bootsImg = earthShieldImg;
+            bootsImg = earthBootsImg;
             boots();
         }
         private void DeathBoots_Click(object sender, RoutedEventArgs e)
         {
             bootsElement = "death";
-            bootsImg = deathShieldImg;
+            bootsImg = deathBootsImg;
             boots();
         }
         private void Boots_Click(object sender, RoutedEventArgs e)

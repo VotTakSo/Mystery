@@ -184,8 +184,20 @@
     <Resource Include="Resources\Artefacts\Shields\BigShield\BigWindShield.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Artefacts\Amulet\cross.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resources\Artefacts\Cloack\cloack.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Artefacts\Ring\OrksRing.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Artefacts\Boots\DeathBoots.jpg" />
+    <Resource Include="Resources\Artefacts\Boots\EarthBoots.jpg" />
+    <Resource Include="Resources\Artefacts\Boots\FireBoots.jpg" />
+    <Resource Include="Resources\Artefacts\Boots\WaterBoots.jpg" />
+    <Resource Include="Resources\Artefacts\Boots\WindBoots.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

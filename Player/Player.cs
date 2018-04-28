@@ -16,6 +16,9 @@ namespace Mystery
         Weapon weapon;
         ShieldInterface shield;
         CloackInterface cloack;
+        BootsInterface boots;
+        AmuletInterface amulet;
+        RingInterface ring;
 
         public Creature[] Weapon(Creature[] cre, int mana, int min, int max)
         {
@@ -37,7 +40,18 @@ namespace Mystery
         {
             return cloack.ReturnAttack(cre);
         }
-
+        public Player Amulet(Player pl)
+        {
+            return amulet.Amulet(pl);
+        }
+        public Creature[] Ring(Creature[] cre, int min, int max)
+        {
+            return ring.Ring(cre, min, max);
+        }
+        public Player Boots(Player pl, string bootsMana)
+        {
+            return boots.Boots(pl, bootsMana);
+        }
         public void setWeapon(Weapon w)
         {
             weapon = w;
@@ -53,6 +67,18 @@ namespace Mystery
             cloack = c;
         }
 
+        public void setAmulet(AmuletInterface a)
+        {
+            amulet = a;
+        }
+        public void setBoots(BootsInterface b)
+        {
+            boots = b;
+        }
+        public void setRing(RingInterface r)
+        {
+            ring = r;
+        }
         public string weaponElements;
         public string bootsElements;
         public string shieldElements;

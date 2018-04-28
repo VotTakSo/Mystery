@@ -356,6 +356,7 @@ namespace Mystery
                         // art.DamageBow( mass, secondPlayer.water, i, 11); //Последний параметр будет меняться в зависимости от выбраного артефакта
                         // art.Damage(mass, mana, 1, 6); //Последний параметр будет меняться в зависимости от выбраного артефакта
                         // art.Ring(mass, i, 11);
+                        mrTorry.Ring(mass, i, 11);
                         break;
                     }
                 }
@@ -542,8 +543,16 @@ namespace Mystery
         //
         public void StartLogic()
         {
+            if (!mrTorry.first)
+            {
+                mrTorry.Amulet(mrTorry);
+            }
+            else
+            {
+                
+            }
             Choose(out firstPlayer, out secondPlayer);
-            
+           
             
 
         }

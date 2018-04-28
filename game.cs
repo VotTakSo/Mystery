@@ -86,10 +86,47 @@ namespace Mystery
 
             if (w.bootsFlag)
             {
-                
-                
+                mrTorry.setBoots(new ElementBoots());
             }
-           // enemy.setShield(new Shield());
+            else
+            {
+                mrTorry.setBoots(new NoBoots());
+            }
+            mrTorry.Boots(mrTorry, w.bootsElement);
+
+            if(w.amuletFlag)
+            {
+                switch (w.amuletNumber)
+                {
+                    case 1:
+                        {
+                            mrTorry.setAmulet(new Cross());
+                            break;
+                        }
+                }
+            }
+            else
+            {
+                mrTorry.setAmulet(new NoAmulet());
+            }
+
+            if (w.ringFlag)
+            {
+                switch (w.ringNumber)
+                {
+                    case 1:
+                        {
+                            mrTorry.setRing(new OrksRing());
+                            break;
+                        }
+                }
+            }
+            else
+            {
+                mrTorry.setRing(new NoRing());
+            }
+
+            // enemy.setShield(new Shield());
             wind = w;
            
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mystery
 {
-    interface RingInterface
+    public interface RingInterface
     {
         Creature[] Ring(Creature[] cre, int min, int max);
     }

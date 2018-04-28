@@ -159,7 +159,7 @@
         <Grid x:Name="CloackGrid">
         <Button x:Name="Cloack" HorizontalAlignment="Left" Margin="473,380,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="CloackOfVipers_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Resources/Artefacts/Cloack/cloack.jpg"  />
+                    <ImageBrush ImageSource="Resources/Artefacts/Cloack/cloack.jpg"  />
             </Button.Background>
         </Button>
         <Button x:Name="CloackButton" Click="Cloack_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="340,290,0,0" VerticalAlignment="Top" Width="50" Height="50">
@@ -169,27 +169,27 @@
         <Grid x:Name="BootsGrid">
             <Button x:Name="FireBoots" HorizontalAlignment="Left" Margin="473,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="FireBoots_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/FireShield.jpg"  />
+                    <ImageBrush ImageSource="Resources/Artefacts/Boots/FireBoots.jpg"  />
                 </Button.Background>
             </Button>
             <Button x:Name="WindBoots" HorizontalAlignment="Left" Margin="523,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WindBoots_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/WindShield.jpg"  />
+                    <ImageBrush ImageSource="Resources/Artefacts/Boots/WindBoots.jpg"  />
                 </Button.Background>
             </Button>
             <Button x:Name="WaterBoots" HorizontalAlignment="Left" Margin="573,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WaterBoots_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/WaterShield.jpg"  />
+                    <ImageBrush ImageSource="Resources/Artefacts/Boots/WaterBoots.jpg"  />
                 </Button.Background>
             </Button>
             <Button x:Name="EarthBoots" HorizontalAlignment="Left" Margin="623,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="EarthBoots_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/EarthShield.jpg"  />
+                    <ImageBrush ImageSource="Resources/Artefacts/Boots/EarthBoots.jpg"  />
                 </Button.Background>
             </Button>
             <Button x:Name="DeathBoots" HorizontalAlignment="Left" Margin="673,320,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DeathBoots_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/Artefacts/Shields/Shield/DeathShield.jpg"  />
+                    <ImageBrush ImageSource="Resources/Artefacts/Boots/DeathBoots.jpg"  />
                 </Button.Background>
             </Button>
 
@@ -201,7 +201,7 @@
         <Grid x:Name="AmuletGrid">
             <Button x:Name="Cross" HorizontalAlignment="Left" Margin="473,430,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="Cross_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/Artefacts/Cloack/cloack.jpg"  />
+                    <ImageBrush ImageSource="Resources/Artefacts/Amulet/cross.jpg"  />
                 </Button.Background>
             </Button>
             <Button x:Name="AmuletButton" Click="Amulet_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Margin="100,170,0,0" VerticalAlignment="Top" Width="50" Height="50">
@@ -212,7 +212,7 @@
         <Grid x:Name="RingGrid">
             <Button x:Name="RingOfOrcs" HorizontalAlignment="Left" Margin="473,480,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="OrksRing_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/Artefacts/Cloack/cloack.jpg"  />
+                    <ImageBrush ImageSource="Resources/Artefacts/Ring/OrksRing.jpg"  />
                 </Button.Background>
             </Button>
             <Button x:Name="RingButton" Click="Ring_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Margin="340,170,0,0" VerticalAlignment="Top" Width="50" Height="50">
