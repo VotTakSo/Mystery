@@ -73,6 +73,10 @@
     <Compile Include="Player\Ring\NoRing.cs" />
     <Compile Include="Player\Ring\OrksRing.cs" />
     <Compile Include="Player\Ring\RingInterface.cs" />
+    <Compile Include="Player\Runes\ElementRune.cs" />
+    <Compile Include="Player\Runes\HealRune.cs" />
+    <Compile Include="Player\Runes\PotionRune.cs" />
+    <Compile Include="Player\Runes\RuneInterface.cs" />
     <Compile Include="Player\Shield\BigShield.cs" />
     <Compile Include="Player\Shield\NoShield.cs" />
     <Compile Include="Player\Shield\OrksShield.cs" />
@@ -199,5 +203,17 @@
     <Resource Include="Resources\Artefacts\Boots\WaterBoots.jpg" />
     <Resource Include="Resources\Artefacts\Boots\WindBoots.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Artefacts\Runes\deathRune.jpg" />
+    <Resource Include="Resources\Artefacts\Runes\earthRune.jpg" />
+    <Resource Include="Resources\Artefacts\Runes\fireRune.jpg" />
+    <Resource Include="Resources\Artefacts\Runes\waterRune.jpg" />
+    <Resource Include="Resources\Artefacts\Runes\windRune.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Artefacts\Runes\heal.jpg" />
+    <Resource Include="Resources\Artefacts\Runes\Potion.jpg" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

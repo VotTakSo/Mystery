@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mystery
 {
-    class ElementBoots:BootsInterface
+    class ElementRune:RuneInterface
     {
-        public Player Boots(Player pl, string bootsMana)
+        public Player Rune(Player pl, string bootsMana)
         {
             switch (bootsMana)
             {

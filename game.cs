@@ -288,7 +288,7 @@ namespace Mystery
                     Ghost Ghost = new Ghost(wind.poleNumber, VsPole(wind.poleNumber));
 
                     if (mrTorry.first) Armor = mrTorry.Shield(mrTorry, Ghost.Element);
-                    else Armor = enemy.Shield(enemy, Ghost.Element);
+                   // else Armor = enemy.Shield(enemy, Ghost.Element);
                     Ghost.armor += Armor;
                     Armor = 0;
 

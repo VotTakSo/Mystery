@@ -34,15 +34,18 @@ namespace Mystery
         public string amuletImg = artFon;
         public string bootsImg = artFon;
         public string ringImg = artFon;
+        public string runeImg = artFon;
 
         public string weaponElement;
         public string shieldElement;
         public string bootsElement;
+        public string runesElement;
 
         public int weaponNumber;
         public int shieldNumber;
         public int ringNumber;
         public int amuletNumber;
+        public int runeNumber;
 
         public bool weaponFlag = false;
         public bool shieldFlag = false;
@@ -50,9 +53,10 @@ namespace Mystery
         public bool amuletFlag = false;
         public bool bootsFlag  = false;
         public bool ringFlag   = false;
+        public bool runeFlag = false;
 
-       
-//******************************Загрузка изображений******************************//
+
+        //******************************Загрузка изображений******************************//
         public void LoadImage(Image i, string s)
         {
             Uri uri = new Uri(s);
@@ -60,7 +64,17 @@ namespace Mystery
             i.Source = bitmap;
         }
 
-//*************************Изображения артефактов*********************************//
+        //*************************Изображения артефактов*********************************//
+        string fireRuneImg = "pack://application:,,,/Resources/Artefacts/Runes/fireRune.jpg";
+        string windRuneImg = "pack://application:,,,/Resources/Artefacts/Runes/windRune.jpg";
+        string waterRuneImg = "pack://application:,,,/Resources/Artefacts/Runes/waterRune.jpg";
+        string earthRuneImg = "pack://application:,,,/Resources/Artefacts/Runes/earthRune.jpg";
+        string deathRuneImg = "pack://application:,,,/Resources/Artefacts/Runes/dearhRune.jpg";
+
+        string potionImg = "pack://application:,,,/Resources/Artefacts/Runes/potion.jpg";
+
+        string healImg = "pack://application:,,,/Resources/Artefacts/Runes/heal.jpg";
+
         string fireBowImg = "pack://application:,,,/Resources/Artefacts/Weapon/Bow/FireBow.jpg";
         string windBowImg = "pack://application:,,,/Resources/Artefacts/Weapon/Bow/WindBow.jpg";
         string waterBowImg = "pack://application:,,,/Resources/Artefacts/Weapon/Bow/WaterBow.jpg";
@@ -393,7 +407,9 @@ namespace Mystery
             bootsImg = artFon;
             LoadImage(BootsImage, bootsImg);
         }
-        //*************************************************************************//
+        //******************************************************************************************//
+
+        //******************************************************************************************//
         bool end = false;
 
         public bool returnEnd()

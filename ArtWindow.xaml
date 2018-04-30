@@ -219,6 +219,53 @@
 
             </Button>
         </Grid>
+
+        <Grid x:Name="RunesGrid">
+            <Button x:Name="FireRune" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="FireRune_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Runes/fireRune.jpg"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="WindRune" HorizontalAlignment="Left" Margin="150,450,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WindRune_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Runes/windRune.jpg"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="WaterRune" HorizontalAlignment="Left" Margin="200,450,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="WaterRune_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Runes/waterRune.jpg"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="EarthRune" HorizontalAlignment="Left" Margin="250,450,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="EarthRune_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Runes/earthRune.jpg"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="DeathRune" HorizontalAlignment="Left" Margin="300,450,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="DeathRune_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Runes/deathRune.jpg"  />
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="Zelie" HorizontalAlignment="Left" Margin="100,500,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="Heal_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Runes/Potion.jpg"  />
+                </Button.Background>
+            </Button>
+            
+            <Button x:Name="Heal" HorizontalAlignment="Left" Margin="300,500,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="Heal_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Artefacts/Runes/heal.jpg"  />
+                </Button.Background>
+            </Button>
+            
+            <Button x:Name="RuneSlot1Button" Click="Rune_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Margin="165,350,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+            <Button x:Name="RuneSlot2Button" Click="Rune_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="220,350,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+            <Button x:Name="RuneSlot3Button" Click="Rune_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Margin="275,350,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+
+        </Grid>
+
+
         <Button Content="Go" Click="Go_Click" HorizontalAlignment="Left" Margin="657,516,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>

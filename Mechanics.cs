@@ -519,7 +519,7 @@ namespace Mystery
                         wind.poleBuffer[cre.poleNumberVS] = false;
                         mass[cre.poleNumberVS] = null;
                         // art.CloackOfVipers(mass[cre.poleNumber], secondPlayer);
-                        if(mrTorry.first) mrTorry.Cloack(mass[cre.poleNumber], secondPlayer);
+                        if(!mrTorry.first) mrTorry.Cloack(mass[cre.poleNumber], secondPlayer);
                        
                     }
                 if (mass[cre.poleNumber] != null)
@@ -533,7 +533,7 @@ namespace Mystery
                         wind.poleBuffer[cre.poleNumber] = false;
                         mass[cre.poleNumber] = null;
                         // art.CloackOfVipers(mass[cre.poleNumberVS], firstPlayer);
-                        if (mrTorry.first) mrTorry.Cloack(mass[cre.poleNumber], firstPlayer);
+                        if (!mrTorry.first) mrTorry.Cloack(mass[cre.poleNumber], firstPlayer);
                     }
             }
         }

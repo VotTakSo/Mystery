@@ -456,6 +456,94 @@ namespace Mystery {
         #line default
         #line hidden
         
+        
+        #line 223 "..\..\ArtWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Grid RunesGrid;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 224 "..\..\ArtWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button FireRune;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 229 "..\..\ArtWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button WindRune;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 234 "..\..\ArtWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button WaterRune;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 239 "..\..\ArtWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button EarthRune;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 244 "..\..\ArtWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button DeathRune;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 250 "..\..\ArtWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button Zelie;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 256 "..\..\ArtWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button Heal;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 262 "..\..\ArtWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button RuneSlot1Button;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 263 "..\..\ArtWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button RuneSlot2Button;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 264 "..\..\ArtWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button RuneSlot3Button;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -853,8 +941,101 @@ namespace Mystery {
             #line hidden
             return;
             case 53:
+            this.RunesGrid = ((System.Windows.Controls.Grid)(target));
+            return;
+            case 54:
+            this.FireRune = ((System.Windows.Controls.Button)(target));
             
-            #line 222 "..\..\ArtWindow.xaml"
+            #line 224 "..\..\ArtWindow.xaml"
+            this.FireRune.Click += new System.Windows.RoutedEventHandler(this.FireRune_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 55:
+            this.WindRune = ((System.Windows.Controls.Button)(target));
+            
+            #line 229 "..\..\ArtWindow.xaml"
+            this.WindRune.Click += new System.Windows.RoutedEventHandler(this.WindRune_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 56:
+            this.WaterRune = ((System.Windows.Controls.Button)(target));
+            
+            #line 234 "..\..\ArtWindow.xaml"
+            this.WaterRune.Click += new System.Windows.RoutedEventHandler(this.WaterRune_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 57:
+            this.EarthRune = ((System.Windows.Controls.Button)(target));
+            
+            #line 239 "..\..\ArtWindow.xaml"
+            this.EarthRune.Click += new System.Windows.RoutedEventHandler(this.EarthRune_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 58:
+            this.DeathRune = ((System.Windows.Controls.Button)(target));
+            
+            #line 244 "..\..\ArtWindow.xaml"
+            this.DeathRune.Click += new System.Windows.RoutedEventHandler(this.DeathRune_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 59:
+            this.Zelie = ((System.Windows.Controls.Button)(target));
+            
+            #line 250 "..\..\ArtWindow.xaml"
+            this.Zelie.Click += new System.Windows.RoutedEventHandler(this.Heal_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 60:
+            this.Heal = ((System.Windows.Controls.Button)(target));
+            
+            #line 256 "..\..\ArtWindow.xaml"
+            this.Heal.Click += new System.Windows.RoutedEventHandler(this.Heal_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 61:
+            this.RuneSlot1Button = ((System.Windows.Controls.Button)(target));
+            
+            #line 262 "..\..\ArtWindow.xaml"
+            this.RuneSlot1Button.Click += new System.Windows.RoutedEventHandler(this.Rune_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 62:
+            this.RuneSlot2Button = ((System.Windows.Controls.Button)(target));
+            
+            #line 263 "..\..\ArtWindow.xaml"
+            this.RuneSlot2Button.Click += new System.Windows.RoutedEventHandler(this.Rune_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 63:
+            this.RuneSlot3Button = ((System.Windows.Controls.Button)(target));
+            
+            #line 264 "..\..\ArtWindow.xaml"
+            this.RuneSlot3Button.Click += new System.Windows.RoutedEventHandler(this.Rune_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 64:
+            
+            #line 269 "..\..\ArtWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Go_Click);
             
             #line default
