@@ -20,7 +20,7 @@ namespace Mystery
     /// </summary>
     public partial class ArtWindow : Window
     {
-        public ArtWindow()
+        public ArtWindow(string s)
         {
 
             InitializeComponent();
@@ -34,18 +34,24 @@ namespace Mystery
         public string amuletImg = artFon;
         public string bootsImg = artFon;
         public string ringImg = artFon;
-        public string runeImg = artFon;
+        public string runeImg1 = artFon;
+        public string runeImg2 = artFon;
+        public string runeImg3 = artFon;
 
         public string weaponElement;
         public string shieldElement;
         public string bootsElement;
-        public string runesElement;
+        public string runeElement1;
+        public string runeElement2;
+        public string runeElement3;
 
         public int weaponNumber;
         public int shieldNumber;
         public int ringNumber;
         public int amuletNumber;
-        public int runeNumber;
+        public int runeNumber1;
+        public int runeNumber2;
+        public int runeNumber3;
 
         public bool weaponFlag = false;
         public bool shieldFlag = false;
@@ -53,7 +59,9 @@ namespace Mystery
         public bool amuletFlag = false;
         public bool bootsFlag  = false;
         public bool ringFlag   = false;
-        public bool runeFlag = false;
+        public bool runeFlag1 = false;
+        public bool runeFlag2 = false;
+        public bool runeFlag3 = false;
 
 
         //******************************Загрузка изображений******************************//
@@ -69,7 +77,7 @@ namespace Mystery
         string windRuneImg = "pack://application:,,,/Resources/Artefacts/Runes/windRune.jpg";
         string waterRuneImg = "pack://application:,,,/Resources/Artefacts/Runes/waterRune.jpg";
         string earthRuneImg = "pack://application:,,,/Resources/Artefacts/Runes/earthRune.jpg";
-        string deathRuneImg = "pack://application:,,,/Resources/Artefacts/Runes/dearhRune.jpg";
+        string deathRuneImg = "pack://application:,,,/Resources/Artefacts/Runes/deathRune.jpg";
 
         string potionImg = "pack://application:,,,/Resources/Artefacts/Runes/potion.jpg";
 
@@ -408,7 +416,323 @@ namespace Mystery
             LoadImage(BootsImage, bootsImg);
         }
         //******************************************************************************************//
+        void rune()
+        {
 
+            bootsFlag = true;
+            BootsButton.Visibility = Visibility.Visible;
+            LoadImage(Rune1Image, runeImg1);
+        }
+        private void FireRune_Click(object sender, RoutedEventArgs e)
+        {
+            if (runeFlag1)
+            {
+                if (runeFlag2)
+                {
+                    if(runeFlag3)
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    else
+                    {
+                        runeFlag3 = true;
+                        RuneSlot3Button.Visibility = Visibility.Visible;
+                        runeElement3 = "fire";
+                        runeImg3 = fireRuneImg;
+                        LoadImage(Rune3Image, runeImg3);
+                        runeNumber3 = 3;
+                    }
+                }
+                else
+                {
+                    runeFlag2 = true;
+                    RuneSlot2Button.Visibility = Visibility.Visible;
+                    runeElement2 = "fire";
+                    runeImg2 = fireRuneImg;
+                    LoadImage(Rune2Image, runeImg2);
+                    runeNumber2 = 3;
+                }
+            }
+            else
+            {
+
+                runeFlag1 = true;
+                RuneSlot1Button.Visibility = Visibility.Visible;
+                runeElement1 = "fire";
+                runeImg1 = fireRuneImg;
+                LoadImage(Rune1Image, runeImg1);
+                runeNumber1 = 3;
+            }
+        }
+        private void WaterRune_Click(object sender, RoutedEventArgs e)
+        {
+            if (runeFlag1)
+            {
+                if (runeFlag2)
+                {
+                    if (runeFlag3)
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    else
+                    {
+                        runeFlag3 = true;
+                        RuneSlot3Button.Visibility = Visibility.Visible;
+                        runeElement3 = "water";
+                        runeImg3 = waterRuneImg;
+                        LoadImage(Rune3Image, runeImg3);
+                        runeNumber3 = 3;
+                    }
+                }
+                else
+                {
+                    runeFlag2 = true;
+                    RuneSlot2Button.Visibility = Visibility.Visible;
+                    runeElement2 = "water";
+                    runeImg2 = waterRuneImg;
+                    LoadImage(Rune2Image, runeImg2);
+                    runeNumber2 = 3;
+                }
+            }
+            else
+            {
+
+                runeFlag1 = true;
+                RuneSlot1Button.Visibility = Visibility.Visible;
+                runeElement1 = "water";
+                runeImg1 = waterRuneImg;
+                LoadImage(Rune1Image, runeImg1);
+                runeNumber1 = 3;
+            }
+        }
+        private void WindRune_Click(object sender, RoutedEventArgs e)
+        {
+            if (runeFlag1)
+            {
+                if (runeFlag2)
+                {
+                    if (runeFlag3)
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    else
+                    {
+                        runeFlag3 = true;
+                        RuneSlot3Button.Visibility = Visibility.Visible;
+                        runeElement3 = "wind";
+                        runeImg3 = windRuneImg;
+                        LoadImage(Rune3Image, runeImg3);
+                        runeNumber3 = 3;
+                    }
+                }
+                else
+                {
+                    runeFlag2 = true;
+                    RuneSlot2Button.Visibility = Visibility.Visible;
+                    runeElement2 = "wind";
+                    runeImg2 = windRuneImg;
+                    LoadImage(Rune2Image, runeImg2);
+                    runeNumber2 = 3;
+                }
+            }
+            else
+            {
+
+                runeFlag1 = true;
+                RuneSlot1Button.Visibility = Visibility.Visible;
+                runeElement1 = "wind";
+                runeImg1 = windRuneImg;
+                LoadImage(Rune1Image, runeImg1);
+                runeNumber1 = 3;
+            }
+        }
+        private void EarthRune_Click(object sender, RoutedEventArgs e)
+        {
+            if (runeFlag1)
+            {
+                if (runeFlag2)
+                {
+                    if (runeFlag3)
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    else
+                    {
+                        runeFlag3 = true;
+                        RuneSlot3Button.Visibility = Visibility.Visible;
+                        runeElement3 = "earth";
+                        runeImg3 = earthRuneImg;
+                        LoadImage(Rune3Image, runeImg3);
+                        runeNumber3 = 3;
+                    }
+                }
+                else
+                {
+                    runeFlag2 = true;
+                    RuneSlot2Button.Visibility = Visibility.Visible;
+                    runeElement2 = "earth";
+                    runeImg2 = earthRuneImg;
+                    LoadImage(Rune2Image, runeImg2);
+                    runeNumber2 = 3;
+                }
+            }
+            else
+            {
+
+                runeFlag1 = true;
+                RuneSlot1Button.Visibility = Visibility.Visible;
+                runeElement1 = "earth";
+                runeImg1 = earthRuneImg;
+                LoadImage(Rune1Image, runeImg1);
+                runeNumber1 = 3;
+            }
+        }
+        private void DeathRune_Click(object sender, RoutedEventArgs e)
+        {
+            if (runeFlag1)
+            {
+                if (runeFlag2)
+                {
+                    if (runeFlag3)
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    else
+                    {
+                        runeFlag3 = true;
+                        RuneSlot3Button.Visibility = Visibility.Visible;
+                        runeElement3 = "death";
+                        runeImg3 = deathRuneImg;
+                        LoadImage(Rune3Image, runeImg3);
+                        runeNumber3 = 3;
+                    }
+                }
+                else
+                {
+                    runeFlag2 = true;
+                    RuneSlot2Button.Visibility = Visibility.Visible;
+                    runeElement2 = "death";
+                    runeImg2 = deathRuneImg;
+                    LoadImage(Rune2Image, runeImg2);
+                    runeNumber2 = 3;
+                }
+            }
+            else
+            {
+
+                runeFlag1 = true;
+                RuneSlot1Button.Visibility = Visibility.Visible;
+                runeElement1 = "death";
+                runeImg1 = deathRuneImg;
+                LoadImage(Rune1Image, runeImg1);
+                runeNumber1 = 3;
+            }
+        }
+        private void Potion_Click(object sender, RoutedEventArgs e)
+        {
+            if (runeFlag1)
+            {
+                if (runeFlag2)
+                {
+                    if (runeFlag3)
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    else
+                    {
+                        runeFlag3 = true;
+                        RuneSlot3Button.Visibility = Visibility.Visible;
+                        runeImg3 = potionImg;
+                        LoadImage(Rune3Image, runeImg3);
+                        runeNumber3 = 1;
+                    }
+                }
+                else
+                {
+                    runeFlag2 = true;
+                    RuneSlot2Button.Visibility = Visibility.Visible;
+                    runeImg2 = potionImg;
+                    LoadImage(Rune2Image, runeImg2);
+                    runeNumber2 = 1;
+                }
+            }
+            else
+            {
+
+                runeFlag1 = true;
+                RuneSlot1Button.Visibility = Visibility.Visible;
+                runeImg1 = potionImg;
+                LoadImage(Rune1Image, runeImg1);
+                runeNumber1 = 1;
+
+            }
+        }
+        private void Heal_Click(object sender, RoutedEventArgs e)
+        {
+            if (runeFlag1)
+            {
+                if (runeFlag2)
+                {
+                    if (runeFlag3)
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    else
+                    {
+                        runeFlag3 = true;
+                        RuneSlot3Button.Visibility = Visibility.Visible;
+                        runeImg3 = healImg;
+                        LoadImage(Rune3Image, runeImg3);
+                        runeNumber3 = 2;
+                    }
+                }
+                else
+                {
+                    runeFlag2 = true;
+                    RuneSlot2Button.Visibility = Visibility.Visible;
+                    runeImg2 = healImg;
+                    LoadImage(Rune2Image, runeImg2);
+                    runeNumber2 = 2;
+                }
+            }
+            else
+            {
+
+                runeFlag1 = true;
+                RuneSlot1Button.Visibility = Visibility.Visible;
+                runeImg1 = healImg;
+                LoadImage(Rune1Image, runeImg1);
+                runeNumber1 = 2;
+            }
+        }
+        
+        private void Rune1_Click(object sender, RoutedEventArgs e)
+        {
+            runeFlag1 = false;
+            RuneSlot1Button.Visibility = Visibility.Hidden;
+            runeImg1 = artFon;
+            LoadImage(Rune1Image, runeImg1);
+            runeNumber1 = 0;
+            runeElement1 = "";
+        }
+        private void Rune2_Click(object sender, RoutedEventArgs e)
+        {
+            runeFlag2 = false;
+            RuneSlot2Button.Visibility = Visibility.Hidden;
+            runeImg2 = artFon;
+            LoadImage(Rune2Image, runeImg2);
+            runeNumber2 = 0;
+            runeElement2 = "";
+        }
+        private void Rune3_Click(object sender, RoutedEventArgs e)
+        {
+            runeFlag3 = false;
+            RuneSlot3Button.Visibility = Visibility.Hidden;
+            runeImg3 = artFon;
+            LoadImage(Rune3Image, runeImg3);
+            runeNumber3 = 0;
+            runeElement3 = "";
+        }
         //******************************************************************************************//
         bool end = false;
 

@@ -18,26 +18,35 @@
 
             <Label x:Name="Hod" Content="Label" HorizontalAlignment="Left" Margin="465,27,0,0" VerticalAlignment="Top"/>
             <Button x:Name="Pas"  Content="Пропуск хода" HorizontalAlignment="Left" Margin="900,527,0,0" VerticalAlignment="Top" Width="75" Click="Pas_Click"/>
-            <Image Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="47,332,0,0" VerticalAlignment="Top" Width="18"/>
+           
             <Button  Content="Сдаться" Click="GetUp_Click" HorizontalAlignment="Left" Margin="900,563,0,0" VerticalAlignment="Top" Width="75"/>
 
-            <Button  Click="Runa_Click" HorizontalAlignment="Left" Height="22" Margin="47,332,0,0" VerticalAlignment="Top" Width="18" >
-                <Button.Background>
-                    <ImageBrush ImageSource="Resources/Artefacts/RUNA.jpg"  />
-                </Button.Background>
+            <Image x:Name="RuneSlot1Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="47,332,0,0" VerticalAlignment="Top" Width="18"/>
+            <Button x:Name="RuneSlot1" Click="Runa1_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="22" Margin="47,332,0,0" VerticalAlignment="Top" Width="18" >
+                
+            </Button>
+            <Image x:Name="RuneSlot2Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="87,332,0,0" VerticalAlignment="Top" Width="18"/>
+            <Button x:Name="RuneSlot2" Click="Runa2_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="22" Margin="87,332,0,0" VerticalAlignment="Top" Width="18" >
+               
+            </Button>
+            <Image x:Name="RuneSlot3Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="127,332,0,0" VerticalAlignment="Top" Width="18"/>
+            <Button x:Name="RuneSlot3" Click="Runa3_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="22" Margin="127,332,0,0" VerticalAlignment="Top" Width="18" >
+                
             </Button>
 
-            <Button  Click="Runa_Click" HorizontalAlignment="Left" Height="22" Margin="87,332,0,0" VerticalAlignment="Top" Width="18" >
-                <Button.Background>
-                    <ImageBrush ImageSource="Resources/Artefacts/RUNA.jpg"  />
-                </Button.Background>
-            </Button>
+            <Image x:Name="Player2RuneSlot1Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="847,332,0,0" VerticalAlignment="Top" Width="18"/>
+            <Button x:Name="Player2RuneSlot1" Click="Player2Runa1_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Height="22" Margin="847,332,0,0" VerticalAlignment="Top" Width="18" >
 
-            <Button  Click="Runa_Click" HorizontalAlignment="Left" Height="22" Margin="127,332,0,0" VerticalAlignment="Top" Width="18" >
-                <Button.Background>
-                    <ImageBrush ImageSource="Resources/Artefacts/RUNA.jpg"  />
-                </Button.Background>
             </Button>
+            <Image x:Name="Player2RuneSlot2Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="887,332,0,0" VerticalAlignment="Top" Width="18"/>
+            <Button x:Name="Player2RuneSlot2" Click="Player2Runa2_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="22" Margin="887,332,0,0" VerticalAlignment="Top" Width="18" >
+
+            </Button>
+            <Image x:Name="Player2RuneSlot3Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="927,332,0,0" VerticalAlignment="Top" Width="18"/>
+            <Button x:Name="Player2RuneSlot3" Click="Player2Runa3_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="22" Margin="927,332,0,0" VerticalAlignment="Top" Width="18" >
+
+            </Button>
+            
             <Image x:Name="weaponImg" HorizontalAlignment="Left" Height="50" Margin="0,242,0,0" VerticalAlignment="Top" Width="50"/>
         </Grid>
 

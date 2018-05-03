@@ -8,8 +8,11 @@ namespace Mystery
 {
     public class Player
     {
+        static public int lvl=9;
+        
         public int HP = 72;
-        public int astralPower = 16;
+        public int astralPower = 14;
+        public int skillPoint = lvl - 5;
         public int fire = 5, wind = 3, water = 4, earth = 4, death = 4;
         public bool first=true;
 
@@ -19,7 +22,9 @@ namespace Mystery
         BootsInterface boots;
         AmuletInterface amulet;
         RingInterface ring;
-        RuneInterface rune;
+        RuneInterface rune1;
+        RuneInterface rune2;
+        RuneInterface rune3;
 
         public Creature[] Weapon(Creature[] cre, int mana, int min, int max)
         {
@@ -49,9 +54,17 @@ namespace Mystery
         {
             return boots.Boots(pl, bootsMana);
         }
-        public Player Rune(Player pl, string runeElement)
+        public Player Rune1(Player pl, string runeElement)
         {
-            return rune.Rune(pl, runeElement);
+            return rune1.Rune(pl, runeElement);
+        }
+        public Player Rune2(Player pl, string runeElement)
+        {
+            return rune2.Rune(pl, runeElement);
+        }
+        public Player Rune3(Player pl, string runeElement)
+        {
+            return rune3.Rune(pl, runeElement);
         }
 
         public void setWeapon(Weapon w)
@@ -78,14 +91,25 @@ namespace Mystery
         {
             ring = r;
         }
-        public void setRune(RuneInterface r)
+        public void setRune1(RuneInterface r)
         {
-            rune = r;
+            rune1 = r;
+        }
+        public void setRune2(RuneInterface r)
+        {
+            rune2 = r;
+        }
+        public void setRune3(RuneInterface r)
+        {
+            rune3 = r;
         }
 
         public string weaponElements;
         public string bootsElements;
         public string shieldElements;
+        public string runeElement1;
+        public string runeElement2;
+        public string runeElement3;
         public int shieldBuff;
         public bool boolCloack = false;
 

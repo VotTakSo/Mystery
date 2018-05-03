@@ -24,6 +24,23 @@ namespace Mystery
     {
         Game game;
 
+        static string artFon = "pack://application:,,,/Resources/Artefacts/test.jpg";
+
+        public string runeElement1;
+        public int runeNumber1;
+        public bool runeFlag1 = false;
+        public string runeImage1;
+
+        public string runeElement2;
+        public int runeNumber2;
+        public bool runeFlag2 = false;
+        public string runeImage2;
+
+        public string runeElement3;
+        public int runeNumber3;
+        public bool runeFlag3 = false;
+        public string runeImage3;
+
         public string weaponElement;
         public int weaponNumber;
         public bool weaponFlag = false;
@@ -48,17 +65,86 @@ namespace Mystery
         public int shieldNumber;
         public bool shieldFlag = false;
         public string shieldImage;
-        
+
+
+
+        public string Player2runeElement1;
+        public int Player2runeNumber1;
+        public bool Player2runeFlag1 = false;
+        public string Player2runeImage1;
+
+        public string Player2runeElement2;
+        public int Player2runeNumber2;
+        public bool Player2runeFlag2 = false;
+        public string Player2runeImage2;
+
+        public string Player2runeElement3;
+        public int Player2runeNumber3;
+        public bool Player2runeFlag3 = false;
+        public string Player2runeImage3;
+
+        public string Player2weaponElement;
+        public int Player2weaponNumber;
+        public bool Player2weaponFlag = false;
+        public string Player2weaponImage;
+
+        public bool Player2cloackFlag = false;
+        public string Player2cloackImage;
+
+        public bool Player2ringFlag = false;
+        public string Player2ringImage;
+        public int Player2ringNumber;
+
+        public bool Player2amuletFlag = false;
+        public string Player2amuletImage;
+        public int Player2amuletNumber;
+
+        public bool Player2bootsFlag = false;
+        public string Player2bootsImage;
+        public string Player2bootsElement;
+
+        public string Player2shieldElement;
+        public int Player2shieldNumber;
+        public bool Player2shieldFlag = false;
+        public string Player2shieldImage;
 
         public void Init()
         {
             game = new Game(this);
         }
         bool end;
+        bool Player2end;
+        void LoadImage(Image i, string s)
+        {
+            Uri uri = new Uri(s);
+            BitmapImage bitmap = new BitmapImage(uri);
+            i.Source = bitmap;
+        }
         public MainWindow()
         {
-            ArtWindow w1 = new ArtWindow();
+            ArtWindow w1 = new ArtWindow("Выбирвет первый игрок");
             w1.ShowDialog();
+
+          
+
+            runeElement1 = w1.runeElement1;
+            runeNumber1 = w1.runeNumber1;
+            runeFlag1 = w1.runeFlag1;
+            runeImage1 = w1.runeImg1;
+
+            runeElement2 = w1.runeElement2;
+            runeNumber2 = w1.runeNumber2;
+            runeFlag2 = w1.runeFlag2;
+            runeImage2 = w1.runeImg2;
+
+            runeElement3 = w1.runeElement3;
+            runeNumber3 = w1.runeNumber3;
+            runeFlag3 = w1.runeFlag3;
+            runeImage3 = w1.runeImg3;
+
+          
+
+            
 
             shieldElement = w1.shieldElement;
             shieldNumber  = w1.shieldNumber;
@@ -88,6 +174,50 @@ namespace Mystery
             end = w1.returnEnd();
             if (!end) this.Close();
 
+            ArtWindow w2 = new ArtWindow("Выбирвет второй игрок");
+            w2.ShowDialog();
+            Player2runeElement1 = w2.runeElement1;
+            Player2runeNumber1 = w2.runeNumber1;
+            Player2runeFlag1 = w2.runeFlag1;
+            Player2runeImage1 = w2.runeImg1;
+
+            Player2runeElement2 = w2.runeElement2;
+            Player2runeNumber2 = w2.runeNumber2;
+            Player2runeFlag2 = w2.runeFlag2;
+            Player2runeImage2 = w2.runeImg2;
+
+            Player2runeElement3 = w2.runeElement3;
+            Player2runeNumber3 = w2.runeNumber3;
+            Player2runeFlag3 = w2.runeFlag3;
+            Player2runeImage3 = w2.runeImg3;
+
+            Player2shieldElement = w2.shieldElement;
+            Player2shieldNumber = w2.shieldNumber;
+            Player2shieldFlag = w2.shieldFlag;
+            Player2shieldImage = w2.shieldImg;
+
+            Player2cloackFlag = w2.cloackFlag;
+            Player2cloackImage = w2.cloackImg;
+
+            Player2ringFlag = w2.ringFlag;
+            Player2ringImage = w2.ringImg;
+            Player2ringNumber = w2.ringNumber;
+
+            Player2bootsFlag = w2.bootsFlag;
+            Player2bootsImage = w2.bootsImg;
+            Player2bootsElement = w2.bootsElement;
+
+            Player2amuletFlag = w2.amuletFlag;
+            Player2amuletImage = w2.amuletImg;
+            Player2amuletNumber = w2.amuletNumber;
+
+            Player2weaponElement = w2.weaponElement;
+            Player2weaponNumber = w2.weaponNumber;
+            Player2weaponFlag = w2.weaponFlag;
+            Player2weaponImage = w2.weaponImg;
+
+            Player2end = w2.returnEnd();
+            if (!Player2end) this.Close();
 
 
             Init();
@@ -101,6 +231,12 @@ namespace Mystery
             ChooseGrid.Visibility = Visibility.Collapsed;
             ChooseEnemyGrid.Visibility = Visibility.Collapsed;
 
+            LoadImage(RuneSlot1Img, runeImage1);
+            LoadImage(RuneSlot2Img, runeImage2);
+            LoadImage(RuneSlot3Img, runeImage3);
+            LoadImage(Player2RuneSlot1Img, Player2runeImage1);
+            LoadImage(Player2RuneSlot2Img, Player2runeImage2);
+            LoadImage(Player2RuneSlot3Img, Player2runeImage3);
             game.Refresh();
           
         
@@ -371,9 +507,60 @@ namespace Mystery
             game.GetUp();
         }
 
-        private void Runa_Click(object sender, RoutedEventArgs e)
+        private void Runa1_Click(object sender, RoutedEventArgs e)
         {
+            game.rune1();
+            LoadImage(RuneSlot1Img, artFon);
+            runeFlag1 = game.rune1flag;
+            RuneSlot1.Visibility = Visibility.Hidden;
+            RuneSlot2.Visibility = Visibility.Hidden;
+            RuneSlot3.Visibility = Visibility.Hidden;
+        }
+        private void Runa2_Click(object sender, RoutedEventArgs e)
+        {
+            game.rune2();
+            LoadImage(RuneSlot2Img, artFon);
+            runeFlag2 = game.rune2flag;
+            RuneSlot1.Visibility = Visibility.Hidden;
+            RuneSlot2.Visibility = Visibility.Hidden;
+            RuneSlot3.Visibility = Visibility.Hidden;
+        }
+        private void Runa3_Click(object sender, RoutedEventArgs e)
+        {
+            game.rune3();
+            LoadImage(RuneSlot3Img, artFon);
+            runeFlag3 = game.rune3flag;
+            RuneSlot1.Visibility = Visibility.Hidden;
+            RuneSlot2.Visibility = Visibility.Hidden;
+            RuneSlot3.Visibility = Visibility.Hidden;
+        }
 
+        private void Player2Runa1_Click(object sender, RoutedEventArgs e)
+        {
+            game.Player2rune1();
+            LoadImage(Player2RuneSlot1Img, artFon);
+            runeFlag1 = game.rune1flag;
+            Player2RuneSlot1.Visibility = Visibility.Hidden;
+            Player2RuneSlot2.Visibility = Visibility.Hidden;
+            Player2RuneSlot3.Visibility = Visibility.Hidden;
+        }
+        private void Player2Runa2_Click(object sender, RoutedEventArgs e)
+        {
+            game.Player2rune2();
+            LoadImage(Player2RuneSlot2Img, artFon);
+            runeFlag2 = game.rune2flag;
+            Player2RuneSlot1.Visibility = Visibility.Hidden;
+            Player2RuneSlot2.Visibility = Visibility.Hidden;
+            Player2RuneSlot3.Visibility = Visibility.Hidden;
+        }
+        private void Player2Runa3_Click(object sender, RoutedEventArgs e)
+        {
+            game.Player2rune3();
+            LoadImage(Player2RuneSlot3Img, artFon);
+            runeFlag3 = game.rune3flag;
+            Player2RuneSlot1.Visibility = Visibility.Hidden;
+            Player2RuneSlot2.Visibility = Visibility.Hidden;
+            Player2RuneSlot3.Visibility = Visibility.Hidden;
         }
 
         //private void Button_MouseEnter(object sender, MouseEventArgs e)

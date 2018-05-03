@@ -75,6 +75,7 @@
     <Compile Include="Player\Ring\RingInterface.cs" />
     <Compile Include="Player\Runes\ElementRune.cs" />
     <Compile Include="Player\Runes\HealRune.cs" />
+    <Compile Include="Player\Runes\NoRune.cs" />
     <Compile Include="Player\Runes\PotionRune.cs" />
     <Compile Include="Player\Runes\RuneInterface.cs" />
     <Compile Include="Player\Shield\BigShield.cs" />

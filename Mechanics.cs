@@ -303,6 +303,32 @@ namespace Mystery
             wind.earthMana.Content = mrTorry.earth;
             wind.dethMana.Content = mrTorry.death;
             EndChooseTarget();
+
+            if(wind.runeFlag1 && mrTorry.first)
+            {
+                wind.RuneSlot1.Visibility = Visibility.Visible;
+            }
+            if (wind.runeFlag2 && mrTorry.first)
+            {
+                wind.RuneSlot2.Visibility = Visibility.Visible;
+            }
+            if (wind.runeFlag3 && mrTorry.first)
+            {
+                wind.RuneSlot3.Visibility = Visibility.Visible;
+            }
+
+            if (wind.Player2runeFlag1 && !mrTorry.first)
+            {
+                wind.Player2RuneSlot1.Visibility = Visibility.Visible;
+            }
+            if (wind.Player2runeFlag2 && !mrTorry.first)
+            {
+                wind.Player2RuneSlot2.Visibility = Visibility.Visible;
+            }
+            if (wind.Player2runeFlag3 && !mrTorry.first)
+            {
+                wind.Player2RuneSlot3.Visibility = Visibility.Visible;
+            }
         }
 
         //Возврат данных в глобальные 
@@ -356,7 +382,7 @@ namespace Mystery
                         // art.DamageBow( mass, secondPlayer.water, i, 11); //Последний параметр будет меняться в зависимости от выбраного артефакта
                         // art.Damage(mass, mana, 1, 6); //Последний параметр будет меняться в зависимости от выбраного артефакта
                         // art.Ring(mass, i, 11);
-                        mrTorry.Ring(mass, i, 11);
+                        mrTorry.Ring(mass, 6, 11);
                         break;
                     }
                 }
@@ -368,9 +394,11 @@ namespace Mystery
                 {
                     if (mass[i] != null)
                     {
+                        enemy.Weapon(mass, mana, 6, 11);
                         //art.DamageBow(mass, secondPlayer.water, i, 6); //Последний параметр будет меняться в зависимости от выбраного артефакта
-                       // art.Damage(mass, mana, 6, 11); //Последний параметр будет меняться в зависимости от выбраного артефакта
-                       // art.Ring(mass, 1, 6);
+                        // art.Damage(mass, mana, 6, 11); //Последний параметр будет меняться в зависимости от выбраного артефакта
+                        // art.Ring(mass, 1, 6);
+                        enemy.Ring(mass, 1, 6);
                         break;
                     }
                 }
@@ -422,6 +450,7 @@ namespace Mystery
             {
                 for (int i = 1; i < 6; i++)
                 {
+                    CreatureDeth(mass[i]);
                     damage(mass[i], secondPlayer);
                     CreatureDeth(mass[i]);
                 }
@@ -430,6 +459,7 @@ namespace Mystery
             {
                 for (int i = 6; i < 11; i++)
                 {
+                    CreatureDeth(mass[i]);
                     damage(mass[i], secondPlayer);
                     CreatureDeth(mass[i]);
                 }
@@ -509,19 +539,6 @@ namespace Mystery
         {
             if (cre != null)
             {
-                if (mass[cre.poleNumberVS] != null)
-                    if (mass[cre.poleNumberVS].Hp <= 0)
-                    {
-                        mass[cre.poleNumberVS].ActionAfterDeath(mass, mrTorry, enemy);
-                        CreatureHPAttackDeth(cre.poleNumberVS);
-                        mass[cre.poleNumberVS].img = "pack://application:,,,/Resources/Creatures/fon.jpg";
-                        LoadImage(mass[cre.poleNumberVS].poleNumber, mass[cre.poleNumberVS].img);
-                        wind.poleBuffer[cre.poleNumberVS] = false;
-                        mass[cre.poleNumberVS] = null;
-                        // art.CloackOfVipers(mass[cre.poleNumber], secondPlayer);
-                        if(!mrTorry.first) mrTorry.Cloack(mass[cre.poleNumber], secondPlayer);
-                       
-                    }
                 if (mass[cre.poleNumber] != null)
                     if (mass[cre.poleNumber].Hp <= 0)
                     {
@@ -534,7 +551,23 @@ namespace Mystery
                         mass[cre.poleNumber] = null;
                         // art.CloackOfVipers(mass[cre.poleNumberVS], firstPlayer);
                         if (!mrTorry.first) mrTorry.Cloack(mass[cre.poleNumber], firstPlayer);
+                        else enemy.Cloack(mass[cre.poleNumberVS], secondPlayer);
                     }
+                if (mass[cre.poleNumberVS] != null)
+                    if (mass[cre.poleNumberVS].Hp <= 0)
+                    {
+                        mass[cre.poleNumberVS].ActionAfterDeath(mass, mrTorry, enemy);
+                        CreatureHPAttackDeth(cre.poleNumberVS);
+                        mass[cre.poleNumberVS].img = "pack://application:,,,/Resources/Creatures/fon.jpg";
+                        LoadImage(mass[cre.poleNumberVS].poleNumber, mass[cre.poleNumberVS].img);
+                        wind.poleBuffer[cre.poleNumberVS] = false;
+                        mass[cre.poleNumberVS] = null;
+                        // art.CloackOfVipers(mass[cre.poleNumber], secondPlayer);
+                        if (!mrTorry.first) mrTorry.Cloack(mass[cre.poleNumber], secondPlayer);
+                        else enemy.Cloack(mass[cre.poleNumber], firstPlayer);
+
+                    }
+
             }
         }
 
@@ -549,7 +582,7 @@ namespace Mystery
             }
             else
             {
-                
+                enemy.Amulet(enemy);
             }
             Choose(out firstPlayer, out secondPlayer);
            
@@ -677,7 +710,7 @@ namespace Mystery
                         mana = pl.earth;
                         break;
                     }
-                case "deth":
+                case "death":
                     {
                         mana = pl.death;
                         break;
@@ -685,7 +718,7 @@ namespace Mystery
             }
             return mana;
         }
-
+        
         public void ReturnAttack()
         {
             for (int i = 1; i < 11; i++)

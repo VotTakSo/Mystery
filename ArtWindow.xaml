@@ -20,9 +20,9 @@
             <Image x:Name="CloackImage" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="340,329,0,0" VerticalAlignment="Top" Width="50"/>
             <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="340,389,0,0" VerticalAlignment="Top" Width="50"/>
 
-            <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="275,389,0,0" VerticalAlignment="Top" Width="50"/>
-            <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="220,389,0,0" VerticalAlignment="Top" Width="50"/>
-            <Image Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="165,389,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image x:Name="Rune3Image" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="275,389,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image x:Name="Rune2Image" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="220,389,0,0" VerticalAlignment="Top" Width="50"/>
+            <Image x:Name="Rune1Image" Source="Resources/Artefacts/test.jpg" HorizontalAlignment="Left" Height="53" Margin="165,389,0,0" VerticalAlignment="Top" Width="50"/>
 
         </Grid>
         
@@ -221,7 +221,7 @@
         </Grid>
 
         <Grid x:Name="RunesGrid">
-            <Button x:Name="FireRune" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="FireRune_Click">
+            <Button x:Name="FireRune" HorizontalAlignment="Left" Margin="96,450,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="FireRune_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Artefacts/Runes/fireRune.jpg"  />
                 </Button.Background>
@@ -247,7 +247,7 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="Zelie" HorizontalAlignment="Left" Margin="100,500,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="Heal_Click">
+            <Button x:Name="Potion" HorizontalAlignment="Left" Margin="100,500,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="Potion_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Artefacts/Runes/Potion.jpg"  />
                 </Button.Background>
@@ -259,9 +259,9 @@
                 </Button.Background>
             </Button>
             
-            <Button x:Name="RuneSlot1Button" Click="Rune_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Margin="165,350,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
-            <Button x:Name="RuneSlot2Button" Click="Rune_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="220,350,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
-            <Button x:Name="RuneSlot3Button" Click="Rune_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Margin="275,350,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+            <Button x:Name="RuneSlot1Button" Click="Rune1_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Margin="165,350,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+            <Button x:Name="RuneSlot2Button" Click="Rune2_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="220,350,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+            <Button x:Name="RuneSlot3Button" Click="Rune3_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Margin="275,350,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
 
         </Grid>
 

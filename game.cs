@@ -24,17 +24,12 @@ namespace Mystery
             BitmapImage bitmap = new BitmapImage(uri);
             i.Source = bitmap;
         }
-
-        public Game(MainWindow w)
+        public bool rune1flag, rune2flag, rune3flag, Player2rune1flag, Player2rune2flag, Player2rune3flag;
+        public Player setWeapon(Player mrTorry, bool weaponFlag, int weaponNumber)
         {
-
-            mrTorry.weaponElements = w.weaponElement;
-            mrTorry.shieldElements = w.shieldElement;
-            mrTorry.bootsElements = w.bootsElement;
-            enemy.shieldElements = w.shieldElement;
-            if (w.weaponFlag)
+            if (weaponFlag)
             {
-                switch (w.weaponNumber)
+                switch (weaponNumber)
                 {
                     case 1:
                         {
@@ -50,10 +45,13 @@ namespace Mystery
             }
             else
                 mrTorry.setWeapon(new NoWeapon());
-
-            if (w.shieldFlag)
+            return mrTorry;
+        }
+        public Player setShield(Player mrTorry, bool shieldFlag, int shieldNumber)
+        {
+            if (shieldFlag)
             {
-                switch (w.shieldNumber)
+                switch (shieldNumber)
                 {
                     case 1:
                         {
@@ -75,16 +73,21 @@ namespace Mystery
             }
             else
                 mrTorry.setShield(new NoShield());
-
-
-            if (w.cloackFlag)
+            return mrTorry;
+        }
+        public Player setCloack(Player mrTorry, bool cloackFlag)
+        {
+            if (cloackFlag)
             {
                 mrTorry.setCloack(new CloackOfVipers());
             }
             else
                 mrTorry.setCloack(new NoCloack());
-
-            if (w.bootsFlag)
+            return mrTorry;
+        }
+        public Player setBoots(Player mrTorry, bool bootsFlag)
+        {
+            if (bootsFlag)
             {
                 mrTorry.setBoots(new ElementBoots());
             }
@@ -92,11 +95,13 @@ namespace Mystery
             {
                 mrTorry.setBoots(new NoBoots());
             }
-            mrTorry.Boots(mrTorry, w.bootsElement);
-
-            if(w.amuletFlag)
+            return mrTorry;
+        }
+        public Player setAmulet(Player mrTorry, bool amuletFlag, int amuletNumber)
+        {
+            if (amuletFlag)
             {
-                switch (w.amuletNumber)
+                switch (amuletNumber)
                 {
                     case 1:
                         {
@@ -109,10 +114,13 @@ namespace Mystery
             {
                 mrTorry.setAmulet(new NoAmulet());
             }
-
-            if (w.ringFlag)
+            return mrTorry;
+        }
+        public Player setRing(Player mrTorry, bool ringFlag, int ringNumber)
+        {
+            if (ringFlag)
             {
-                switch (w.ringNumber)
+                switch (ringNumber)
                 {
                     case 1:
                         {
@@ -125,8 +133,140 @@ namespace Mystery
             {
                 mrTorry.setRing(new NoRing());
             }
+            return mrTorry;
+        }
+        public Player setRune1(Player mrTorry, bool runeFlag1, int runeNumber1)
+        {
+            if (runeFlag1)
+            {
+                switch (runeNumber1)
+                {
+                    case 1:
+                        {
+                            mrTorry.setRune1(new PotionRune());
+                            break;
+                        }
+                    case 2:
+                        {
+                            mrTorry.setRune1(new HealRune());
+                            break;
+                        }
+                    case 3:
+                        {
+                            mrTorry.setRune1(new ElementRune());
+                            break;
+                        }
+                }
+            }
+            return mrTorry;
+        }
+        public Player setRune2(Player mrTorry, bool runeFlag2, int runeNumber2)
+        {
+            if (runeFlag2)
+            {
+                switch (runeNumber2)
+                {
+                    case 1:
+                        {
+                            mrTorry.setRune2(new PotionRune());
+                            break;
+                        }
+                    case 2:
+                        {
+                            mrTorry.setRune2(new HealRune());
+                            break;
+                        }
+                    case 3:
+                        {
+                            mrTorry.setRune2(new ElementRune());
+                            break;
+                        }
+                }
+            }
+            return mrTorry;
+        }
+        public Player setRune3(Player mrTorry, bool runeFlag3, int runeNumber3)
+        {
+            if (runeFlag3)
+            {
+                switch (runeNumber3)
+                {
+                    case 1:
+                        {
+                            mrTorry.setRune3(new PotionRune());
+                            break;
+                        }
+                    case 2:
+                        {
+                            mrTorry.setRune3(new HealRune());
+                            break;
+                        }
+                    case 3:
+                        {
+                            mrTorry.setRune3(new ElementRune());
+                            break;
+                        }
+                }
+            }
+            return mrTorry;
+        }
 
-            // enemy.setShield(new Shield());
+        public Game(MainWindow w)
+        {
+            rune1flag = w.runeFlag1;
+            rune2flag = w.runeFlag2;
+            rune3flag = w.runeFlag3;
+
+            Player2rune1flag = w.Player2runeFlag1;
+            Player2rune2flag = w.Player2runeFlag2;
+            Player2rune3flag = w.Player2runeFlag3;
+
+            mrTorry.weaponElements = w.weaponElement;
+            mrTorry.shieldElements = w.shieldElement;
+            mrTorry.bootsElements = w.bootsElement;
+            mrTorry.runeElement1 = w.runeElement1;
+            mrTorry.runeElement2 = w.runeElement3;
+            mrTorry.runeElement3 = w.runeElement3;
+
+            enemy.weaponElements = w.Player2weaponElement;
+            enemy.shieldElements = w.Player2shieldElement;
+            enemy.bootsElements = w.Player2bootsElement;
+            enemy.runeElement1 = w.Player2runeElement1;
+            enemy.runeElement2 = w.Player2runeElement3;
+            enemy.runeElement3 = w.Player2runeElement3;
+
+
+            mrTorry = setRune1(mrTorry, w.runeFlag1, w.runeNumber1);
+            enemy = setRune1(enemy, w.Player2runeFlag1, w.Player2runeNumber1);
+
+            mrTorry = setRune2(mrTorry, w.runeFlag2, w.runeNumber2);
+            enemy = setRune2(enemy, w.Player2runeFlag2, w.Player2runeNumber2);
+
+            mrTorry = setRune3(mrTorry, w.runeFlag3, w.runeNumber3);
+            enemy = setRune3(enemy, w.Player2runeFlag3, w.Player2runeNumber3);
+         
+            mrTorry = setWeapon(mrTorry, w.weaponFlag, w.weaponNumber);
+            enemy = setWeapon(enemy, w.Player2weaponFlag, w.Player2weaponNumber);
+
+            mrTorry = setShield(mrTorry, w.shieldFlag, w.shieldNumber);
+            enemy = setShield(enemy, w.Player2shieldFlag, w.Player2shieldNumber);
+
+            mrTorry = setCloack(mrTorry, w.cloackFlag);
+            enemy = setCloack(enemy, w.Player2cloackFlag);
+
+            mrTorry = setBoots(mrTorry, w.bootsFlag);
+            enemy = setBoots(enemy, w.Player2bootsFlag);
+            mrTorry.Boots(mrTorry, w.bootsElement);
+            enemy.Boots(enemy, w.Player2bootsElement);
+
+            mrTorry = setAmulet(mrTorry, w.amuletFlag, w.amuletNumber);
+            enemy = setAmulet(enemy, w.Player2amuletFlag, w.Player2amuletNumber);
+
+            mrTorry = setRing(mrTorry, w.ringFlag, w.ringNumber);
+            enemy = setRing(enemy, w.Player2ringFlag, w.Player2ringNumber);
+
+
+
             wind = w;
            
 
@@ -172,8 +312,8 @@ namespace Mystery
                     Goblin Goblin = new Goblin(wind.poleNumber, VsPole(wind.poleNumber));
                    
                     //Добавление защиты с учетом щита
-                    if(mrTorry.first)
-                    Armor = mrTorry.Shield(mrTorry, Goblin.Element);
+                    if(mrTorry.first) Armor = mrTorry.Shield(mrTorry, Goblin.Element);
+                    else Armor = enemy.Shield(enemy, Goblin.Element);
                     Goblin.armor += Armor;
                     Armor = 0;
 
@@ -288,7 +428,7 @@ namespace Mystery
                     Ghost Ghost = new Ghost(wind.poleNumber, VsPole(wind.poleNumber));
 
                     if (mrTorry.first) Armor = mrTorry.Shield(mrTorry, Ghost.Element);
-                   // else Armor = enemy.Shield(enemy, Ghost.Element);
+                    else Armor = enemy.Shield(enemy, Ghost.Element);
                     Ghost.armor += Armor;
                     Armor = 0;
 
@@ -316,7 +456,44 @@ namespace Mystery
 
         }
         //********************************************************************//
+        public void rune1()
+        {
+            mrTorry.Rune1(mrTorry, wind.runeElement1);
+            Refresh();
+            rune1flag = false;
+        }
+        public void rune2()
+        {
+            mrTorry.Rune2(mrTorry, wind.runeElement2);
+            Refresh();
+            rune2flag = false;
+        }
+        public void rune3()
+        {
+            mrTorry.Rune3(mrTorry, wind.runeElement3);
+            Refresh();
+            rune3flag = false;
+        }
 
+        public void Player2rune1()
+        {
+            enemy.Rune1(enemy, wind.Player2runeElement1);
+            Refresh();
+            rune1flag = false;
+        }
+        public void Player2rune2()
+        {
+            enemy.Rune2(enemy, wind.Player2runeElement2);
+            Refresh();
+            rune2flag = false;
+        }
+        public void Player2rune3()
+        {
+            enemy.Rune3(enemy, wind.Player2runeElement3);
+            Refresh();
+            rune3flag = false;
+        }
+        //***************************************************************//
         //Пропуск хода
         public void Pas()
         {

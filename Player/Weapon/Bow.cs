@@ -30,7 +30,7 @@ namespace Mystery
                 randomNumber = rand.Next(min, max);
 
             }
-            if (mana < 9)
+            if (mana < 6)
             {
                 int dmg = rand.Next(3, 6);
                 cre[randomNumber].Hp -= dmg;

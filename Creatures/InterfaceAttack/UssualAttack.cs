@@ -10,6 +10,7 @@ namespace Mystery
     {
         public Creature[] Damage(Creature[] mass, Creature cre, Player enemy)
         {
+            if (mass[cre.poleNumber] != null)
             if (mass[cre.poleNumberVS] != null)
             {
                 mass[cre.poleNumberVS].Hp -= (cre.Attack - mass[cre.poleNumberVS].armor);
