@@ -15,3 +15,5 @@ C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug
 C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\Mystery_MarkupCompile.lref
 C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\ArtWindow.g.cs
 C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\ArtWindow.baml
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\LvlElement.g.cs
+C:\Users\MrTorry\Documents\Visual Studio 2017\Projects\Mystery\Mystery\obj\Debug\LvlElement.baml

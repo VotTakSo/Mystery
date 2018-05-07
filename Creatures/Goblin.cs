@@ -13,6 +13,7 @@ namespace Mystery
         public Goblin(int poleNumbers, int poleNumbersVS)
         {
             Attack = 8;
+            maxHp = 20;
             Hp = 20;
             armor = 0;
 

@@ -122,10 +122,21 @@ namespace Mystery
         }
         public MainWindow()
         {
+            LvlElement wLE1 = new LvlElement();
+            wLE1.ShowDialog();
+            end = wLE1.returnEnd();
+            if (!end) this.Close();
+
+            LvlElement wLE2 = new LvlElement();
+            wLE2.ShowDialog();
+            end = wLE2.returnEnd();
+            if (!end) this.Close();
+
             ArtWindow w1 = new ArtWindow("Выбирвет первый игрок");
             w1.ShowDialog();
+            end = w1.returnEnd();
+            if (!end) this.Close();
 
-          
 
             runeElement1 = w1.runeElement1;
             runeNumber1 = w1.runeNumber1;

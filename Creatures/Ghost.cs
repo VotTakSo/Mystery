@@ -25,6 +25,7 @@ namespace Mystery
         public Ghost(int poleNumbers, int poleNumbersVS)
         {
             Attack = 5;
+            maxHp=15;
             Hp = 15;
             armor = 3;
 

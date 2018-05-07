@@ -10,6 +10,7 @@ namespace Mystery
     {
         protected Attack attack;
         public string name;
+        public int maxHp;
         public int Hp;
         public int Attack;
         public string img;
