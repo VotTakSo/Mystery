@@ -9,12 +9,19 @@ namespace Mystery
     public class Player
     {
         static public int lvl=9;
-        
+
+        public string Element;
         public int HP = 72;
-        public int astralPower = 14;
+        public int astralPower = 15;
         public int skillPoint = lvl - 5;
-        public int fire = 5, wind = 3, water = 4, earth = 4, death = 4;
+        public int fire = 4, wind = 4, water = 4, earth = 4, death = 4;
         public bool first=true;
+        public bool skillElement=false;
+        public bool skill = false;
+        public int skillElementLvl = 0;
+        public int skillLvl = 0;
+        static Random rand = new Random();
+
 
         Weapon weapon;
         ShieldInterface shield;
@@ -25,6 +32,9 @@ namespace Mystery
         RuneInterface rune1;
         RuneInterface rune2;
         RuneInterface rune3;
+
+        ElementsSkillInterface elementSkill;
+        SkillInterface playerSkill;
 
         public Creature[] Weapon(Creature[] cre, int mana, int min, int max)
         {
@@ -66,6 +76,68 @@ namespace Mystery
         {
             return rune3.Rune(pl, runeElement);
         }
+        public Player ElementSkill(Player pl, int skillLvl, string Element)
+        {
+            return elementSkill.skill(pl, skillLvl, Element);
+        }
+        public Creature[] PlayerSkill(Creature[] creMass, Creature cre, Player pl, int skillLvl)
+        {
+            return playerSkill.skill(creMass,cre,pl,skillLvl);
+        }
+
+        public void Mana()
+        {
+            int elementNumber;
+            int mana3Buffer, mana5Buffer;
+         
+            elementNumber = rand.Next(1, 10);
+            if (elementNumber <= 5)
+            {
+                mana3Buffer = rand.Next(3, 4);
+                if (mana3Buffer == 3)
+                {
+                    mana5Buffer = elementNumber;
+                    while (mana5Buffer == elementNumber)
+                    {
+                        mana5Buffer = rand.Next(1, 5);
+                    }
+                    ChangeMana(elementNumber, 3);
+                    ChangeMana(mana5Buffer, 5);
+                }
+
+            }
+        }
+        public void ChangeMana(int elementNumber, int mana)
+        {
+            switch (elementNumber)
+            {
+                case 1:
+                    {
+                        fire = mana;
+                        break;
+                    }
+                case 2:
+                    {
+                        wind = mana;
+                        break;
+                    }
+                case 3:
+                    {
+                        water = mana;
+                        break;
+                    }
+                case 4:
+                    {
+                        earth = mana;
+                        break;
+                    }
+                case 5:
+                    {
+                        death = mana;
+                        break;
+                    }
+            }
+        }
 
         public void setWeapon(Weapon w)
         {
@@ -103,6 +175,14 @@ namespace Mystery
         {
             rune3 = r;
         }
+        public void setElementSkill(ElementsSkillInterface e)
+        {
+            elementSkill = e;
+        }
+        public void setSkill(SkillInterface s)
+        {
+            playerSkill = s;
+        }
 
         public string weaponElements;
         public string bootsElements;
@@ -120,6 +200,7 @@ namespace Mystery
         public Player(bool hod)
         {
             first = hod;
+            Mana();
         }
         public Player(bool hod, string weaponElement, string bootsElement)
         {

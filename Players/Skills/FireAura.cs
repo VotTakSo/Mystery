@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mystery.Player.Skills
+namespace Mystery
 {
     class FireAura:SkillInterface
     {

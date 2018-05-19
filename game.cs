@@ -158,6 +158,10 @@ namespace Mystery
                         }
                 }
             }
+            else
+            {
+                mrTorry.setRune1(new NoRune());
+            }
             return mrTorry;
         }
         public Player setRune2(Player mrTorry, bool runeFlag2, int runeNumber2)
@@ -182,6 +186,10 @@ namespace Mystery
                             break;
                         }
                 }
+            }
+            else
+            {
+                mrTorry.setRune2(new NoRune());
             }
             return mrTorry;
         }
@@ -208,11 +216,80 @@ namespace Mystery
                         }
                 }
             }
+            else
+            {
+                mrTorry.setRune3(new NoRune());
+            }
+            return mrTorry;
+        }
+        public Player setElementSkill(Player mrTorry, bool skillElement)
+        {
+            if(skillElement)
+            {
+                mrTorry.setElementSkill(new ElementBuff());
+            }
+            else
+            {
+                mrTorry.setElementSkill(new NoElementSkill());
+            }
+            return mrTorry;
+        }
+        public Player setSkill(Player mrTorry, bool skillElement, string element)
+        {
+            if (skillElement)
+            {
+                switch (element)
+                {
+                    case ("fire"):
+                        {
+                            mrTorry.setSkill(new FireAura());
+                            break;
+                        }
+                    
+                    case ("water"):
+                        {
+                            mrTorry.setSkill(new DepthForce());
+                            break;
+                        }
+                    case ("earth"):
+                        {
+                            mrTorry.setSkill(new EarthHeal());
+                            break;
+                        }
+                    case ("death"):
+                        {
+                            mrTorry.setSkill(new Miasama());
+                            break;
+                        }
+                }
+                
+            }
+        
+            else
+            {
+                mrTorry.setSkill(new NoSkill());
+            }
             return mrTorry;
         }
 
         public Game(MainWindow w)
         {
+            mrTorry.skill = w.Player1Skill;
+            mrTorry.skillElement = w.Player1ElementSkill;
+            mrTorry.skillLvl = w.Player1SkillLvl;
+            mrTorry.skillElementLvl = w.Player1ElementSkillLvl;
+            mrTorry.astralPower = w.Player1AstralPower;
+            mrTorry.Element = w.Player1Element;
+            mrTorry.HP = w.Player1HP;
+
+            enemy.skill = w.Player2Skill;
+            enemy.skillElement = w.Player2ElementSkill;
+            enemy.skillLvl = w.Player2SkillLvl;
+            enemy.skillElementLvl = w.Player2ElementSkillLvl;
+            enemy.astralPower = w.Player2AstralPower;
+            enemy.Element = w.Player2Element;
+            enemy.HP = w.Player2HP;
+
             rune1flag = w.runeFlag1;
             rune2flag = w.runeFlag2;
             rune3flag = w.runeFlag3;
@@ -265,7 +342,13 @@ namespace Mystery
             mrTorry = setRing(mrTorry, w.ringFlag, w.ringNumber);
             enemy = setRing(enemy, w.Player2ringFlag, w.Player2ringNumber);
 
+            mrTorry = setElementSkill(mrTorry, w.Player1ElementSkill);
+            enemy = setElementSkill(enemy, w.Player2ElementSkill);
+            mrTorry.ElementSkill(mrTorry, mrTorry.skillElementLvl, mrTorry.Element);
+            enemy.ElementSkill(enemy, enemy.skillElementLvl, enemy.Element);
 
+            mrTorry = setSkill(mrTorry, w.Player1Skill, w.Player1Element);
+            enemy= setSkill(enemy, w.Player2Skill, w.Player2Element);
 
             wind = w;
            

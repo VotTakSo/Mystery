@@ -23,13 +23,13 @@
                 <ComboBoxItem>14</ComboBoxItem>
 
             </ComboBox>
-            <ComboBox x:Name="FireSkillslvl9" Visibility="Hidden" SelectionChanged="FireLvl9_SelectionChanged" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="FireSkillslvl9" Visibility="Hidden" SelectionChanged="Lvl9_SelectionChanged" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem>1. 3 lvl element + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>2. 4 lvl element</ComboBoxItem>
                 <ComboBoxItem>3. 3 lvl fire aura + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>4. 4 lvl fire aura </ComboBoxItem>
             </ComboBox>
-            <ComboBox x:Name="FireSkillslvl14" Visibility="Hidden" SelectionChanged="FireLvl9_SelectionChanged"  HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="FireSkillslvl14" Visibility="Hidden" SelectionChanged="Lvl14_SelectionChanged"  HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem>1. 5 lvl element + 8 astral power</ComboBoxItem>
                 <ComboBoxItem>2. 5 lvl element + 3 fire aura + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>3. 5 lvl element + 4 fire aura</ComboBoxItem>
@@ -41,12 +41,12 @@
                 <ComboBoxItem>14</ComboBoxItem>
 
             </ComboBox>
-            <ComboBox x:Name="WindSkillslvl9" Visibility="Hidden"  HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="WindSkillslvl9" Visibility="Hidden"  SelectionChanged="Lvl9_SelectionChanged" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem>1. 3 lvl element + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>2. 4 lvl element</ComboBoxItem>
                 
             </ComboBox>
-            <ComboBox x:Name="WindSkillslvl14" Visibility="Hidden"  HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="WindSkillslvl14" Visibility="Hidden" SelectionChanged="Lvl14_SelectionChanged" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem>1. 5 lvl element + 8 astral power</ComboBoxItem>
                 
             </ComboBox>
@@ -57,13 +57,13 @@
                 <ComboBoxItem>14</ComboBoxItem>
 
             </ComboBox>
-            <ComboBox x:Name="WaterSkillslvl9" Visibility="Hidden"  HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="WaterSkillslvl9" Visibility="Hidden"  SelectionChanged="Lvl9_SelectionChanged" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem>1. 3 lvl element + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>2. 4 lvl element</ComboBoxItem>
                 <ComboBoxItem>3. 3 lvl depth force + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>4. 4 lvl depth force</ComboBoxItem>
             </ComboBox>
-            <ComboBox x:Name="WaterSkillslvl14" Visibility="Hidden"  HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="WaterSkillslvl14" Visibility="Hidden" SelectionChanged="Lvl14_SelectionChanged" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem>1. 5 lvl element + 8 astral power</ComboBoxItem>
                 <ComboBoxItem>2. 5 lvl element + 3 depth force + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>3. 5 lvl element + 4 depth force</ComboBoxItem>
@@ -76,13 +76,13 @@
                 <ComboBoxItem>14</ComboBoxItem>
 
             </ComboBox>
-            <ComboBox x:Name="EarthSkillslvl9" Visibility="Hidden"  HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="EarthSkillslvl9" Visibility="Hidden"  SelectionChanged="Lvl9_SelectionChanged" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem>1. 3 lvl element + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>2. 4 lvl element</ComboBoxItem>
                 <ComboBoxItem>3. 3 lvl heal + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>4. 4 lvl heal</ComboBoxItem>
             </ComboBox>
-            <ComboBox x:Name="EarthSkillslvl14" Visibility="Hidden"  HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="EarthSkillslvl14" Visibility="Hidden" SelectionChanged="Lvl14_SelectionChanged" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem>1. 5 lvl element + 8 astral power</ComboBoxItem>
                 <ComboBoxItem>2. 5 lvl element + 3 heal + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>3. 5 lvl element + 4 heal</ComboBoxItem>
@@ -95,13 +95,13 @@
                 <ComboBoxItem>14</ComboBoxItem>
 
             </ComboBox>
-            <ComboBox x:Name="DeathSkillslvl9" Visibility="Hidden"  HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="DeathSkillslvl9" Visibility="Hidden"  SelectionChanged="Lvl9_SelectionChanged" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem>1. 3 lvl element + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>2. 4 lvl element</ComboBoxItem>
                 <ComboBoxItem>3. 3 lvl miasama + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>4. 4 lvl miasama</ComboBoxItem>
             </ComboBox>
-            <ComboBox x:Name="DeathSkillslvl14" Visibility="Hidden"  HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="DeathSkillslvl14" Visibility="Hidden" SelectionChanged="Lvl14_SelectionChanged"  HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem>1. 5 lvl element + 8 astral power</ComboBoxItem>
                 <ComboBoxItem>2. 5 lvl element + 3 miasama + 2 astral power</ComboBoxItem>
                 <ComboBoxItem>3. 5 lvl element + 4 miasama</ComboBoxItem>

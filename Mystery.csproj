@@ -64,32 +64,32 @@
     <Compile Include="LvlElement.xaml.cs">
       <DependentUpon>LvlElement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Player\Artefacts\Amulet\AmuletInterface.cs" />
-    <Compile Include="Player\Artefacts\Amulet\Cross.cs" />
-    <Compile Include="Player\Artefacts\Amulet\NoAmulet.cs" />
-    <Compile Include="Player\Artefacts\Boots\BootsInterface.cs" />
-    <Compile Include="Player\Artefacts\Boots\ElementBoots.cs" />
-    <Compile Include="Player\Artefacts\Boots\NoBoots.cs" />
-    <Compile Include="Player\Artefacts\Cloack\CloackOfVipers.cs" />
-    <Compile Include="Player\Artefacts\Cloack\CloackInterface.cs" />
-    <Compile Include="Player\Artefacts\Cloack\NoCloack.cs" />
-    <Compile Include="Player\Artefacts\Ring\NoRing.cs" />
-    <Compile Include="Player\Artefacts\Ring\OrksRing.cs" />
-    <Compile Include="Player\Artefacts\Ring\RingInterface.cs" />
-    <Compile Include="Player\Artefacts\Runes\ElementRune.cs" />
-    <Compile Include="Player\Artefacts\Runes\HealRune.cs" />
-    <Compile Include="Player\Artefacts\Runes\NoRune.cs" />
-    <Compile Include="Player\Artefacts\Runes\PotionRune.cs" />
-    <Compile Include="Player\Artefacts\Runes\RuneInterface.cs" />
-    <Compile Include="Player\Artefacts\Shield\BigShield.cs" />
-    <Compile Include="Player\Artefacts\Shield\NoShield.cs" />
-    <Compile Include="Player\Artefacts\Shield\OrksShield.cs" />
-    <Compile Include="Player\Artefacts\Shield\Shield.cs" />
-    <Compile Include="Player\Artefacts\Shield\ShieldInterface.cs" />
-    <Compile Include="Player\Artefacts\Weapon\Bow.cs" />
-    <Compile Include="Player\Artefacts\Weapon\NoWeapon.cs" />
-    <Compile Include="Player\Artefacts\Weapon\Splinter.cs" />
-    <Compile Include="Player\Artefacts\Weapon\WeaponInterface.cs" />
+    <Compile Include="Players\Artefacts\Amulet\AmuletInterface.cs" />
+    <Compile Include="Players\Artefacts\Amulet\Cross.cs" />
+    <Compile Include="Players\Artefacts\Amulet\NoAmulet.cs" />
+    <Compile Include="Players\Artefacts\Boots\BootsInterface.cs" />
+    <Compile Include="Players\Artefacts\Boots\ElementBoots.cs" />
+    <Compile Include="Players\Artefacts\Boots\NoBoots.cs" />
+    <Compile Include="Players\Artefacts\Cloack\CloackOfVipers.cs" />
+    <Compile Include="Players\Artefacts\Cloack\CloackInterface.cs" />
+    <Compile Include="Players\Artefacts\Cloack\NoCloack.cs" />
+    <Compile Include="Players\Artefacts\Ring\NoRing.cs" />
+    <Compile Include="Players\Artefacts\Ring\OrksRing.cs" />
+    <Compile Include="Players\Artefacts\Ring\RingInterface.cs" />
+    <Compile Include="Players\Artefacts\Runes\ElementRune.cs" />
+    <Compile Include="Players\Artefacts\Runes\HealRune.cs" />
+    <Compile Include="Players\Artefacts\Runes\NoRune.cs" />
+    <Compile Include="Players\Artefacts\Runes\PotionRune.cs" />
+    <Compile Include="Players\Artefacts\Runes\RuneInterface.cs" />
+    <Compile Include="Players\Artefacts\Shield\BigShield.cs" />
+    <Compile Include="Players\Artefacts\Shield\NoShield.cs" />
+    <Compile Include="Players\Artefacts\Shield\OrksShield.cs" />
+    <Compile Include="Players\Artefacts\Shield\Shield.cs" />
+    <Compile Include="Players\Artefacts\Shield\ShieldInterface.cs" />
+    <Compile Include="Players\Artefacts\Weapon\Bow.cs" />
+    <Compile Include="Players\Artefacts\Weapon\NoWeapon.cs" />
+    <Compile Include="Players\Artefacts\Weapon\Splinter.cs" />
+    <Compile Include="Players\Artefacts\Weapon\WeaponInterface.cs" />
     <Compile Include="ArtWindow.xaml.cs">
       <DependentUpon>ArtWindow.xaml</DependentUpon>
     </Compile>
@@ -118,14 +118,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mechanics.cs" />
-    <Compile Include="Player\Player.cs" />
-    <Compile Include="Player\Skills\DepthForce.cs" />
-    <Compile Include="Player\Skills\EarthHeal.cs" />
-    <Compile Include="Player\Skills\Elements\ElementBuff.cs" />
-    <Compile Include="Player\Skills\FireAura.cs" />
-    <Compile Include="Player\Skills\Miasama.cs" />
-    <Compile Include="Player\Skills\Elements\ElementsSkillInterface.cs" />
-    <Compile Include="Player\Skills\SkillInterface.cs" />
+    <Compile Include="Players\Player.cs" />
+    <Compile Include="Players\Skills\DepthForce.cs" />
+    <Compile Include="Players\Skills\EarthHeal.cs" />
+    <Compile Include="Players\Skills\Elements\ElementBuff.cs" />
+    <Compile Include="Players\Skills\Elements\NoElementSkill.cs" />
+    <Compile Include="Players\Skills\FireAura.cs" />
+    <Compile Include="Players\Skills\Miasama.cs" />
+    <Compile Include="Players\Skills\Elements\ElementsSkillInterface.cs" />
+    <Compile Include="Players\Skills\NoSkill.cs" />
+    <Compile Include="Players\Skills\SkillInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

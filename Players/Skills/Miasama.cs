@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mystery.Player.Skills
+namespace Mystery
 {
     class Miasama:SkillInterface
     {
@@ -12,13 +12,13 @@ namespace Mystery.Player.Skills
         {
             if (cre.Element == "death")
             {
-                if (cre.Hp*100/cre.maxHp >= 55)
+                if (cre.Hp*100/cre.maxHp <= 55)
                 {
                     creMass[cre.poleNumber].Hp += skillLvl;
                     if (creMass[cre.poleNumberVS] != null)
                         creMass[cre.poleNumberVS].Hp -= skillLvl;
                     else
-                        enemy.Hp -= skillLvl;
+                        enemy.HP -= skillLvl;
                 }
             }
             return creMass;

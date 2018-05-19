@@ -20,7 +20,7 @@ namespace Mystery
             attack = new UssualAttack();
 
             name = "Goblin";
-            Element = "Fire";
+            Element = "fire";
 
             img= "pack://application:,,,/Resources/Creatures/1.Fire/Goblin.jpg";
 

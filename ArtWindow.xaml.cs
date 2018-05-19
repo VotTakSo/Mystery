@@ -20,13 +20,26 @@ namespace Mystery
     /// </summary>
     public partial class ArtWindow : Window
     {
-        public ArtWindow(string s)
+        int astralPower;
+        int lvl;
+        public ArtWindow(string s, int AstralPower, int Lvl)
         {
-
+            astralPower = AstralPower;
+            lvl = Lvl;
             InitializeComponent();
         }
 
         static string artFon = "pack://application:,,,/Resources/Artefacts/test.jpg";
+
+        int bufAmulet;
+        int bufweapon;
+        int bufBoots;
+        int bufRune1;
+        int bufRune2;
+        int bufRune3;
+        int bufCloack;
+        int bufShield;
+        int bufRing;
 
         public string weaponImg = artFon;
         public string shieldImg = artFon;
@@ -63,7 +76,7 @@ namespace Mystery
         public bool runeFlag2 = false;
         public bool runeFlag3 = false;
 
-
+       
         //******************************Загрузка изображений******************************//
         public void LoadImage(Image i, string s)
         {
@@ -123,10 +136,23 @@ namespace Mystery
         //*****************************Оружие*****************************************//
         void Bow()
         {
-            weaponFlag = true;
+            astralPower += bufweapon;
+            bufweapon = 3;
+            if (astralPower >= bufweapon)
+            {
+                weaponFlag = true;
             weaponNumber = 1;
             WeaponButton.Visibility = Visibility.Visible;
             LoadImage(WeaponImage, weaponImg);
+                astralPower -= bufweapon;
+            }
+            else
+            {
+                bufweapon = 0;
+                weaponElement = "";
+                weaponImg = artFon;
+                AstralPowerError();
+            }
         }
         private void FireBow_Click(object sender, RoutedEventArgs e)
         {
@@ -165,10 +191,23 @@ namespace Mystery
         }
         void Splinter()
         {
-            weaponFlag = true;
-            weaponNumber = 2;
-            WeaponButton.Visibility = Visibility.Visible;
-            LoadImage(WeaponImage, weaponImg);
+            astralPower += bufweapon;
+            bufweapon = 3;
+            if (astralPower >= bufweapon)
+            {
+                weaponFlag = true;
+                weaponNumber = 2;
+                WeaponButton.Visibility = Visibility.Visible;
+                LoadImage(WeaponImage, weaponImg);
+                astralPower -= bufweapon;
+            }
+            else
+            {
+                weaponElement = "";
+                weaponImg = artFon;
+                AstralPowerError();
+                bufweapon = 0;
+            }
 
         }
         private void FireSplinter_Click(object sender, RoutedEventArgs e)
@@ -204,6 +243,8 @@ namespace Mystery
         private void Weapon_Click(object sender, RoutedEventArgs e)
         {
             weaponFlag = false;
+            astralPower += bufweapon;
+            bufweapon = 0;
             weaponNumber = 0;
             weaponElement = null;
             WeaponButton.Visibility = Visibility.Hidden;
@@ -214,22 +255,45 @@ namespace Mystery
         //***********************************Щиты******************************************************//
         private void OrksShield_Click(object sender, RoutedEventArgs e)
         {
-            shieldElement = "fire";
-            shieldImg = orksShieldImg;
-            
-            shieldFlag = true;
-            shieldNumber = 3;
-            ShieldButton.Visibility = Visibility.Visible;
-            LoadImage(ShieldImage, shieldImg);
+            astralPower += bufShield;
+            bufShield = 4;
+            if (astralPower >= bufShield)
+            {
+                shieldElement = "fire";
+                shieldImg = orksShieldImg;
 
+                shieldFlag = true;
+                shieldNumber = 3;
+                ShieldButton.Visibility = Visibility.Visible;
+                LoadImage(ShieldImage, shieldImg);
+                astralPower -= bufShield;
+            }
+            else
+            {
+                bufShield = 0;
+                AstralPowerError();
+            }
         }
         //*********************Малые щиты**********************************************//
         void shield()
         {
-            shieldFlag = true;
-            shieldNumber = 1;
-            ShieldButton.Visibility = Visibility.Visible;
-            LoadImage(ShieldImage, shieldImg);
+            astralPower += bufShield;
+            bufShield = 3;
+            if (astralPower >= bufShield)
+            {
+                shieldFlag = true;
+                shieldNumber = 1;
+                ShieldButton.Visibility = Visibility.Visible;
+                LoadImage(ShieldImage, shieldImg);
+                astralPower -= bufShield;
+            }
+            else
+            {
+                shieldElement = "";
+                shieldImg = artFon;
+                AstralPowerError();
+                bufShield = 0;
+            }
         }
         private void FireShield_Click(object sender, RoutedEventArgs e)
         {
@@ -269,10 +333,33 @@ namespace Mystery
         //********************Большие щиты*******************************//
         void BigShield()
         {
-            shieldFlag = true;
-            shieldNumber = 2;
-            ShieldButton.Visibility = Visibility.Visible;
-            LoadImage(ShieldImage, shieldImg);
+            if (lvl > 13)
+            {
+                astralPower += bufShield;
+                bufShield = 6;
+                if (astralPower >= bufShield)
+                {
+                    shieldFlag = true;
+                    shieldNumber = 2;
+                    ShieldButton.Visibility = Visibility.Visible;
+                    LoadImage(ShieldImage, shieldImg);
+                    astralPower -= bufShield;
+                }
+                else
+                {
+                    shieldElement = "";
+                    shieldImg = artFon;
+                    AstralPowerError();
+                    bufShield = 0;
+                }
+            }
+            else
+            {
+                shieldElement = "";
+                shieldImg = artFon;
+                LvlError();
+                bufShield = 0;
+            }
         }
         private void BigFireShield_Click(object sender, RoutedEventArgs e)
         {
@@ -313,6 +400,8 @@ namespace Mystery
         private void Shield_Click(object sender, RoutedEventArgs e)
         {
             shieldFlag = false;
+            astralPower += bufShield;
+            bufShield = 0;
             shieldNumber = 0;
             shieldElement = null;
             ShieldButton.Visibility = Visibility.Hidden;
@@ -324,14 +413,37 @@ namespace Mystery
         //********************************************************************************************//
         private void CloackOfVipers_Click(object sender, RoutedEventArgs e)
         {
-            cloackImg = cloackOfVipersImg;
-            cloackFlag = true;
-            CloackButton.Visibility = Visibility.Visible;
-            LoadImage(CloackImage, cloackImg);
+            if (lvl > 12)
+            {
+                astralPower += bufCloack;
+                bufCloack = 5;
+                if (astralPower >= bufCloack)
+                {
+                    cloackImg = cloackOfVipersImg;
+                    cloackFlag = true;
+                    CloackButton.Visibility = Visibility.Visible;
+                    LoadImage(CloackImage, cloackImg);
+                    astralPower -= bufCloack;
+                }
+                else
+                {
+                    AstralPowerError();
+                    bufCloack = 0;
+                }
+            }
+            else
+            {
+                shieldElement = "";
+                shieldImg = artFon;
+                LvlError();
+                bufShield = 0;
+            }
         }
         private void Cloack_Click(object sender, RoutedEventArgs e)
         {
             cloackFlag = false;
+            astralPower += bufCloack;
+            bufCloack = 0;
             CloackButton.Visibility = Visibility.Hidden;
             cloackImg = artFon;
             LoadImage(CloackImage, cloackImg);
@@ -339,15 +451,28 @@ namespace Mystery
         //*******************************************************************************************//
         private void Cross_Click(object sender, RoutedEventArgs e)
         {
-            amuletImg = crossImg;
-            amuletFlag = true;
-            amuletNumber = 1;
-            AmuletButton.Visibility = Visibility.Visible;
-            LoadImage(AmuletImage, amuletImg);
+            astralPower += bufAmulet;
+            bufAmulet = 2;
+            if (astralPower >= bufAmulet)
+            {
+                amuletImg = crossImg;
+                amuletFlag = true;
+                amuletNumber = 1;
+                AmuletButton.Visibility = Visibility.Visible;
+                LoadImage(AmuletImage, amuletImg);
+                astralPower -= bufAmulet;
+            }
+            else
+            {
+                AstralPowerError();
+                bufAmulet = 0;
+            }
         }
         private void Amulet_Click(object sender, RoutedEventArgs e)
         {
             amuletFlag = false;
+            astralPower += bufAmulet;
+            bufAmulet = 0;
             amuletNumber = 0;
             AmuletButton.Visibility = Visibility.Hidden;
             amuletImg = artFon;
@@ -356,15 +481,38 @@ namespace Mystery
         //*******************************************************************************************//
         private void OrksRing_Click(object sender, RoutedEventArgs e)
         {
-            ringImg = orksRingImg;
-            ringFlag = true;
-            ringNumber = 1;
-            RingButton.Visibility = Visibility.Visible;
-            LoadImage(RingImage, ringImg);
+            if (lvl > 12)
+            {
+                astralPower += bufRing;
+                bufRing = 2;
+                if (astralPower >= bufRing)
+                {
+                    ringImg = orksRingImg;
+                    ringFlag = true;
+                    ringNumber = 1;
+                    RingButton.Visibility = Visibility.Visible;
+                    LoadImage(RingImage, ringImg);
+                    astralPower -= bufRing;
+                }
+                else
+                {
+                    AstralPowerError();
+                    bufRing = 0;
+                }
+            }
+            else
+            {
+                shieldElement = "";
+                shieldImg = artFon;
+                LvlError();
+                bufShield = 0;
+            }
         }
         private void Ring_Click(object sender, RoutedEventArgs e)
         {
             ringFlag = false;
+            astralPower += bufRing;
+            bufRing = 0;
             ringNumber = 0;
             RingButton.Visibility = Visibility.Hidden;
             ringImg = artFon;
@@ -373,9 +521,22 @@ namespace Mystery
         //*******************************************************************************************//
         void boots()
         {
-            bootsFlag = true;
-            BootsButton.Visibility = Visibility.Visible;
-            LoadImage(BootsImage, bootsImg);
+            astralPower += bufBoots;
+            bufBoots = 3;
+            if (astralPower >= bufBoots)
+            {
+                bootsFlag = true;
+                BootsButton.Visibility = Visibility.Visible;
+                LoadImage(BootsImage, bootsImg);
+                astralPower -= bufBoots;
+            }
+            else
+            {
+                bootsElement = "";
+                bootsImg = artFon;
+                AstralPowerError();
+                bufBoots = 0;
+            }
         }
         private void FireBoots_Click(object sender, RoutedEventArgs e)
         {
@@ -410,6 +571,8 @@ namespace Mystery
         private void Boots_Click(object sender, RoutedEventArgs e)
         {
             bootsFlag = false;
+            astralPower += bufBoots;
+            bufBoots = 0;
             bootsElement = null;
             BootsButton.Visibility = Visibility.Hidden;
             bootsImg = artFon;
@@ -423,8 +586,72 @@ namespace Mystery
             BootsButton.Visibility = Visibility.Visible;
             LoadImage(Rune1Image, runeImg1);
         }
+        void RunPos3(string element, string img, int ap, int rn)
+        {
+            astralPower += bufRune3;
+            bufRune3 = ap;
+            if (astralPower >= bufRune3)
+            {
+                runeFlag3 = true;
+                RuneSlot3Button.Visibility = Visibility.Visible;
+                runeElement3 = element;
+                runeImg3 = img;
+                LoadImage(Rune3Image, runeImg3);
+                runeNumber3 = rn;
+                astralPower -= bufRune3;
+            }
+            else
+            {
+                AstralPowerError();
+                bufRune3 = 0;
+            }
+        }
+        void RunPos2(string element, string img, int ap, int rn)
+        {
+            astralPower += bufRune2;
+            bufRune2 = ap;
+            if (astralPower >= bufRune2)
+            {
+                runeFlag2 = true;
+                RuneSlot2Button.Visibility = Visibility.Visible;
+                runeElement2 = element;
+                runeImg2 = img;
+                LoadImage(Rune2Image, runeImg2);
+                runeNumber2 = rn;
+                astralPower -= bufRune2;
+            }
+            else
+            {
+                AstralPowerError();
+                bufRune2 = 0;
+            }
+        }
+        void RunPos1(string element, string img, int ap, int rn)
+        {
+            astralPower += bufRune1;
+            bufRune1 = ap;
+            if (astralPower >= bufRune1)
+            {
+                runeFlag1 = true;
+                RuneSlot1Button.Visibility = Visibility.Visible;
+                runeElement1 = element;
+                runeImg1 = img;
+                LoadImage(Rune1Image, runeImg1);
+                runeNumber1 = rn;
+                astralPower-=bufRune1;
+            }
+            else
+            {
+                AstralPowerError();
+                bufRune1 = 0;
+            }
+        }
+
         private void FireRune_Click(object sender, RoutedEventArgs e)
         {
+            string s = "fire";
+            int rn = 3;
+            int ap = 1;
             if (runeFlag1)
             {
                 if (runeFlag2)
@@ -435,37 +662,26 @@ namespace Mystery
                     }
                     else
                     {
-                        runeFlag3 = true;
-                        RuneSlot3Button.Visibility = Visibility.Visible;
-                        runeElement3 = "fire";
-                        runeImg3 = fireRuneImg;
-                        LoadImage(Rune3Image, runeImg3);
-                        runeNumber3 = 3;
+                        RunPos3(s, fireRuneImg, ap, rn);
+                       
                     }
                 }
                 else
                 {
-                    runeFlag2 = true;
-                    RuneSlot2Button.Visibility = Visibility.Visible;
-                    runeElement2 = "fire";
-                    runeImg2 = fireRuneImg;
-                    LoadImage(Rune2Image, runeImg2);
-                    runeNumber2 = 3;
+                    RunPos2(s, fireRuneImg, ap, rn);
                 }
             }
             else
             {
+                RunPos1(s, fireRuneImg, ap, rn);
 
-                runeFlag1 = true;
-                RuneSlot1Button.Visibility = Visibility.Visible;
-                runeElement1 = "fire";
-                runeImg1 = fireRuneImg;
-                LoadImage(Rune1Image, runeImg1);
-                runeNumber1 = 3;
             }
         }
         private void WaterRune_Click(object sender, RoutedEventArgs e)
         {
+            string s = "water";
+            int rn = 3;
+            int ap = 1;
             if (runeFlag1)
             {
                 if (runeFlag2)
@@ -476,37 +692,24 @@ namespace Mystery
                     }
                     else
                     {
-                        runeFlag3 = true;
-                        RuneSlot3Button.Visibility = Visibility.Visible;
-                        runeElement3 = "water";
-                        runeImg3 = waterRuneImg;
-                        LoadImage(Rune3Image, runeImg3);
-                        runeNumber3 = 3;
+                        RunPos3(s, waterRuneImg, ap, rn);
                     }
                 }
                 else
                 {
-                    runeFlag2 = true;
-                    RuneSlot2Button.Visibility = Visibility.Visible;
-                    runeElement2 = "water";
-                    runeImg2 = waterRuneImg;
-                    LoadImage(Rune2Image, runeImg2);
-                    runeNumber2 = 3;
+                    RunPos2(s, waterRuneImg, ap, rn);
                 }
             }
             else
             {
-
-                runeFlag1 = true;
-                RuneSlot1Button.Visibility = Visibility.Visible;
-                runeElement1 = "water";
-                runeImg1 = waterRuneImg;
-                LoadImage(Rune1Image, runeImg1);
-                runeNumber1 = 3;
+                RunPos1(s, waterRuneImg, ap, rn);
             }
         }
         private void WindRune_Click(object sender, RoutedEventArgs e)
         {
+            string s = "wind";
+            int rn = 3;
+            int ap = 1;
             if (runeFlag1)
             {
                 if (runeFlag2)
@@ -517,37 +720,24 @@ namespace Mystery
                     }
                     else
                     {
-                        runeFlag3 = true;
-                        RuneSlot3Button.Visibility = Visibility.Visible;
-                        runeElement3 = "wind";
-                        runeImg3 = windRuneImg;
-                        LoadImage(Rune3Image, runeImg3);
-                        runeNumber3 = 3;
+                        RunPos3(s, windRuneImg, ap, rn);
                     }
                 }
                 else
                 {
-                    runeFlag2 = true;
-                    RuneSlot2Button.Visibility = Visibility.Visible;
-                    runeElement2 = "wind";
-                    runeImg2 = windRuneImg;
-                    LoadImage(Rune2Image, runeImg2);
-                    runeNumber2 = 3;
+                    RunPos2(s, windRuneImg, ap, rn);
                 }
             }
             else
             {
-
-                runeFlag1 = true;
-                RuneSlot1Button.Visibility = Visibility.Visible;
-                runeElement1 = "wind";
-                runeImg1 = windRuneImg;
-                LoadImage(Rune1Image, runeImg1);
-                runeNumber1 = 3;
+                RunPos1(s, windRuneImg, ap, rn);
             }
         }
         private void EarthRune_Click(object sender, RoutedEventArgs e)
         {
+            string s = "earth";
+            int rn = 3;
+            int ap = 1;
             if (runeFlag1)
             {
                 if (runeFlag2)
@@ -558,37 +748,25 @@ namespace Mystery
                     }
                     else
                     {
-                        runeFlag3 = true;
-                        RuneSlot3Button.Visibility = Visibility.Visible;
-                        runeElement3 = "earth";
-                        runeImg3 = earthRuneImg;
-                        LoadImage(Rune3Image, runeImg3);
-                        runeNumber3 = 3;
+                        RunPos3(s, earthRuneImg, ap, rn);
                     }
                 }
                 else
                 {
-                    runeFlag2 = true;
-                    RuneSlot2Button.Visibility = Visibility.Visible;
-                    runeElement2 = "earth";
-                    runeImg2 = earthRuneImg;
-                    LoadImage(Rune2Image, runeImg2);
-                    runeNumber2 = 3;
+                    RunPos2(s, earthRuneImg, ap, rn);
                 }
             }
             else
             {
 
-                runeFlag1 = true;
-                RuneSlot1Button.Visibility = Visibility.Visible;
-                runeElement1 = "earth";
-                runeImg1 = earthRuneImg;
-                LoadImage(Rune1Image, runeImg1);
-                runeNumber1 = 3;
+                RunPos1(s, earthRuneImg, ap, rn);
             }
         }
         private void DeathRune_Click(object sender, RoutedEventArgs e)
         {
+            string s = "death";
+            int rn = 3;
+            int ap = 1;
             if (runeFlag1)
             {
                 if (runeFlag2)
@@ -599,37 +777,24 @@ namespace Mystery
                     }
                     else
                     {
-                        runeFlag3 = true;
-                        RuneSlot3Button.Visibility = Visibility.Visible;
-                        runeElement3 = "death";
-                        runeImg3 = deathRuneImg;
-                        LoadImage(Rune3Image, runeImg3);
-                        runeNumber3 = 3;
+                        RunPos3(s, deathRuneImg, ap, rn);
                     }
                 }
                 else
                 {
-                    runeFlag2 = true;
-                    RuneSlot2Button.Visibility = Visibility.Visible;
-                    runeElement2 = "death";
-                    runeImg2 = deathRuneImg;
-                    LoadImage(Rune2Image, runeImg2);
-                    runeNumber2 = 3;
+                    RunPos2(s, deathRuneImg, ap, rn);
                 }
             }
             else
             {
-
-                runeFlag1 = true;
-                RuneSlot1Button.Visibility = Visibility.Visible;
-                runeElement1 = "death";
-                runeImg1 = deathRuneImg;
-                LoadImage(Rune1Image, runeImg1);
-                runeNumber1 = 3;
+                RunPos1(s, deathRuneImg, ap, rn);
             }
         }
         private void Potion_Click(object sender, RoutedEventArgs e)
         {
+            string s = "";
+            int rn = 1;
+            int ap = 2;
             if (runeFlag1)
             {
                 if (runeFlag2)
@@ -640,35 +805,25 @@ namespace Mystery
                     }
                     else
                     {
-                        runeFlag3 = true;
-                        RuneSlot3Button.Visibility = Visibility.Visible;
-                        runeImg3 = potionImg;
-                        LoadImage(Rune3Image, runeImg3);
-                        runeNumber3 = 1;
+                        RunPos3(s, potionImg, ap, rn);
                     }
                 }
                 else
                 {
-                    runeFlag2 = true;
-                    RuneSlot2Button.Visibility = Visibility.Visible;
-                    runeImg2 = potionImg;
-                    LoadImage(Rune2Image, runeImg2);
-                    runeNumber2 = 1;
+                    RunPos2(s, potionImg, ap, rn);
                 }
             }
             else
             {
-
-                runeFlag1 = true;
-                RuneSlot1Button.Visibility = Visibility.Visible;
-                runeImg1 = potionImg;
-                LoadImage(Rune1Image, runeImg1);
-                runeNumber1 = 1;
+                RunPos1(s, potionImg, ap, rn);
 
             }
         }
         private void Heal_Click(object sender, RoutedEventArgs e)
         {
+            string s = "";
+            int rn = 2;
+            int ap = 1;
             if (runeFlag1)
             {
                 if (runeFlag2)
@@ -679,36 +834,25 @@ namespace Mystery
                     }
                     else
                     {
-                        runeFlag3 = true;
-                        RuneSlot3Button.Visibility = Visibility.Visible;
-                        runeImg3 = healImg;
-                        LoadImage(Rune3Image, runeImg3);
-                        runeNumber3 = 2;
+                        RunPos3(s, healImg, ap, rn); 
                     }
                 }
                 else
                 {
-                    runeFlag2 = true;
-                    RuneSlot2Button.Visibility = Visibility.Visible;
-                    runeImg2 = healImg;
-                    LoadImage(Rune2Image, runeImg2);
-                    runeNumber2 = 2;
+                    RunPos2(s, healImg, ap, rn);
                 }
             }
             else
             {
-
-                runeFlag1 = true;
-                RuneSlot1Button.Visibility = Visibility.Visible;
-                runeImg1 = healImg;
-                LoadImage(Rune1Image, runeImg1);
-                runeNumber1 = 2;
+                RunPos1(s, healImg, ap, rn);
             }
         }
         
         private void Rune1_Click(object sender, RoutedEventArgs e)
         {
             runeFlag1 = false;
+            astralPower += bufRune1;
+            bufRune1 = 0;
             RuneSlot1Button.Visibility = Visibility.Hidden;
             runeImg1 = artFon;
             LoadImage(Rune1Image, runeImg1);
@@ -718,6 +862,8 @@ namespace Mystery
         private void Rune2_Click(object sender, RoutedEventArgs e)
         {
             runeFlag2 = false;
+            astralPower += bufRune2;
+            bufRune2 = 0;
             RuneSlot2Button.Visibility = Visibility.Hidden;
             runeImg2 = artFon;
             LoadImage(Rune2Image, runeImg2);
@@ -727,6 +873,8 @@ namespace Mystery
         private void Rune3_Click(object sender, RoutedEventArgs e)
         {
             runeFlag3 = false;
+            astralPower += bufRune3;
+            bufRune3 = 0;
             RuneSlot3Button.Visibility = Visibility.Hidden;
             runeImg3 = artFon;
             LoadImage(Rune3Image, runeImg3);
@@ -735,6 +883,15 @@ namespace Mystery
         }
         //******************************************************************************************//
         bool end = false;
+
+        void AstralPowerError()
+        {
+            MessageBox.Show("Недостаточно астральной силы");
+        }
+        void LvlError()
+        {
+            MessageBox.Show("Доступно с 14 уровня");
+        }
 
         public bool returnEnd()
         {

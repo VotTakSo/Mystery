@@ -24,7 +24,8 @@ namespace Mystery
         //Массив всех существ
         public Creature[] mass = new Creature[11];
 
-        protected Player mrTorry = new Player(true, "fire", "water",false);
+        protected Player mrTorry = new Player(true);
+        
         protected Player enemy = new Player(false);
         
         
@@ -374,10 +375,16 @@ namespace Mystery
             mana = ChooseElement(secondPlayer.weaponElements, firstPlayer);
             if (!mrTorry.first)
             {
+                for (int i = 1; i < 6; i++)
+                {
+                    if (mass[i] != null)
+                        mrTorry.PlayerSkill(mass, mass[i], enemy, mrTorry.skillLvl);
+                }
                 for (int i = 6, j = 1; i < 11; i++, j++)
                 {
                     if (mass[i] != null)
                     {
+               
                         mrTorry.Weapon(mass, mana, 1, 6); //Последний параметр будет меняться в зависимости от выбраного артефакта
                         // art.DamageBow( mass, secondPlayer.water, i, 11); //Последний параметр будет меняться в зависимости от выбраного артефакта
                         // art.Damage(mass, mana, 1, 6); //Последний параметр будет меняться в зависимости от выбраного артефакта
@@ -390,6 +397,11 @@ namespace Mystery
             }
             else
             {
+                for (int i = 6; i < 11; i++)
+                {
+                    if (mass[i] != null)
+                        enemy.PlayerSkill(mass, mass[i], mrTorry, enemy.skillLvl);
+                }
                 for (int i = 1; i < 6; i++)
                 {
                     if (mass[i] != null)

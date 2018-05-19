@@ -108,6 +108,26 @@ namespace Mystery
         public bool Player2shieldFlag = false;
         public string Player2shieldImage;
 
+        public int Player1Lvl;
+        public string Player1Element;
+        public bool Player1ElementSkill;
+        public bool Player1Skill;
+        public int Player1ElementSkillLvl;
+        public int Player1SkillLvl;
+        public int Player1AstralPower;
+        public int Player1HP;
+
+        public int Player2Lvl;
+        public string Player2Element;
+        public bool Player2ElementSkill;
+        public bool Player2Skill;
+        public int Player2ElementSkillLvl;
+        public int Player2SkillLvl;
+        public int Player2AstralPower;
+        public int Player2HP;
+
+        int Lvl;
+
         public void Init()
         {
             game = new Game(this);
@@ -124,15 +144,33 @@ namespace Mystery
         {
             LvlElement wLE1 = new LvlElement();
             wLE1.ShowDialog();
+            Lvl = wLE1.lvl;
+            if (wLE1.lvl == 9)
+                Player1HP = 67;
+            else
+                Player1HP = 82;
+            Player1Element = wLE1.NameElement;
+            Player1ElementSkill = wLE1.elementSkillFlag;
+            Player1Skill = wLE1.skillFlag;
+            Player1ElementSkillLvl = wLE1.elementSkillLvl;
+            Player1SkillLvl = wLE1.skillLvl;
+            Player1AstralPower = wLE1.astralPower+1;
             end = wLE1.returnEnd();
             if (!end) this.Close();
 
-            LvlElement wLE2 = new LvlElement();
+            LvlElement wLE2 = new LvlElement(Lvl);
             wLE2.ShowDialog();
+            Player2HP = Player1HP;
+            Player2Element = wLE2.NameElement;
+            Player2ElementSkill = wLE2.elementSkillFlag;
+            Player2Skill = wLE2.skillFlag;
+            Player2ElementSkillLvl = wLE2.elementSkillLvl;
+            Player2SkillLvl = wLE2.skillLvl;
+            Player2AstralPower = wLE2.astralPower+1;
             end = wLE2.returnEnd();
             if (!end) this.Close();
-
-            ArtWindow w1 = new ArtWindow("Выбирвет первый игрок");
+            
+            ArtWindow w1 = new ArtWindow("Выбирвет первый игрок", Player1AstralPower, Lvl);
             w1.ShowDialog();
             end = w1.returnEnd();
             if (!end) this.Close();
@@ -153,14 +191,14 @@ namespace Mystery
             runeFlag3 = w1.runeFlag3;
             runeImage3 = w1.runeImg3;
 
-          
 
-            
+
+
 
             shieldElement = w1.shieldElement;
-            shieldNumber  = w1.shieldNumber;
-            shieldFlag    = w1.shieldFlag;
-            shieldImage   = w1.shieldImg;
+            shieldNumber = w1.shieldNumber;
+            shieldFlag = w1.shieldFlag;
+            shieldImage = w1.shieldImg;
 
             cloackFlag = w1.cloackFlag;
             cloackImage = w1.cloackImg;
@@ -185,7 +223,7 @@ namespace Mystery
             end = w1.returnEnd();
             if (!end) this.Close();
 
-            ArtWindow w2 = new ArtWindow("Выбирвет второй игрок");
+            ArtWindow w2 = new ArtWindow("Выбирвет второй игрок",Player2AstralPower, Lvl);
             w2.ShowDialog();
             Player2runeElement1 = w2.runeElement1;
             Player2runeNumber1 = w2.runeNumber1;
@@ -233,7 +271,7 @@ namespace Mystery
 
             Init();
             InitializeComponent();
-           
+
             for (int i = 0; i < poleBuffer.Length; i++)
             {
                 poleBuffer[i] = false;
@@ -249,8 +287,8 @@ namespace Mystery
             LoadImage(Player2RuneSlot2Img, Player2runeImage2);
             LoadImage(Player2RuneSlot3Img, Player2runeImage3);
             game.Refresh();
-          
-        
+
+
         }
 
         //*******************************************************************************//
