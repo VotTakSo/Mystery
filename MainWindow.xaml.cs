@@ -157,9 +157,9 @@ namespace Mystery
             Player1AstralPower = wLE1.astralPower+1;
             end = wLE1.returnEnd();
             if (!end) this.Close();
-
-            LvlElement wLE2 = new LvlElement(Lvl);
-            wLE2.ShowDialog();
+            LvlElement wLE2 = wLE1;
+           // LvlElement wLE2 = new LvlElement(Lvl);
+          //  wLE2.ShowDialog();
             Player2HP = Player1HP;
             Player2Element = wLE2.NameElement;
             Player2ElementSkill = wLE2.elementSkillFlag;
@@ -222,9 +222,9 @@ namespace Mystery
 
             end = w1.returnEnd();
             if (!end) this.Close();
-
-            ArtWindow w2 = new ArtWindow("Выбирвет второй игрок",Player2AstralPower, Lvl);
-            w2.ShowDialog();
+            ArtWindow w2 = w1;
+           // ArtWindow w2 = new ArtWindow("Выбирвет второй игрок",Player2AstralPower, Lvl);
+          //  w2.ShowDialog();
             Player2runeElement1 = w2.runeElement1;
             Player2runeNumber1 = w2.runeNumber1;
             Player2runeFlag1 = w2.runeFlag1;
@@ -264,7 +264,7 @@ namespace Mystery
             Player2weaponNumber = w2.weaponNumber;
             Player2weaponFlag = w2.weaponFlag;
             Player2weaponImage = w2.weaponImg;
-
+           
             Player2end = w2.returnEnd();
             if (!Player2end) this.Close();
 
@@ -279,6 +279,24 @@ namespace Mystery
             game.wTest();
             ChooseGrid.Visibility = Visibility.Collapsed;
             ChooseEnemyGrid.Visibility = Visibility.Collapsed;
+
+            LoadImage(weaponImg_Copy, Player2weaponImage);
+            LoadImage(bootsImg, bootsImage);
+            LoadImage(bootsImg_Copy, Player2bootsImage);
+            LoadImage(amuletImg, amuletImage);
+            LoadImage(amuletImg_Copy, Player2amuletImage);
+            LoadImage(shieldImg,shieldImage);
+            LoadImage(shieldImg_Copy, Player2shieldImage);
+            LoadImage(ringImg, ringImage);
+            LoadImage(ringImg_Copy, Player2ringImage);
+            LoadImage(cloackImg, cloackImage);
+            LoadImage(cloackImg_Copy, Player2cloackImage);
+            LoadImage(headImg, artFon);
+            LoadImage(headImg_Copy, artFon);
+            LoadImage(bandImg, artFon);
+            LoadImage(bandImg_Copy, artFon);
+            LoadImage(broneImg, artFon);
+            LoadImage(broneImg_Copy, artFon);
 
             LoadImage(RuneSlot1Img, runeImage1);
             LoadImage(RuneSlot2Img, runeImage2);
@@ -332,20 +350,153 @@ namespace Mystery
         {
             game.card();
         }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        public void FireButton1_Click(object sender, RoutedEventArgs e)
         {
-            game.TargetSpell();
+            game.Goblin();
         }
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        public void FireButton2_Click(object sender, RoutedEventArgs e)
         {
-            // game.AllHeal();
-            //game.card2();
+            game.FireWall();
+        }
+        public void FireButton3_Click(object sender, RoutedEventArgs e)
+        {
+            game.Infernal();
+        }
+        public void FireButton4_Click(object sender, RoutedEventArgs e)
+        {
+            game.Meteor();
+        }
+        public void FireButton5_Click(object sender, RoutedEventArgs e)
+        {
+            game.Inferno();
+        }
+        public void FireButton6_Click(object sender, RoutedEventArgs e)
+        {
+            game.Scorpio();
         }
 
-        private void Ghost_Click(object sender, RoutedEventArgs e)
+        public void WindButton1_Click(object sender, RoutedEventArgs e)
         {
-            game.ghost();
+            game.Storm();
         }
+        public void WindButton2_Click(object sender, RoutedEventArgs e)
+        {
+            game.Assasin();
+        }
+        public void WindButton3_Click(object sender, RoutedEventArgs e)
+        {
+            game.Gargoule();
+        }
+        public void WindButton4_Click(object sender, RoutedEventArgs e)
+        {
+            game.Sabbath();
+        }
+        public void WindButton5_Click(object sender, RoutedEventArgs e)
+        {
+            game.Discharge();
+        }
+        public void WindButton6_Click(object sender, RoutedEventArgs e)
+        {
+            game.ChainLightning();
+        }
+
+
+        public void WaterButton1_Click(object sender, RoutedEventArgs e)
+        {
+            game.Triton();
+        }
+        public void WaterButton2_Click(object sender, RoutedEventArgs e)
+        {
+            game.SeaSnake();
+        }
+        public void WaterButton3_Click(object sender, RoutedEventArgs e)
+        {
+            game.TargetHeal();
+        }
+        public void WaterButton4_Click(object sender, RoutedEventArgs e)
+        {
+            game.Heal();
+        }
+        public void WaterButton5_Click(object sender, RoutedEventArgs e)
+        {
+            game.ElementVortex();
+        }
+        public void WaterButton6_Click(object sender, RoutedEventArgs e)
+        {
+            game.IceMonster();
+        }
+        public void WaterButton7_Click(object sender, RoutedEventArgs e)
+        {
+            game.CallOfTheSirens();
+        }
+
+        public void EarthButton1_Click(object sender, RoutedEventArgs e)
+        {
+            game.Druid();
+        }
+        public void EarthButton2_Click(object sender, RoutedEventArgs e)
+        {
+            game.Prostration();
+        }
+        public void EarthButton3_Click(object sender, RoutedEventArgs e)
+        {
+            game.EarthWorms();
+        }
+        public void EarthButton4_Click(object sender, RoutedEventArgs e)
+        {
+            game.Frog();
+        }
+        public void EarthButton5_Click(object sender, RoutedEventArgs e)
+        {
+            game.Dendroid();
+        }
+        public void EarthButton6_Click(object sender, RoutedEventArgs e)
+        {
+            game.AncientMonster();
+        }
+        public void EarthButton7_Click(object sender, RoutedEventArgs e)
+        {
+            game.Kramola();
+        }
+        public void DeathButton1_Click(object sender, RoutedEventArgs e)
+        {
+            game.Demoralization();
+        }
+        public void DeathButton2_Click(object sender, RoutedEventArgs e)
+        {
+            game.Damnation();
+        }
+        public void DeathButton3_Click(object sender, RoutedEventArgs e)
+        {
+            game.Ghost();
+        }
+        public void DeathButton4_Click(object sender, RoutedEventArgs e)
+        {
+            game.Weakness();
+        }
+        public void DeathButton5_Click(object sender, RoutedEventArgs e)
+        {
+            game.Decomposition();
+        }
+        public void DeathButton6_Click(object sender, RoutedEventArgs e)
+        {
+            game.Regeneration();
+        }
+        public void NeitralButton1_Click(object sender, RoutedEventArgs e)
+        {
+            game.Fairy();
+        }
+        public void NeitralButton2_Click(object sender, RoutedEventArgs e)
+        {
+            game.Quicksand();
+        }
+        public void NeitralButton3_Click(object sender, RoutedEventArgs e)
+        {
+            game.card();
+        }
+
+
+       
 
         //*******************************************************************************//
 
@@ -497,57 +648,58 @@ namespace Mystery
         private void target1Click(object sender, RoutedEventArgs e)
         {
             targetNumber = 1;
-            game.SpellCast();
+            game.EndTarget();
         }
         private void target2Click(object sender, RoutedEventArgs e)
         {
             targetNumber = 2;
-            game.SpellCast();
+            game.EndTarget();
         }
         private void target3Click(object sender, RoutedEventArgs e)
         {
             targetNumber = 3;
-            game.SpellCast();
+            game.EndTarget();
         }
         private void target4Click(object sender, RoutedEventArgs e)
         {
             targetNumber = 4;
-            game.SpellCast();
+            game.EndTarget();
         }
         private void target5Click(object sender, RoutedEventArgs e)
         {
             targetNumber = 5;
-            game.SpellCast();
+            game.EndTarget();
         }
         private void target6Click(object sender, RoutedEventArgs e)
         {
             targetNumber = 6;
-            game.SpellCast();
+            game.EndTarget();
         }
         private void target7Click(object sender, RoutedEventArgs e)
         {
             targetNumber = 7;
-            game.SpellCast();
+            game.EndTarget();
         }
         private void target8Click(object sender, RoutedEventArgs e)
         {
             targetNumber = 8;
-            game.SpellCast();
+            game.EndTarget();
         }
         private void target9Click(object sender, RoutedEventArgs e)
         {
             targetNumber = 9;
-            game.SpellCast();
+            game.EndTarget();
         }
         private void target10Click(object sender, RoutedEventArgs e)
         {
             targetNumber = 10;
-            game.SpellCast();
+            game.EndTarget();
         }
         //Отмена выбора существа
         private void BackClick(object sender, RoutedEventArgs e)
         {
-
+            ChooseGrid.Visibility = Visibility.Collapsed;
+            ChooseEnemyGrid.Visibility = Visibility.Collapsed;
             game.Refresh();
         }
 
@@ -588,7 +740,7 @@ namespace Mystery
         {
             game.Player2rune1();
             LoadImage(Player2RuneSlot1Img, artFon);
-            runeFlag1 = game.rune1flag;
+            Player2runeFlag1 = game.rune1flag;
             Player2RuneSlot1.Visibility = Visibility.Hidden;
             Player2RuneSlot2.Visibility = Visibility.Hidden;
             Player2RuneSlot3.Visibility = Visibility.Hidden;
@@ -597,7 +749,7 @@ namespace Mystery
         {
             game.Player2rune2();
             LoadImage(Player2RuneSlot2Img, artFon);
-            runeFlag2 = game.rune2flag;
+            Player2runeFlag2 = game.rune2flag;
             Player2RuneSlot1.Visibility = Visibility.Hidden;
             Player2RuneSlot2.Visibility = Visibility.Hidden;
             Player2RuneSlot3.Visibility = Visibility.Hidden;
@@ -606,7 +758,7 @@ namespace Mystery
         {
             game.Player2rune3();
             LoadImage(Player2RuneSlot3Img, artFon);
-            runeFlag3 = game.rune3flag;
+            Player2runeFlag3 = game.rune3flag;
             Player2RuneSlot1.Visibility = Visibility.Hidden;
             Player2RuneSlot2.Visibility = Visibility.Hidden;
             Player2RuneSlot3.Visibility = Visibility.Hidden;

@@ -20,18 +20,6 @@ namespace Mystery
             return cre;
         }
 
-        public Creature ReturnAttack(Creature cre)
-        {
-            if (cre != null)
-                if (cre.hodPas != 0)
-                {
-                    cre.hodPas--;
-                    if (cre.hodPas == 0)
-                    {
-                        cre.Attack = cre.buffAtack;
-                    }
-                }
-            return cre;
-        }
+       
     }
 }

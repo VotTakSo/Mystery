@@ -357,187 +357,1113 @@ namespace Mystery
         }
         int Armor;
         
-        
-
-
         public void wTest ()
             {
             LoadImage(wind.weaponImg, wind.weaponImage);
         }
         
-        //При выборе ячейки определяет какое заклинание воздействует на эту ячейку
-        public void SpellCast()
-        {
-            switch (spellNumber)
-            {
-                case 1:
-                    {
-                        TargetSpell();
-                        break;
-                    }
-            }
-        }
-        int spellNumber;
+      
         Creature Master(Creature cre)
         {
-            if (mrTorry.first) { cre.master = mrTorry; } else { cre.master = enemy; }
+            if (mrTorry.first) { cre.master = mrTorry; cre.enemy = enemy; } else { cre.master = enemy; cre.enemy = mrTorry; }
             return cre;
         }
-//********************************************************************//
+        //********************************************************************//
+        int buffArmor = 0;
         //Карты
         public void card()
         {
+        }
+
+        int PlayerMana(Player pl, Creature cre)
+        {
+            int mana = 0;
+            switch(cre.Element)
+            {
+                case "fire":
+                    {
+                        mana = pl.fire;
+                        break;
+                    }
+                case "wind":
+                    {
+                        mana = pl.wind;
+                        break;
+                    }
+                case "water":
+                    {
+                        mana = pl.water;
+                        break;
+                    }
+                case "earth":
+                    {
+                        mana = pl.earth;
+                        break;
+                    }
+                case "death":
+                    {
+                        mana = pl.death;
+                        break;
+                    }
+            }
+            return mana;
+        }
+        int PlayerMana(Player pl, Spell cre)
+        {
+            int mana = 0;
+            switch (cre.Element)
+            {
+                case "fire":
+                    {
+                        mana = pl.fire;
+                        break;
+                    }
+                case "wind":
+                    {
+                        mana = pl.wind;
+                        break;
+                    }
+                case "water":
+                    {
+                        mana = pl.water;
+                        break;
+                    }
+                case "earth":
+                    {
+                        mana = pl.earth;
+                        break;
+                    }
+                case "death":
+                    {
+                        mana = pl.death;
+                        break;
+                    }
+            }
+            return mana;
+        }
+        Player ReturnPlayerMana(Player pl, Creature cre, int mana)
+        {
+            
+            switch (cre.Element)
+            {
+                case "fire":
+                    {
+                        pl.fire=mana;
+                        break;
+                    }
+                case "wind":
+                    {
+                        pl.wind = mana;
+                        break;
+                    }
+                case "water":
+                    {
+                        pl.water = mana;
+                        break;
+                    }
+                case "earth":
+                    {
+                        pl.earth = mana;
+                        break;
+                    }
+                case "death":
+                    {
+                        pl.death = mana;
+                        break;
+                    }
+            }
+            return pl;
+        }
+
+        public Spell a;
+        public void EndTarget()
+        {
+            if (mass[wind.targetNumber] != null)
+            {
+                mrTorry.target = wind.targetNumber;
+                enemy.target = wind.targetNumber;
+
+                a.Action(mass, mrTorry, enemy);
+                EndChooseTarget();
+                CreatureDeth(mass[wind.targetNumber]);
+                //ReturnAttack();
+
+                wind.targetNumber = 0;
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorTarget();
+            }
+        }
+        //Огонь
+        public void Goblin()
+        {
+            int playerMana = 0;
             StartLogic();
             if (wind.poleNumber != 0)
-                if (firstPlayer.fire > 3)
+            {
+                Creature cre = new Goblin(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
                 {
-                   
-                    Goblin Goblin = new Goblin(wind.poleNumber, VsPole(wind.poleNumber));
-                   
                     //Добавление защиты с учетом щита
-                    if(mrTorry.first) Armor = mrTorry.Shield(mrTorry, Goblin.Element);
-                    else Armor = enemy.Shield(enemy, Goblin.Element);
-                    Goblin.armor += Armor;
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element)+mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element)+enemy.armor;
+                    cre.armor += Armor;
                     Armor = 0;
 
-                    Master(Goblin);
-                    mass[wind.poleNumber] = Goblin;
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
 
-                    LoadImage(Goblin.poleNumber, Goblin.img);
+                    LoadImage(cre.poleNumber, cre.img);
 
                     firstPlayer.water += 0;
 
                     wind.poleNumber = 0;
-                    
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
                     EndLogic();
                 }
                 else
                 {
                     wind.ErrorMana();
                 }
+            }
             else
             {
                 wind.ErrorPole();
             }
-
         }
-        public void TargetSpell()
+        public void FireWall()
         {
-            spellNumber = 1;
+            int playerMana = 0;
             StartLogic();
-         
-            //Проаерка маны
-            if (firstPlayer.death > -100)
+            if (wind.poleNumber != 0)
             {
-               
-                //Выбранао ли существо для взаимодействия
-                if (wind.targetNumber == 0)
+                Creature cre = new FireWall(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
                 {
-                    if (mrTorry.first)
-                    {
-                        wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
-                        wind.firstPlayerRB.Visibility = Visibility.Collapsed;
-                    }
-                    else
-                    {
-                        wind.ChooseGrid.Visibility = Visibility.Visible;
-                        wind.secondPlayerRB.Visibility = Visibility.Collapsed;
-                    }
-                    AllCollapsed();
-                    ElementsGridCollapsed();
-                   
-                }
-                else
-                //Если в выбранном поле есть существо
-                if (mass[wind.targetNumber] != null)
-                {
-                    mass[wind.targetNumber].Hp -= (10- mass[wind.targetNumber].armor);
-                   // firstPlayer.death -= 5;
-                    secondPlayer.HP -= 10;
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element)+mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element)+enemy.armor;
+                    cre.armor += Armor;
+                    Armor = 0;
 
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
 
-                    EndChooseTarget();
+                    LoadImage(cre.poleNumber, cre.img);
 
-                    
-                    CreatureDeth(mass[wind.targetNumber]);
-                    ReturnAttack();
+                    firstPlayer.water += 0;
 
-                    wind.targetNumber = 0;
+                    wind.poleNumber = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
                     EndLogic();
                 }
                 else
                 {
-                    wind.ErrorTarget();
+                    wind.ErrorMana();
                 }
             }
             else
             {
-                wind.ErrorMana();
+                wind.ErrorPole();
             }
-
         }
-     
-
-        public void AllHeal()
+        public void Infernal()
         {
+            int playerMana = 0;
             StartLogic();
-            if (firstPlayer.water > 8)
+            if (wind.poleNumber != 0)
             {
-                firstPlayer.HP += firstPlayer.water * 3;
+                Creature cre = new Infernal(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
+                {
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element)+mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element)+enemy.armor;
+                    cre.armor += Armor;
+                    Armor = 0;
 
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
 
-                firstPlayer.water += 0;
+                    LoadImage(cre.poleNumber, cre.img);
+
+                    firstPlayer.water += 0;
+
+                    wind.poleNumber = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
+                    EndLogic();
+                }
+                else
+                {
+                    wind.ErrorMana();
+                }
+            }
+            else
+            {
+                wind.ErrorPole();
+            }
+        }
+        public void Meteor()
+        {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new Meteorite();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                if (mrTorry.first)
+                    spell.Action(mass, mrTorry, enemy);
+                else
+                    spell.Action(mass, enemy, mrTorry);
                 EndLogic();
             }
             else
             {
                 wind.ErrorMana();
-
             }
-
-
-
         }
-
-
-        public void ghost()
+        public void Inferno()
         {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new Inferno();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                spell.Action(mass, mrTorry, enemy);
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void Scorpio()
+        {
+            int playerMana = 0;
             StartLogic();
             if (wind.poleNumber != 0)
-                if (firstPlayer.death > 2)
+            {
+                Creature cre = new Scorpio(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
                 {
-                    
-
-                    Ghost Ghost = new Ghost(wind.poleNumber, VsPole(wind.poleNumber));
-
-                    if (mrTorry.first) Armor = mrTorry.Shield(mrTorry, Ghost.Element);
-                    else Armor = enemy.Shield(enemy, Ghost.Element);
-                    Ghost.armor += Armor;
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element) + mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element) + enemy.armor;
+                    cre.armor += Armor;
                     Armor = 0;
 
-                    Master(Ghost);
-                    mass[wind.poleNumber] = Ghost;
-                
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
 
-                    LoadImage(wind.poleNumber, Ghost.img);
+                    LoadImage(cre.poleNumber, cre.img);
 
                     firstPlayer.water += 0;
-                    firstPlayer.death -= 3;
 
                     wind.poleNumber = 0;
-
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
                     EndLogic();
                 }
                 else
                 {
                     wind.ErrorMana();
                 }
+            }
             else
             {
                 wind.ErrorPole();
             }
-
         }
+        //Воздух
+        public void Storm()
+        {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new Storm();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                spell.Action(mass, mrTorry, enemy);
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void Assasin()
+        {
+            int playerMana = 0;
+            StartLogic();
+            if (wind.poleNumber != 0)
+            {
+                Creature cre = new Assasin(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
+                {
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element) + mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element) + enemy.armor;
+                    cre.armor += Armor;
+                    Armor = 0;
+
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
+
+                    LoadImage(cre.poleNumber, cre.img);
+
+                    firstPlayer.water += 0;
+
+                    wind.poleNumber = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
+                    EndLogic();
+                }
+                else
+                {
+                    wind.ErrorMana();
+                }
+            }
+            else
+            {
+                wind.ErrorPole();
+            }
+        }
+        public void Gargoule()
+        {
+            int playerMana = 0;
+            StartLogic();
+            if (wind.poleNumber != 0)
+            {
+                Creature cre = new Gargoyle(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
+                {
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element);
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element);
+                    cre.armor += Armor;
+                    Armor = 0;
+
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
+
+                    LoadImage(cre.poleNumber, cre.img);
+
+                    firstPlayer.water += 0;
+
+                    wind.poleNumber = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
+                    EndLogic();
+                }
+                else
+                {
+                    wind.ErrorMana();
+                }
+            }
+            else
+            {
+                wind.ErrorPole();
+            }
+        }
+        public void Sabbath()
+        {
+            Spell cast = new Sabbath();
+            int playerMana = 0;
+            spellNumber = 1;
+            StartLogic();
+            playerMana = PlayerMana(firstPlayer, cast);
+            if (playerMana >= cast.manaCast)
+            {
+                if (mrTorry.first)
+                {
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.firstPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.secondPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                AllCollapsed();
+                ElementsGridCollapsed();
+                a = cast;
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void Discharge()
+        {
+            Spell cast = new Discharge();
+            int playerMana = 0;
+            spellNumber = 1;
+            StartLogic();
+            playerMana = PlayerMana(firstPlayer, cast);
+            if (playerMana >= cast.manaCast)
+            {
+                if (mrTorry.first)
+                {
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.firstPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.secondPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                AllCollapsed();
+                ElementsGridCollapsed();
+                a = cast;
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void ChainLightning()
+        {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new ChainLightning();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                spell.Action(mass, mrTorry, enemy);
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        //Вода
+        public void Triton()
+        {
+            int playerMana = 0;
+            StartLogic();
+            if (wind.poleNumber != 0)
+            {
+                Creature cre = new Triton(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
+                {
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element) + mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element) + enemy.armor;
+                    cre.armor += Armor;
+                    Armor = 0;
+
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
+
+                    LoadImage(cre.poleNumber, cre.img);
+
+                    firstPlayer.water += 0;
+
+                    wind.poleNumber = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
+                    EndLogic();
+                }
+                else
+                {
+                    wind.ErrorMana();
+                }
+            }
+            else
+            {
+                wind.ErrorPole();
+            }
+        }
+        public void SeaSnake()
+        {
+            int playerMana = 0;
+            StartLogic();
+            if (wind.poleNumber != 0)
+            {
+                Creature cre = new SeaSnake(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
+                {
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element) + mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element) + enemy.armor;
+                    cre.armor += Armor;
+                    Armor = 0;
+
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
+
+                    LoadImage(cre.poleNumber, cre.img);
+
+                    firstPlayer.water += 0;
+
+                    wind.poleNumber = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
+                    EndLogic();
+                }
+                else
+                {
+                    wind.ErrorMana();
+                }
+            }
+            else
+            {
+                wind.ErrorPole();
+            }
+        }
+        public void TargetHeal()
+        {
+            Spell cast = new TargetHeal();
+            int playerMana = 0;
+            spellNumber = 1;
+            StartLogic();
+            playerMana = PlayerMana(firstPlayer, cast);
+            if (playerMana >= cast.manaCast)
+            {
+                if (mrTorry.first)
+                {
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.firstPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.secondPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                AllCollapsed();
+                ElementsGridCollapsed();
+                a = cast;
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void Heal()
+        {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new Heal();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                spell.Action(mass, mrTorry, enemy);
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void ElementVortex()
+        {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new ElementalVortex();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                spell.Action(mass, mrTorry, enemy);
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void IceMonster()
+        {
+            int playerMana = 0;
+            StartLogic();
+            if (wind.poleNumber != 0)
+            {
+                Creature cre = new IceMonster(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
+                {
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element) + mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element) + enemy.armor;
+                    cre.armor += Armor;
+                    Armor = 0;
+
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
+
+                    LoadImage(cre.poleNumber, cre.img);
+
+                    firstPlayer.water += 0;
+
+                    wind.poleNumber = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
+                    EndLogic();
+                }
+                else
+                {
+                    wind.ErrorMana();
+                }
+            }
+            else
+            {
+                wind.ErrorPole();
+            }
+        }
+        public void CallOfTheSirens()
+        {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new CallOfTheSirens();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                spell.Action(mass, mrTorry, enemy);
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        //Земля
+        public void Druid()
+        {
+            int playerMana = 0;
+            StartLogic();
+            if (wind.poleNumber != 0)
+            {
+                Creature cre = new Druid(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
+                {
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element) + mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element) + enemy.armor;
+                    cre.armor += Armor;
+                    Armor = 0;
+
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
+
+                    LoadImage(cre.poleNumber, cre.img);
+
+                    firstPlayer.water += 0;
+
+                    wind.poleNumber = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
+                    EndLogic();
+                }
+                else
+                {
+                    wind.ErrorMana();
+                }
+            }
+            else
+            {
+                wind.ErrorPole();
+            }
+        }
+        public void Prostration()
+        {
+            Spell cast = new Prostraion();
+            int playerMana = 0;
+            spellNumber = 1;
+            StartLogic();
+            playerMana = PlayerMana(firstPlayer, cast);
+            if (playerMana >= cast.manaCast)
+            {
+                if (mrTorry.first)
+                {
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.firstPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.secondPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                AllCollapsed();
+                ElementsGridCollapsed();
+                a = cast;
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void EarthWorms()
+        {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new EarthWorms();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                spell.Action(mass, mrTorry, enemy);
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void Frog()
+        {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new Frog();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                spell.Action(mass, mrTorry, enemy);
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void Dendroid()
+        {
+            int playerMana = 0;
+            StartLogic();
+            if (wind.poleNumber != 0)
+            {
+                Creature cre = new Dendroid(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
+                {
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element) + mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element) + enemy.armor;
+                    cre.armor += Armor;
+                    Armor = 0;
+
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
+
+                    LoadImage(cre.poleNumber, cre.img);
+
+                    firstPlayer.water += 0;
+
+                    wind.poleNumber = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
+                    EndLogic();
+                }
+                else
+                {
+                    wind.ErrorMana();
+                }
+            }
+            else
+            {
+                wind.ErrorPole();
+            }
+        }
+        public void AncientMonster()
+        {
+            int playerMana = 0;
+            StartLogic();
+            if (wind.poleNumber != 0)
+            {
+                Creature cre = new AncientMonster(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
+                {
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element) + mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element) + enemy.armor;
+                    cre.armor += Armor;
+                    Armor = 0;
+
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
+
+                    LoadImage(cre.poleNumber, cre.img);
+
+                    firstPlayer.water += 0;
+
+                    wind.poleNumber = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
+                    EndLogic();
+                }
+                else
+                {
+                    wind.ErrorMana();
+                }
+            }
+            else
+            {
+                wind.ErrorPole();
+            }
+        }
+        public void Kramola()
+        {
+            Spell cast = new Kramola();
+            int playerMana = 0;
+            spellNumber = 1;
+            StartLogic();
+            playerMana = PlayerMana(firstPlayer, cast);
+            if (playerMana >= cast.manaCast)
+            {
+                if (mrTorry.first)
+                {
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.firstPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.secondPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                AllCollapsed();
+                ElementsGridCollapsed();
+                a = cast;
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        //Смерть
+        public void Demoralization()
+        {
+            Spell cast = new Demoralization();
+            int playerMana = 0;
+            spellNumber = 1;
+            StartLogic();
+            playerMana = PlayerMana(firstPlayer, cast);
+            if (playerMana >= cast.manaCast)
+            {
+                if (mrTorry.first)
+                {
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.firstPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.secondPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                AllCollapsed();
+                ElementsGridCollapsed();
+                a = cast;
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void Damnation()
+        {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new Damnation();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                spell.Action(mass, mrTorry, enemy);
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void Ghost()
+        {
+            int playerMana = 0;
+            StartLogic();
+            if (wind.poleNumber != 0)
+            {
+                Creature cre = new Ghost(wind.poleNumber, VsPole(wind.poleNumber));
+                playerMana = PlayerMana(firstPlayer, cre);
+                if (playerMana >= cre.manaCost)
+                {
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element) + mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element) + enemy.armor;
+                    cre.armor += Armor;
+                    Armor = 0;
+
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
+
+                    LoadImage(cre.poleNumber, cre.img);
+
+                    firstPlayer.water += 0;
+
+                    wind.poleNumber = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    playerMana -= cre.manaCost;
+                    firstPlayer = ReturnPlayerMana(firstPlayer, cre, playerMana);
+                    EndLogic();
+                }
+                else
+                {
+                    wind.ErrorMana();
+                }
+            }
+            else
+            {
+                wind.ErrorPole();
+            }
+        }
+        public void Weakness()
+        {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new Weakness();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                spell.Action(mass, mrTorry, enemy);
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void Decomposition()
+        {
+            Spell cast = new Decomposition();
+            int playerMana = 0;
+            spellNumber = 1;
+            StartLogic();
+            playerMana = PlayerMana(firstPlayer, cast);
+            if (playerMana >= cast.manaCast)
+            {
+                if (mrTorry.first)
+                {
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.firstPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    wind.ChooseGrid.Visibility = Visibility.Visible;
+                    wind.ChooseEnemyGrid.Visibility = Visibility.Visible;
+                    wind.secondPlayerRB.Visibility = Visibility.Collapsed;
+                }
+                AllCollapsed();
+                ElementsGridCollapsed();
+                a = cast;
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        public void Regeneration()
+        {
+            int playerMana = 0;
+            StartLogic();
+            Spell spell = new Regeneration();
+            playerMana = PlayerMana(firstPlayer, spell);
+            if (playerMana >= spell.manaCast)
+            {
+                spell.Action(mass, mrTorry, enemy);
+                EndLogic();
+            }
+            else
+            {
+                wind.ErrorMana();
+            }
+        }
+        //Нейтральная
+        public void Fairy()
+        {
+            
+            StartLogic();
+            if (wind.poleNumber != 0)
+            {
+                Creature cre = new Fairy(wind.poleNumber, VsPole(wind.poleNumber));
+               
+               
+                    //Добавление защиты с учетом щита
+                    if (mrTorry.first) Armor = buffArmor + mrTorry.Shield(mrTorry, cre.Element) + mrTorry.armor;
+                    else Armor = buffArmor + enemy.Shield(enemy, cre.Element) + enemy.armor;
+                    cre.armor += Armor;
+                    Armor = 0;
+                    cre.ActionAtBegin(mass, firstPlayer, secondPlayer);
+                    Master(cre);
+                    mass[wind.poleNumber] = cre;
+
+                    LoadImage(cre.poleNumber, cre.img);
+
+                    firstPlayer.water += 0;
+
+                    wind.poleNumber = 0;
+                   
+                    
+                   
+                    EndLogic();
+               
+            }
+            else
+            {
+                wind.ErrorPole();
+            }
+        }
+        public void Quicksand()
+        {
+            //StartLogic();
+            //Spell spell = new Quicksand();
+            //if ()
+            //{
+            //    spell.Action(mass, mrTorry, enemy);
+            //    EndLogic();
+            //}
+            //else
+            //{
+            //    wind.ErrorMana();
+            //}
+        }
+        //
+
         //********************************************************************//
         public void rune1()
         {

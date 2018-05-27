@@ -9,6 +9,6 @@ namespace Mystery
     class NoCloack:CloackInterface
     {
         public Creature Cloack(Creature cre, Player pl) { return cre; }
-        public Creature ReturnAttack(Creature cre) { return cre; }
+   //     public Creature ReturnAttack(Creature cre) { return cre; }
     }
 }

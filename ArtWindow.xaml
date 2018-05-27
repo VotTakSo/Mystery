@@ -28,7 +28,6 @@
         
 
         <Grid x:Name="Weapon" Margin="0,-121,-0.4,41.4">
-            <Label Content="Weapon" HorizontalAlignment="Left" Margin="473,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.592,-0.937"/>
             <Grid x:Name="Bows">
                 <Button x:Name="FireBow" HorizontalAlignment="Left" Margin="473,180,0,0" VerticalAlignment="Top" Height="30" Width="30" Click="FireBow_Click">
                     <Button.Background>
@@ -87,7 +86,7 @@
                     </Button.Background>
                 </Button>
             </Grid>
-            <Button x:Name="WeaponButton" Click="Weapon_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="100,269,0,0" VerticalAlignment="Top" Width="50" Height="50">
+            <Button x:Name="WeaponButton"  Visibility="Hidden" Click="Weapon_Click" Opacity="0.1" HorizontalAlignment="Left" Margin="100,351,0,0" VerticalAlignment="Top" Width="50" Height="50">
 
             </Button>
         </Grid>
@@ -151,7 +150,7 @@
                     <ImageBrush ImageSource="Resources/Artefacts/Shields/OrksShield.jpg"  />
                 </Button.Background>
             </Button>
-            <Button x:Name="ShieldButton" Click="Shield_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Margin="340,269,0,0" VerticalAlignment="Top" Width="50" Height="50">
+            <Button x:Name="ShieldButton"  Visibility="Hidden" Click="Shield_Click" Opacity="0.1" HorizontalAlignment="Left" Margin="341,350,0,0" VerticalAlignment="Top" Width="50" Height="50">
 
 
             </Button>

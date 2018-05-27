@@ -56,9 +56,46 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Artefact.cs" />
+    <Compile Include="Creatures\1. fire\FireWall.cs" />
+    <Compile Include="Creatures\1. fire\Infernal.cs" />
+    <Compile Include="Creatures\1. fire\Inferno.cs" />
+    <Compile Include="Creatures\1. fire\Meteorite.cs" />
+    <Compile Include="Creatures\1. fire\Scorpio.cs" />
+    <Compile Include="Creatures\2. wind\Assasin.cs" />
+    <Compile Include="Creatures\2. wind\ChainLightning.cs" />
+    <Compile Include="Creatures\2. wind\discharge.cs" />
+    <Compile Include="Creatures\2. wind\Gargoyle.cs" />
+    <Compile Include="Creatures\2. wind\Sabbath.cs" />
+    <Compile Include="Creatures\2. wind\Storm.cs" />
+    <Compile Include="Creatures\2. wind\ThorHummer.cs" />
+    <Compile Include="Creatures\3. water\CallOfTheSirens.cs" />
+    <Compile Include="Creatures\3. water\ElementalVortex.cs" />
+    <Compile Include="Creatures\3. water\Heal.cs" />
+    <Compile Include="Creatures\3. water\IceMonster.cs" />
+    <Compile Include="Creatures\3. water\SeaSnake.cs" />
+    <Compile Include="Creatures\3. water\TargetHeal.cs" />
+    <Compile Include="Creatures\3. water\Triton.cs" />
+    <Compile Include="Creatures\4. earth\AncientMonster.cs" />
+    <Compile Include="Creatures\4. earth\Dendroid.cs" />
+    <Compile Include="Creatures\4. earth\Druid.cs" />
+    <Compile Include="Creatures\4. earth\EarthWorms.cs" />
+    <Compile Include="Creatures\4. earth\Frog.cs" />
+    <Compile Include="Creatures\4. earth\Kramola.cs" />
+    <Compile Include="Creatures\4. earth\Prostraion.cs" />
+    <Compile Include="Creatures\5. death\Damnation.cs" />
+    <Compile Include="Creatures\5. death\DarkTouch.cs" />
+    <Compile Include="Creatures\5. death\Decomposition.cs" />
+    <Compile Include="Creatures\5. death\Demoralization.cs" />
+    <Compile Include="Creatures\5. death\Regeneration.cs" />
+    <Compile Include="Creatures\5. death\Weakness.cs" />
+    <Compile Include="Creatures\6. neitral\Fairy.cs" />
+    <Compile Include="Creatures\6. neitral\Gin.cs" />
+    <Compile Include="Creatures\6. neitral\Mill.cs" />
+    <Compile Include="Creatures\6. neitral\Quicksand.cs" />
     <Compile Include="Creatures\InterfaceAttack\Attack.cs" />
     <Compile Include="Creatures\Creature.cs" />
     <Compile Include="Creatures\InterfaceAttack\TrippleAttack.cs" />
+    <Compile Include="Creatures\Spell.cs" />
     <Compile Include="game.cs" />
     <Compile Include="Creatures\InterfaceAttack\UssualAttack.cs" />
     <Compile Include="LvlElement.xaml.cs">
@@ -93,6 +130,7 @@
     <Compile Include="ArtWindow.xaml.cs">
       <DependentUpon>ArtWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Creatures\1. fire\Mist.cs" />
     <Page Include="LvlElement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -105,8 +143,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Creatures\Ghost.cs" />
-    <Compile Include="Creatures\Goblin.cs" />
+    <Compile Include="Creatures\5. death\Ghost.cs" />
+    <Compile Include="Creatures\1. fire\Goblin.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -231,6 +269,62 @@
     <Resource Include="Resources\Artefacts\Runes\heal.jpg" />
     <Resource Include="Resources\Artefacts\Runes\Potion.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Creatures\5.Death\Damnation.jpg" />
+    <Resource Include="Resources\Creatures\5.Death\Decomposition.jpg" />
+    <Resource Include="Resources\Creatures\5.Death\Demoralization.jpg" />
+    <Resource Include="Resources\Creatures\5.Death\Regeneration.jpg" />
+    <Resource Include="Resources\Creatures\5.Death\Weakness.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Creatures\1.Fire\FireWall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Creatures\1.Fire\meteor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Creatures\1.Fire\Infernal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Creatures\1.Fire\Scorpio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Creatures\1.Fire\inferno.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Creatures\2.Wind\Assasin.jpg" />
+    <Resource Include="Resources\Creatures\2.Wind\ChainLightning.jpg" />
+    <Resource Include="Resources\Creatures\2.Wind\Gorgule.jpg" />
+    <Resource Include="Resources\Creatures\2.Wind\Razriad.jpg" />
+    <Resource Include="Resources\Creatures\2.Wind\Sabbath.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Creatures\2.Wind\Storm.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Creatures\3.Water\CallOfTheSirens.jpg" />
+    <Resource Include="Resources\Creatures\3.Water\ElementVortex.jpg" />
+    <Resource Include="Resources\Creatures\3.Water\Heal.jpg" />
+    <Resource Include="Resources\Creatures\3.Water\IceMonster.jpg" />
+    <Resource Include="Resources\Creatures\3.Water\SeaSnake.jpg" />
+    <Resource Include="Resources\Creatures\3.Water\TargetHeal.jpg" />
+    <Resource Include="Resources\Creatures\3.Water\Triton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Creatures\4.Earth\AncientMonster.jpg" />
+    <Resource Include="Resources\Creatures\4.Earth\Dendroid.jpg" />
+    <Resource Include="Resources\Creatures\4.Earth\Druid.jpg" />
+    <Resource Include="Resources\Creatures\4.Earth\EarthWorms.jpg" />
+    <Resource Include="Resources\Creatures\4.Earth\Frog.jpg" />
+    <Resource Include="Resources\Creatures\4.Earth\Kramola.jpg" />
+    <Resource Include="Resources\Creatures\4.Earth\Prostration.jpg" />
+  </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Creatures\6.Neitral\Fairy.jpg" />
+    <Resource Include="Resources\Creatures\6.Neitral\Gin.jpg" />
+    <Resource Include="Resources\Creatures\6.Neitral\Mill.jpg" />
+    <Resource Include="Resources\Creatures\6.Neitral\QuickSand.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,6 +10,7 @@ namespace Mystery
     {
         static public int lvl=9;
 
+        public string name;
         public string Element;
         public int HP = 72;
         public int astralPower = 15;
@@ -21,8 +22,8 @@ namespace Mystery
         public int skillElementLvl = 0;
         public int skillLvl = 0;
         static Random rand = new Random();
-
-
+        public int target;
+        public int armor=0;
         Weapon weapon;
         ShieldInterface shield;
         CloackInterface cloack;
@@ -50,7 +51,16 @@ namespace Mystery
         }
         public Creature ReturnAttack(Creature cre)
         {
-            return cloack.ReturnAttack(cre);
+            if (cre != null)
+                if (cre.hodPas != 0)
+                {
+                    cre.hodPas--;
+                    if (cre.hodPas <= 0)
+                    {
+                        cre.Attack = cre.buffAtack;
+                    }
+                }
+            return cre;
         }
         public Player Amulet(Player pl)
         {
@@ -197,9 +207,10 @@ namespace Mystery
         {
             first = true;
         }
-        public Player(bool hod)
+        public Player(bool hod, string Name)
         {
             first = hod;
+            name = Name;
             Mana();
         }
         public Player(bool hod, string weaponElement, string bootsElement)

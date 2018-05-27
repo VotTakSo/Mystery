@@ -9,6 +9,6 @@ namespace Mystery
     public interface CloackInterface
     {
         Creature Cloack(Creature cre, Player pl);
-        Creature ReturnAttack(Creature cre);
+      //  Creature ReturnAttack(Creature cre);
     }
 }

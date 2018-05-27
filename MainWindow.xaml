@@ -6,51 +6,71 @@
      
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1000">
-   
+
     <Grid>
         <Grid>
-            <Image x:Name="PlayerAva" HorizontalAlignment="Left" Height="100" Margin="884,227,0,0" VerticalAlignment="Top" Width="100"/>
-            <Image Source="Resources/photo.jpg" x:Name="EnemyAva" HorizontalAlignment="Left" Height="100" Margin="47,227,0,0" VerticalAlignment="Top" Width="100"/>
+            <Image x:Name="PlayerAva" Source="Resources/photo.jpg" HorizontalAlignment="Left" Height="115" Margin="845,210,0,0" VerticalAlignment="Top" Width="100"/>
+            <Image Source="Resources/photo.jpg" x:Name="EnemyAva" HorizontalAlignment="Left" Height="115" Margin="47,210,0,0" VerticalAlignment="Top" Width="100"/>
 
-            <Label x:Name="Hp" Content="Label" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="EnemyHp" Content="Label" HorizontalAlignment="Left" Margin="900,194,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="Hp" Content="Label" HorizontalAlignment="Left" Margin="8,134,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="EnemyHp" Content="Label" HorizontalAlignment="Left" Margin="907,142,0,0" VerticalAlignment="Top"/>
 
 
             <Label x:Name="Hod" Content="Label" HorizontalAlignment="Left" Margin="465,27,0,0" VerticalAlignment="Top"/>
             <Button x:Name="Pas"  Content="Пропуск хода" HorizontalAlignment="Left" Margin="900,527,0,0" VerticalAlignment="Top" Width="75" Click="Pas_Click"/>
-           
+
             <Button  Content="Сдаться" Click="GetUp_Click" HorizontalAlignment="Left" Margin="900,563,0,0" VerticalAlignment="Top" Width="75"/>
 
-            <Image x:Name="RuneSlot1Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="47,332,0,0" VerticalAlignment="Top" Width="18"/>
-            <Button x:Name="RuneSlot1" Click="Runa1_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="22" Margin="47,332,0,0" VerticalAlignment="Top" Width="18" >
-                
-            </Button>
-            <Image x:Name="RuneSlot2Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="87,332,0,0" VerticalAlignment="Top" Width="18"/>
-            <Button x:Name="RuneSlot2" Click="Runa2_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="22" Margin="87,332,0,0" VerticalAlignment="Top" Width="18" >
-               
-            </Button>
-            <Image x:Name="RuneSlot3Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="127,332,0,0" VerticalAlignment="Top" Width="18"/>
-            <Button x:Name="RuneSlot3" Click="Runa3_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="22" Margin="127,332,0,0" VerticalAlignment="Top" Width="18" >
-                
-            </Button>
-
-            <Image x:Name="Player2RuneSlot1Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="847,332,0,0" VerticalAlignment="Top" Width="18"/>
-            <Button x:Name="Player2RuneSlot1" Click="Player2Runa1_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Height="22" Margin="847,332,0,0" VerticalAlignment="Top" Width="18" >
+            <Image x:Name="RuneSlot1Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="34" Margin="47,332,0,0" VerticalAlignment="Top" Width="30"/>
+            <Button x:Name="RuneSlot1" Click="Runa1_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="34" Margin="47,332,0,0" VerticalAlignment="Top" Width="30" >
 
             </Button>
-            <Image x:Name="Player2RuneSlot2Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="887,332,0,0" VerticalAlignment="Top" Width="18"/>
-            <Button x:Name="Player2RuneSlot2" Click="Player2Runa2_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="22" Margin="887,332,0,0" VerticalAlignment="Top" Width="18" >
+            <Image x:Name="RuneSlot2Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="34" Margin="83,332,0,0" VerticalAlignment="Top" Width="30"/>
+            <Button x:Name="RuneSlot2" Click="Runa2_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="34" Margin="87,332,0,0" VerticalAlignment="Top" Width="30" >
 
             </Button>
-            <Image x:Name="Player2RuneSlot3Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="22" Margin="927,332,0,0" VerticalAlignment="Top" Width="18"/>
-            <Button x:Name="Player2RuneSlot3" Click="Player2Runa3_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="22" Margin="927,332,0,0" VerticalAlignment="Top" Width="18" >
+            <Image x:Name="RuneSlot3Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="34" Margin="119,332,0,0" VerticalAlignment="Top" Width="30"/>
+            <Button x:Name="RuneSlot3" Click="Runa3_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="34" Margin="127,332,0,0" VerticalAlignment="Top" Width="30" >
 
             </Button>
-            
-            <Image x:Name="weaponImg" HorizontalAlignment="Left" Height="50" Margin="0,242,0,0" VerticalAlignment="Top" Width="50"/>
+
+            <Image x:Name="Player2RuneSlot1Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="34" Margin="847,332,0,0" VerticalAlignment="Top" Width="30"/>
+            <Button x:Name="Player2RuneSlot1" Click="Player2Runa1_Click" Opacity="0.1" Visibility="Hidden" HorizontalAlignment="Left" Height="34" Margin="847,332,0,0" VerticalAlignment="Top" Width="30" >
+
+            </Button>
+            <Image x:Name="Player2RuneSlot2Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="34" Margin="883,332,0,0" VerticalAlignment="Top" Width="30"/>
+            <Button x:Name="Player2RuneSlot2" Click="Player2Runa2_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="34" Margin="887,332,0,0" VerticalAlignment="Top" Width="30" >
+
+            </Button>
+            <Image x:Name="Player2RuneSlot3Img" Source="Resources/Artefacts/RUNA.jpg" HorizontalAlignment="Left" Height="34" Margin="919,332,0,0" VerticalAlignment="Top" Width="30"/>
+            <Button x:Name="Player2RuneSlot3" Click="Player2Runa3_Click" Opacity="0.1" Visibility="Hidden"  HorizontalAlignment="Left" Height="34" Margin="927,332,0,0" VerticalAlignment="Top" Width="30" >
+
+            </Button>
+            <Image x:Name="headImg" HorizontalAlignment="Left" Height="35" Margin="8,170,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="amuletImg" HorizontalAlignment="Left" Height="35" Margin="8,210,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="weaponImg" HorizontalAlignment="Left" Height="35" Margin="8,250,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="broneImg" HorizontalAlignment="Left" Height="35" Margin="8,290,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="bootsImg" HorizontalAlignment="Left" Height="35" Margin="8,330,0,0" VerticalAlignment="Top" Width="35"/>
+
+            <Image x:Name="ringImg" HorizontalAlignment="Left" Height="35" Margin="150,210,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="shieldImg" HorizontalAlignment="Left" Height="35" Margin="150,250,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="cloackImg" HorizontalAlignment="Left" Height="35" Margin="150,290,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="bandImg" HorizontalAlignment="Left" Height="35" Margin="150,330,0,0" VerticalAlignment="Top" Width="35"/>
+
+            <Image x:Name="headImg_Copy" HorizontalAlignment="Left" Height="35" Margin="805,170,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="amuletImg_Copy" HorizontalAlignment="Left" Height="35" Margin="805,210,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="weaponImg_Copy" HorizontalAlignment="Left" Height="35" Margin="805,250,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="broneImg_Copy" HorizontalAlignment="Left" Height="35" Margin="805,290,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="bootsImg_Copy" HorizontalAlignment="Left" Height="35" Margin="805,330,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="ringImg_Copy" HorizontalAlignment="Left" Height="35" Margin="949,210,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="shieldImg_Copy" HorizontalAlignment="Left" Height="35" Margin="949,250,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="cloackImg_Copy" HorizontalAlignment="Left" Height="35" Margin="949,290,0,0" VerticalAlignment="Top" Width="35"/>
+            <Image x:Name="bandImg_Copy" HorizontalAlignment="Left" Height="35" Margin="949,330,0,0" VerticalAlignment="Top" Width="35"/>
+
+
         </Grid>
 
-        <Grid x:Name="fireGrid" Margin="100,500,100,30">
+        <Grid x:Name="fireGrid" Visibility="Hidden" Margin="100,500,100,30">
             <Grid.RowDefinitions>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -65,16 +85,201 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="GoblinButton"  Click="Button_Click" Grid.Column="0" Grid.Row="0" Margin="0,0,0,0" >
+            <Button  Click="FireButton1_Click" Grid.Column="0" Grid.Row="0" Margin="0,0,0,25" >
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/Creatures/1.Fire/Goblin.jpg"  />
+                    <ImageBrush ImageSource="Resources/Creatures/1.Fire/Goblin.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="FireButton2_Click" Grid.Column="1" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/1.Fire/FireWall.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="FireButton3_Click" Grid.Column="2" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/1.Fire/Infernal.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="FireButton4_Click" Grid.Column="3" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/1.Fire/meteor.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="FireButton5_Click" Grid.Column="4" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/1.Fire/inferno.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="FireButton6_Click" Grid.Column="5" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/1.Fire/Scorpio.jpg" />
+                </Button.Background>
+            </Button>
+            <Label Content="1 Attack   16 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top"/>
+            <!--<Image Source="Resources/photo.jpg" x:Name="name" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10"/>-->
+            <Label Content="0 Attack   22 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1"/>
+            <Label Content="3 Attack   20 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="2"/>
+            <Label Content="7 Attack   30 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="5"/>
+        </Grid>
+        <Grid x:Name="WindGrid" Visibility="Hidden"  Margin="100,500,100,30">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button  Click="WindButton1_Click" Grid.Column="0" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/2.Wind/Storm.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="WindButton2_Click" Grid.Column="1" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/2.Wind/Assasin.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="WindButton3_Click" Grid.Column="2" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/2.Wind/Gorgule.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="WindButton4_Click" Grid.Column="3" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/2.Wind/Sabbath.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="WindButton5_Click" Grid.Column="4" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/2.Wind/Razriad.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="WindButton6_Click" Grid.Column="5" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/2.Wind/ChainLightning.jpg" />
+                </Button.Background>
+            </Button>
+
+            <Label Content="1 Attack   16 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1"/>
+            <Label Content="2 Attack   19 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="2"/>
+        </Grid>
+        <Grid x:Name="WaterGrid"  Visibility="Hidden" Margin="100,500,100,30">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button  Click="WaterButton1_Click" Grid.Column="0" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/3.Water/Triton.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="WaterButton2_Click" Grid.Column="1" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/3.Water/SeaSnake.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="WaterButton3_Click" Grid.Column="2" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/3.Water/TargetHeal.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="WaterButton4_Click" Grid.Column="3" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/3.Water/Heal.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="WaterButton5_Click" Grid.Column="4" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/3.Water/ElementVortex.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="WaterButton6_Click" Grid.Column="5" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/3.Water/IceMonster.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="WaterButton7_Click" Grid.Column="6" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/3.Water/CallOfTheSirens.jpg" />
+                </Button.Background>
+            </Button>
+            <Label Content="1 Attack   16 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="0"/>
+            <Label Content="3 Attack   20 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1"/>
+            <Label Content="4 Attack   24 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="5"/>
+        </Grid>
+        <Grid x:Name="EarthGrid"  Visibility="Hidden" Margin="100,500,100,30">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button  Click="EarthButton1_Click" Grid.Column="0" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/4.Earth/Druid.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="EarthButton2_Click" Grid.Column="1" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/4.Earth/Prostration.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="EarthButton3_Click" Grid.Column="2" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/4.Earth/EarthWorms.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="EarthButton4_Click" Grid.Column="3" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/4.Earth/Frog.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="EarthButton5_Click" Grid.Column="4" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/4.Earth/Dendroid.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="EarthButton6_Click" Grid.Column="5" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/4.Earth/AncientMonster.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="EarthButton7_Click" Grid.Column="6" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/4.Earth/Kramola.jpg" />
                 </Button.Background>
             </Button>
             <!--<Image Source="Resources/photo.jpg" x:Name="name" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10"/>-->
-            <Button Content="Button" Grid.Column="1" Grid.Row="0"   Margin="0,0,0,0" Click="Button_Click_1" />
-            <Button Content="Button" Grid.Column="2" Grid.Row="0"   Margin="0,0,0,0" Click="Button_Click_2"/>
+            <Label Content="2 Attack   16 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="0"/>
+            <Label Content="8 Attack   32 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="4"/>
+            <Label Content="7 Attack   36 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="5"/>
         </Grid>
-        <Grid x:Name="WindGrid" Margin="100,500,100,30">
+        <Grid x:Name="DethGrid" Visibility="Hidden"  Margin="100,500,100,30">
             <Grid.RowDefinitions>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -89,93 +294,42 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Content="Button" Click="Button_Click" Grid.Column="0" Grid.Row="0" Margin="0,0,0,0" >
+
+            <!--<Image Source="Resources/photo.jpg" x:Name="name" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10"/>-->
+            <Button  Click="DeathButton1_Click" Grid.Column="0" Grid.Row="0" Margin="0,0,0,25" >
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/photo.jpg"  />
+                    <ImageBrush ImageSource="Resources/Creatures/5.Death/Demoralization.jpg" />
                 </Button.Background>
             </Button>
-            <!--<Image Source="Resources/photo.jpg" x:Name="name" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10"/>-->
-            <Button Content="Button" Grid.Column="1" Grid.Row="0"   Margin="0,0,0,0" Click="Button_Click_1" />
-            <Button Content="Button" Grid.Column="2" Grid.Row="0"   Margin="0,0,0,0" Click="Button_Click_2"/>
-        </Grid>
-        <Grid x:Name="WaterGrid" Margin="100,500,100,30">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <Button Content="Button" Click="Button_Click" Grid.Column="0" Grid.Row="0" Margin="0,0,0,0" >
+            <Button  Click="DeathButton2_Click" Grid.Column="1" Grid.Row="0" Margin="0,0,0,25" >
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/photo.jpg"  />
+                    <ImageBrush ImageSource="Resources/Creatures/5.Death/Damnation.jpg" />
                 </Button.Background>
             </Button>
-            <!--<Image Source="Resources/photo.jpg" x:Name="name" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10"/>-->
-            <Button Content="Button" Grid.Column="1" Grid.Row="0"   Margin="0,0,0,0" Click="Button_Click_1" />
-            <Button Content="Button" Grid.Column="2" Grid.Row="0"   Margin="0,0,0,0" Click="Button_Click_2"/>
-        </Grid>
-        <Grid x:Name="EarthGrid" Margin="100,500,100,30">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <Button Content="Button" Click="Button_Click" Grid.Column="0" Grid.Row="0" Margin="0,0,0,0" >
+            <Button  Click="DeathButton3_Click" Grid.Column="2" Grid.Row="0" Margin="0,0,0,25" >
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/photo.jpg"  />
+                    <ImageBrush ImageSource="Resources/Creatures/5.Death/ghost.png" />
                 </Button.Background>
             </Button>
-            <!--<Image Source="Resources/photo.jpg" x:Name="name" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10"/>-->
-            <Button Content="Button" Grid.Column="1" Grid.Row="0"   Margin="0,0,0,0" Click="Button_Click_1" />
-            <Button Content="Button" Grid.Column="2" Grid.Row="0"   Margin="0,0,0,0" Click="Button_Click_2"/>
-            <Button Grid.ColumnSpan="2" Content="Button" Grid.Column="3" HorizontalAlignment="Left" Margin="34.4,74,0,0" VerticalAlignment="Top" Width="75"/>
-        </Grid>
-        <Grid x:Name="DethGrid" Margin="100,500,100,30">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
+            <Button  Click="DeathButton4_Click" Grid.Column="3" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/5.Death/Weakness.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="DeathButton5_Click" Grid.Column="4" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/5.Death/Decomposition.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="DeathButton6_Click" Grid.Column="5" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/5.Death/Regeneration.jpg" />
+                </Button.Background>
+            </Button>
            
-            <!--<Image Source="Resources/photo.jpg" x:Name="name" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10"/>-->
-            <Button  Grid.Column="0" Grid.Row="0"   Margin="0,0,0,0" Click="Ghost_Click" >
-                <Button.Background>
-                    <ImageBrush ImageSource="Resources/Creatures/5.Death/Ghost.png"  />
-                </Button.Background>
-            </Button>
-
-            <Button  Grid.Column="1" Grid.Row="0"   Margin="0,0,0,0" Click="Ghost_Click" >
-              
-            </Button>
-
+            <Label Content="3 Attack   20 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="2"/>
         </Grid>
-        <Grid x:Name="NeitralGrid" Margin="100,500,100,30">
+        <Grid x:Name="NeitralGrid"  Margin="100,500,100,30">
             <Grid.RowDefinitions>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -190,19 +344,25 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole1Imghbj" Grid.Column="0" Grid.Row="0"/>
-            <Image Grid.Column="3" Grid.Row="0" Source="Resources/Creatures/fon.jpg"/>
-
-            <Button Content="Button" Click="Button_Click" Grid.Column="0" Grid.Row="0" Margin="0,0,0,0" >
+            <Button  Click="NeitralButton1_Click" Grid.Column="0" Grid.Row="0" Margin="0,0,0,25" >
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/Creatures/1.Fire/Goblin.jpg"  />
+                    <ImageBrush ImageSource="Resources/Creatures/6.Neitral/Fairy.jpg" />
                 </Button.Background>
             </Button>
-            <!--<Image Source="Resources/photo.jpg" x:Name="name" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10"/>-->
-            <Button Content="Button" Grid.Column="1" Grid.Row="0"   Margin="0,0,0,0" Click="Button_Click_1" />
-            <Button Content="Button" Grid.Column="2" Grid.Row="0"   Margin="0,0,0,0" Click="Button_Click_2"/>
+            <Button  Click="NeitralButton2_Click" Grid.Column="1" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/6.Neitral/QuickSand.jpg" />
+                </Button.Background>
+            </Button>
+            <Button  Click="NeitralButton3_Click" Grid.Column="2" Grid.Row="0" Margin="0,0,0,25" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/Creatures/6.Neitral/Gin.jpg" />
+                </Button.Background>
+            </Button>
+            <Label Content="1 Attack   25 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="2"/>
+            <Label Content="2 Attack   16 HP" HorizontalAlignment="Left" Margin="1,105,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="0"/>
         </Grid>
-        <Grid x:Name="poleGrid" Margin="200,105,200,225">
+        <Grid x:Name="poleGrid" Height="340" Width="585" Margin="200,105,200,225">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -216,66 +376,66 @@
 
             </Grid.ColumnDefinitions>
 
-            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole6Img" Grid.Column="0" Grid.Row="0" Margin="0,0,0,25" />
-            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole7Img" Grid.Column="1" Grid.Row="0" Margin="0,0,0,25"/>
-            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole8Img" Grid.Column="2" Grid.Row="0" Margin="0,0,0,25"/>
-            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole9Img" Grid.Column="3" Grid.Row="0" Margin="0,0,0,25"/>
-            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole10Img" Grid.Column="4" Grid.Row="0" Margin="0,0,0,25"/>
+            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole6Img" Grid.Column="0" Grid.Row="0" Margin="0,0,0,45" />
+            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole7Img" Grid.Column="1" Grid.Row="0" Margin="0,0,0,45"/>
+            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole8Img" Grid.Column="2" Grid.Row="0" Margin="0,0,0,45"/>
+            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole9Img" Grid.Column="3" Grid.Row="0" Margin="0,0,0,45"/>
+            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole10Img" Grid.Column="4" Grid.Row="0" Margin="0,0,0,45"/>
 
-            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole1Img"  Grid.Column="0" Grid.Row="1" Margin="0,0,0,25" />
-            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole2Img"  Grid.Column="1" Grid.Row="1" Margin="0,0,0,25"/>
-            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole3Img"  Grid.Column="2" Grid.Row="1" Margin="0,0,0,25"/>
-            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole4Img"  Grid.Column="3" Grid.Row="1" Margin="0,0,0,25"/>
-            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole5Img" Grid.Column="4" Grid.Row="1" Margin="0,0,0,25"/>
+            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole1Img"  Grid.Column="0" Grid.Row="1" Margin="0,0,0,45" />
+            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole2Img"  Grid.Column="1" Grid.Row="1" Margin="0,0,0,45"/>
+            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole3Img"  Grid.Column="2" Grid.Row="1" Margin="0,0,0,45"/>
+            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole4Img"  Grid.Column="3" Grid.Row="1" Margin="0,0,0,45"/>
+            <Image Source="Resources/Creatures/fon.jpg" x:Name="pole5Img" Grid.Column="4" Grid.Row="1" Margin="0, 0, 0, 45"/>
 
 
-            <Button x:Name="pole6" Grid.Column="0" Margin="0,0,0,25" Click="pole6Click">
+            <Button x:Name="pole6" Grid.Column="0" Margin="0,0,0,45" Click="pole6Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Creatures/fon.jpg"  />
                 </Button.Background>
             </Button>
-            <Button x:Name="pole7" Grid.Column="1" Margin="0,0,0,25" Click="pole7Click">
+            <Button x:Name="pole7" Grid.Column="1" Margin="0,0,0,45" Click="pole7Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Creatures/fon.jpg"  />
                 </Button.Background>
             </Button>
-            <Button x:Name="pole8" Grid.Column="2" Margin="0,0,0,25" Click="pole8Click">
+            <Button x:Name="pole8" Grid.Column="2" Margin="0,0,0,45" Click="pole8Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Creatures/fon.jpg"  />
                 </Button.Background>
             </Button>
-            <Button x:Name="pole9" Grid.Column="3" Margin="0,0,0,25" Click="pole9Click">
+            <Button x:Name="pole9" Grid.Column="3" Margin="0,0,0,45" Click="pole9Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Creatures/fon.jpg"  />
                 </Button.Background>
             </Button>
-            <Button x:Name="pole10" Grid.Column="4" Margin="0,0,0,25" Click="pole10Click">
+            <Button x:Name="pole10" Grid.Column="4" Margin="0,0,0,45" Click="pole10Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Creatures/fon.jpg"  />
                 </Button.Background>
             </Button>
 
-            <Button x:Name="pole1" Grid.Column="0" Grid.Row="2" Margin="0,0,0,25" Click="pole1Click">
+            <Button x:Name="pole1" Grid.Column="0" Grid.Row="2" Margin="0,0,0,45" Click="pole1Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Creatures/fon.jpg"  />
                 </Button.Background>
             </Button>
-            <Button x:Name="pole2" Grid.Column="1" Grid.Row="2" Margin="0,0,0,25" Click="pole2Click">
+            <Button x:Name="pole2" Grid.Column="1" Grid.Row="2" Margin="0,0,0,45" Click="pole2Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Creatures/fon.jpg"  />
                 </Button.Background>
             </Button>
-            <Button x:Name="pole3" Grid.Column="2" Grid.Row="2" Margin="0,0,0,25" Click="pole3Click">
+            <Button x:Name="pole3" Grid.Column="2" Grid.Row="2" Margin="0,0,0,45" Click="pole3Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Creatures/fon.jpg"  />
                 </Button.Background>
             </Button>
-            <Button x:Name="pole4" Grid.Column="3" Grid.Row="2" Margin="0,0,0,25" Click="pole4Click">
+            <Button x:Name="pole4"  Grid.Column="3" Grid.Row="2" Margin="0,0,0,45" Click="pole4Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Creatures/fon.jpg"  />
                 </Button.Background>
             </Button>
-            <Button x:Name="pole5" Grid.Column="4" Grid.Row="2" Margin="0,0,0,25" Click="pole5Click">
+            <Button x:Name="pole5" Grid.Column="4" Grid.Row="2" Margin="0,0,0,45" Click="pole5Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Creatures/fon.jpg"  />
                 </Button.Background>

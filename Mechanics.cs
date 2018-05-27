@@ -24,9 +24,9 @@ namespace Mystery
         //Массив всех существ
         public Creature[] mass = new Creature[11];
 
-        protected Player mrTorry = new Player(true);
+        protected Player mrTorry = new Player(true, "mrTorry");
         
-        protected Player enemy = new Player(false);
+        protected Player enemy = new Player(false, "enemy");
         
         
         //буферные
@@ -282,6 +282,18 @@ namespace Mystery
                 wind.firstPlayerRB.Visibility = Visibility.Visible;
                 wind.secondPlayerRB.Visibility = Visibility.Collapsed;
                 Elements();
+                if (wind.runeFlag1 && mrTorry.first)
+                {
+                    wind.RuneSlot1.Visibility = Visibility.Visible;
+                }
+                if (wind.runeFlag2 && mrTorry.first)
+                {
+                    wind.RuneSlot2.Visibility = Visibility.Visible;
+                }
+                if (wind.runeFlag3 && mrTorry.first)
+                {
+                    wind.RuneSlot3.Visibility = Visibility.Visible;
+                }
             }
             else
             {
@@ -305,18 +317,7 @@ namespace Mystery
             wind.dethMana.Content = mrTorry.death;
             EndChooseTarget();
 
-            if(wind.runeFlag1 && mrTorry.first)
-            {
-                wind.RuneSlot1.Visibility = Visibility.Visible;
-            }
-            if (wind.runeFlag2 && mrTorry.first)
-            {
-                wind.RuneSlot2.Visibility = Visibility.Visible;
-            }
-            if (wind.runeFlag3 && mrTorry.first)
-            {
-                wind.RuneSlot3.Visibility = Visibility.Visible;
-            }
+          
 
             if (wind.Player2runeFlag1 && !mrTorry.first)
             {
@@ -588,13 +589,29 @@ namespace Mystery
         //
         public void StartLogic()
         {
+
+            
             if (!mrTorry.first)
             {
                 mrTorry.Amulet(mrTorry);
+                for (int i = 1; i < 6; i++)
+                {
+                    if (mass[i] != null)
+                    {
+                        mass[i].ActionEveryStep();
+                    }
+                }
             }
             else
             {
                 enemy.Amulet(enemy);
+                for (int i = 6; i < 11; i++)
+                {
+                    if (mass[i] != null)
+                    {
+                        mass[i].ActionEveryStep();
+                    }
+                }
             }
             Choose(out firstPlayer, out secondPlayer);
            
@@ -610,7 +627,12 @@ namespace Mystery
             Check(firstPlayer, secondPlayer);
             Change();
             Refresh();
-            
+            if(!mrTorry.first)
+            {
+                wind.RuneSlot1.Visibility = Visibility.Hidden;
+                wind.RuneSlot2.Visibility = Visibility.Hidden;
+                wind.RuneSlot3.Visibility = Visibility.Hidden;
+            }
             wind.End(mrTorry, enemy);
            
         }
